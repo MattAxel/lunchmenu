@@ -63,35 +63,41 @@ def run(restaurant_filter: str | None = None):
             if r["name"] != restaurant["name"]
         ]
 
-        try:
-            print(f"  Fetching from {restaurant['url']}...")
-            content = fetch_content(restaurant)
-            content_desc = (
-                f"{len(content)} chars" if isinstance(content, str)
-                else f"{len(content)} bytes"
-            )
-            print(f"  Got {content_desc}. Extracting menu...")
+        max_retries = 2
+        for attempt in range(1, max_retries + 1):
+            try:
+                print(f"  Fetching from {restaurant['url']}...")
+                content = fetch_content(restaurant)
+                content_desc = (
+                    f"{len(content)} chars" if isinstance(content, str)
+                    else f"{len(content)} bytes"
+                )
+                print(f"  Got {content_desc}. Extracting menu...")
 
-            menu_data = extract_menu(content, restaurant)
+                menu_data = extract_menu(content, restaurant)
 
-            entry = {
-                "name": restaurant["name"],
-                "area": restaurant["area"],
-                "url": restaurant["url"],
-                "days": menu_data.get("days", []),
-            }
-            existing["restaurants"].append(entry)
-            print(f"  Extracted {len(entry['days'])} days.")
+                entry = {
+                    "name": restaurant["name"],
+                    "area": restaurant["area"],
+                    "url": restaurant["url"],
+                    "days": menu_data.get("days", []),
+                }
+                existing["restaurants"].append(entry)
+                print(f"  Extracted {len(entry['days'])} days.")
+                break
 
-        except Exception as e:
-            print(f"  ERROR: {e}")
-            existing["restaurants"].append({
-                "name": restaurant["name"],
-                "area": restaurant["area"],
-                "url": restaurant["url"],
-                "days": [],
-                "error": str(e),
-            })
+            except Exception as e:
+                if attempt < max_retries:
+                    print(f"  Attempt {attempt} failed: {e}. Retrying...")
+                    continue
+                print(f"  ERROR: {e}")
+                existing["restaurants"].append({
+                    "name": restaurant["name"],
+                    "area": restaurant["area"],
+                    "url": restaurant["url"],
+                    "days": [],
+                    "error": str(e),
+                })
 
     existing["generated"] = datetime.now().isoformat(timespec="seconds")
     existing["week"] = week_label

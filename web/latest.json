@@ -1,6 +1,6 @@
 {
   "week": "2026-W13",
-  "generated": "2026-03-27T15:59:39",
+  "generated": "2026-03-27T16:01:36",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -365,20 +365,6 @@
       ]
     },
     {
-      "name": "Tilda & Josper",
-      "area": "Amhult",
-      "url": "https://tildajosper.se/lunch",
-      "days": [],
-      "error": "Failed to parse menu JSON from Claude response.\nRaw result text: "
-    },
-    {
-      "name": "Restaurang Hörnet",
-      "area": "Torslanda",
-      "url": "https://www.restaurang-hornet.se/",
-      "days": [],
-      "error": "Failed to parse menu JSON from Claude response.\nRaw result text: "
-    },
-    {
       "name": "Masala Zone",
       "area": "Torslanda",
       "url": "https://www.masalazone.se/masala-zone-torslanda/",
@@ -537,6 +523,166 @@
             {
               "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp",
               "price": "139 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tilda & Josper",
+      "area": "Amhult",
+      "url": "https://tildajosper.se/lunch",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Jägarbiff med grädsås, lingonsylt, potatismos",
+              "price": "129 kr"
+            },
+            {
+              "name": "Honungsgriljerad fläskkarré med rödvinsås, äpplemos, kokt potatis",
+              "price": "129 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Kalops med rödbetor och kokt potatis",
+              "price": "129 kr"
+            },
+            {
+              "name": "Stekt fläsk med löksås och kokt potatis / husets raggmunkar och lingonsylt / bruna bönor och kokt potatis",
+              "price": "129 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Schnitzel med stekt potatis, persiljesmör",
+              "price": "129 kr"
+            },
+            {
+              "name": "Kåldpudding med grädsås, lingonsylt, kokt potatis",
+              "price": "129 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Nötfärsbiff med grönpepparsås, lingonsylt, potatismos",
+              "price": "129 kr"
+            },
+            {
+              "name": "Chicken tikka masala med naanbröd, basmatiris",
+              "price": "129 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Black and White (ryggbiff, fläskfilé) med bearnaisesås, rödvinsås, pommes frites",
+              "price": "129 kr"
+            },
+            {
+              "name": "Chili con carne med ris",
+              "price": "129 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Restaurang Hörnet",
+      "area": "Torslanda",
+      "url": "https://www.restaurang-hornet.se/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Chili con carne med ris",
+              "price": null
+            },
+            {
+              "name": "Fransk fiskgratäng",
+              "price": null
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Stekt fläsk med löksås, bruna bönor, raggmunk samt kokt potatis och lingonsylt",
+              "price": null
+            },
+            {
+              "name": "Hörnets fisk och skaldjurssoppa",
+              "price": null
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Kåldolmar med brunsås, lingonsylt samt kokt potatis",
+              "price": null
+            },
+            {
+              "name": "Ångad fiskfile serveras med vitvinssås samt potatismos",
+              "price": null
+            },
+            {
+              "name": "Paj med vaniljvisp",
+              "price": null
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Ärtsoppa, korv, fläsk samt pannkaka sylt och grädde",
+              "price": null
+            },
+            {
+              "name": "Rotmos med oxbringa och pepparrotssås",
+              "price": null
+            },
+            {
+              "name": "Ungersk gulashsoppa med gräddfil",
+              "price": null
+            },
+            {
+              "name": "Friterad fiskfile med remouladsås samt kokt potatis",
+              "price": null
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Snitsel cordon bleu serveras med rödvinssås samt stekt potatis",
+              "price": null
+            },
+            {
+              "name": "Fisk och skaldjursbiff serveras med Sandefjordsås samt kokt potatis",
+              "price": null
+            },
+            {
+              "name": "Paj med vaniljvisp",
+              "price": null
             }
           ]
         }
