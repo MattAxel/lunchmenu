@@ -11,14 +11,22 @@ else
   source .venv/bin/activate
 fi
 
+echo "=== $(date '+%Y-%m-%d %H:%M') ==="
+
 echo "Fetching menus..."
-python3 -m scraper.run
+if ! python3 -m scraper.run; then
+  echo "FAILED: scraper exited with error"
+  exit 1
+fi
 
 git add data/ web/latest.json
 if git diff --cached --quiet; then
-  echo "No changes, nothing to push."
+  echo "OK: No changes, nothing to push."
 else
-  git commit -m "Update lunch menus $(date +%Y-W%V)"
-  git push
-  echo "Pushed to GitHub."
+  if git commit -m "Update lunch menus $(date +%Y-W%V)" && git push; then
+    echo "OK: Pushed to GitHub."
+  else
+    echo "FAILED: git commit/push failed"
+    exit 1
+  fi
 fi
