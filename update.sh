@@ -14,7 +14,11 @@ fi
 echo "Fetching menus..."
 python3 -m scraper.run
 
-echo "Pushing to GitHub..."
 git add data/ web/latest.json
-git diff --cached --quiet || git commit -m "Update lunch menus $(date +%Y-W%V)"
-git push
+if git diff --cached --quiet; then
+  echo "No changes, nothing to push."
+else
+  git commit -m "Update lunch menus $(date +%Y-W%V)"
+  git push
+  echo "Pushed to GitHub."
+fi
