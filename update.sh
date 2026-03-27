@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-export PATH="/opt/homebrew/bin:/Users/marner/.local/bin:$PATH"
 cd "$(dirname "$0")"
 
 if [ ! -d .venv ]; then
