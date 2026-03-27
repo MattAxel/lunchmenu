@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Golfkrogen",
+    "url": "https://www.torslandagolfkrog.com/lunch-meny",
+    "type": "text",
+    "area": "Torslanda"
+  },
+  {
+    "name": "Bryggan",
+    "url": "https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/",
+    "type": "image",
+    "area": "Amhult"
+  },
+  {
+    "name": "Masala Corner",
+    "url": "https://masalacorner.kvartersmenyn.se/",
+    "type": "text",
+    "area": "Amhult"
+  },
+  {
+    "name": "Tsuki Hana",
+    "url": "https://tsukihana.net/lunch#husmanskost",
+    "type": "text",
+    "area": "Amhult"
+  },
+  {
+    "name": "Tilda & Josper",
+    "url": "https://tildajosper.se/lunch",
+    "type": "text",
+    "area": "Amhult"
+  },
+  {
+    "name": "Restaurang Hörnet",
+    "url": "https://www.restaurang-hornet.se/",
+    "type": "text",
+    "area": "Torslanda"
+  },
+  {
+    "name": "Masala Zone",
+    "url": "https://www.masalazone.se/masala-zone-torslanda/",
+    "type": "text",
+    "area": "Torslanda"
+  }
+]
