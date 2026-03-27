@@ -15,6 +15,7 @@ Scrapes restaurant websites every Monday, extracts structured menu data using th
 | Masala Corner | Amhult | Text scraping |
 | Tsuki Hana | Amhult | Text scraping |
 | Tilda & Josper | Amhult | Text scraping |
+| Kalimera | Amhult | Text scraping |
 
 Add new restaurants by editing `restaurants.json` — no code changes needed.
 
