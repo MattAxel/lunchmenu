@@ -25,6 +25,7 @@ Rules:
 - If no price is found for a dish, set price to null
 - If a day has no dishes, omit that day
 - Only include this week's menu, not previous weeks
+- If dishes are NOT assigned to specific days (e.g. numbered 1-6 with "Mån-Fre"), list ALL dishes under EVERY weekday
 - Return ONLY the JSON, no other text"""
 
 

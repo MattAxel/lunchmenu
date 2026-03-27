@@ -1,6 +1,6 @@
 {
   "week": "2026-W13",
-  "generated": "2026-03-27T16:01:36",
+  "generated": "2026-03-27T16:03:30",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -477,58 +477,6 @@
       ]
     },
     {
-      "name": "Kalimera",
-      "area": "Amhult",
-      "url": "https://kalimeramezetapas.se/veckans-lunch/",
-      "days": [
-        {
-          "day": "Måndag",
-          "dishes": [
-            {
-              "name": "Gyros (strimlad Fläskkarré) serveras med tomatsås, kebabsås, pommes & sallad",
-              "price": "139 kr"
-            }
-          ]
-        },
-        {
-          "day": "Tisdag",
-          "dishes": [
-            {
-              "name": "Kotopolou Gemisto (fetaost fylld kycklingfilé) serveras med rödvinssky, rotfrukter & rostad potatis",
-              "price": "139 kr"
-            }
-          ]
-        },
-        {
-          "day": "Onsdag",
-          "dishes": [
-            {
-              "name": "Flygande Jacob på fläskkött, serveras med basmatiris & jordnötter",
-              "price": "139 kr"
-            }
-          ]
-        },
-        {
-          "day": "Torsdag",
-          "dishes": [
-            {
-              "name": "Panko panerad Spättafilé, serveras med skirat smör, remolaudsås, gröna ärtor & kokt potatis",
-              "price": "139 kr"
-            }
-          ]
-        },
-        {
-          "day": "Fredag",
-          "dishes": [
-            {
-              "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp",
-              "price": "139 kr"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "Tilda & Josper",
       "area": "Amhult",
       "url": "https://tildajosper.se/lunch",
@@ -683,6 +631,178 @@
             {
               "name": "Paj med vaniljvisp",
               "price": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kalimera",
+      "area": "Amhult",
+      "url": "https://kalimeramezetapas.se/veckans-lunch/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Gyros (strimlad Fläskkarré) serveras med tomatsås, kebabsås, pommes & sallad",
+              "price": "139 kr"
+            },
+            {
+              "name": "Kotopolou Gemisto (fetaost fylld kycklingfilé) serveras med rödvinssky, rotfrukter & rostad potatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "Flygande Jacob på fläskkött, serveras med basmatiris & jordnötter",
+              "price": "139 kr"
+            },
+            {
+              "name": "Panko panerad Spättafilé, serveras med skirat smör, remolaudsås, gröna ärtor & kokt potatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp",
+              "price": "139 kr"
+            },
+            {
+              "name": "Pasta med oxfilé, lök, champinjoner & grönpepparsås",
+              "price": "139 kr"
+            },
+            {
+              "name": "Moussaka, serveras med tzatziki",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Gyros (strimlad Fläskkarré) serveras med tomatsås, kebabsås, pommes & sallad",
+              "price": "139 kr"
+            },
+            {
+              "name": "Kotopolou Gemisto (fetaost fylld kycklingfilé) serveras med rödvinssky, rotfrukter & rostad potatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "Flygande Jacob på fläskkött, serveras med basmatiris & jordnötter",
+              "price": "139 kr"
+            },
+            {
+              "name": "Panko panerad Spättafilé, serveras med skirat smör, remolaudsås, gröna ärtor & kokt potatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp",
+              "price": "139 kr"
+            },
+            {
+              "name": "Pasta med oxfilé, lök, champinjoner & grönpepparsås",
+              "price": "139 kr"
+            },
+            {
+              "name": "Moussaka, serveras med tzatziki",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Gyros (strimlad Fläskkarré) serveras med tomatsås, kebabsås, pommes & sallad",
+              "price": "139 kr"
+            },
+            {
+              "name": "Kotopolou Gemisto (fetaost fylld kycklingfilé) serveras med rödvinssky, rotfrukter & rostad potatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "Flygande Jacob på fläskkött, serveras med basmatiris & jordnötter",
+              "price": "139 kr"
+            },
+            {
+              "name": "Panko panerad Spättafilé, serveras med skirat smör, remolaudsås, gröna ärtor & kokt potatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp",
+              "price": "139 kr"
+            },
+            {
+              "name": "Pasta med oxfilé, lök, champinjoner & grönpepparsås",
+              "price": "139 kr"
+            },
+            {
+              "name": "Moussaka, serveras med tzatziki",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Gyros (strimlad Fläskkarré) serveras med tomatsås, kebabsås, pommes & sallad",
+              "price": "139 kr"
+            },
+            {
+              "name": "Kotopolou Gemisto (fetaost fylld kycklingfilé) serveras med rödvinssky, rotfrukter & rostad potatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "Flygande Jacob på fläskkött, serveras med basmatiris & jordnötter",
+              "price": "139 kr"
+            },
+            {
+              "name": "Panko panerad Spättafilé, serveras med skirat smör, remolaudsås, gröna ärtor & kokt potatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp",
+              "price": "139 kr"
+            },
+            {
+              "name": "Pasta med oxfilé, lök, champinjoner & grönpepparsås",
+              "price": "139 kr"
+            },
+            {
+              "name": "Moussaka, serveras med tzatziki",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Gyros (strimlad Fläskkarré) serveras med tomatsås, kebabsås, pommes & sallad",
+              "price": "139 kr"
+            },
+            {
+              "name": "Kotopolou Gemisto (fetaost fylld kycklingfilé) serveras med rödvinssky, rotfrukter & rostad potatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "Flygande Jacob på fläskkött, serveras med basmatiris & jordnötter",
+              "price": "139 kr"
+            },
+            {
+              "name": "Panko panerad Spättafilé, serveras med skirat smör, remolaudsås, gröna ärtor & kokt potatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp",
+              "price": "139 kr"
+            },
+            {
+              "name": "Pasta med oxfilé, lök, champinjoner & grönpepparsås",
+              "price": "139 kr"
+            },
+            {
+              "name": "Moussaka, serveras med tzatziki",
+              "price": "139 kr"
             }
           ]
         }
