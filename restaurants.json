@@ -40,5 +40,11 @@
     "url": "https://www.masalazone.se/masala-zone-torslanda/",
     "type": "text",
     "area": "Torslanda"
+  },
+  {
+    "name": "Kalimera",
+    "url": "https://kalimeramezetapas.se/veckans-lunch/",
+    "type": "text",
+    "area": "Amhult"
   }
 ]

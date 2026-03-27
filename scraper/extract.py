@@ -100,10 +100,18 @@ def _call_claude(prompt: str, allowed_tools: str | None = None) -> dict:
         )
     text = envelope.get("result", "").strip()
 
-    # Strip markdown code fences if present
-    if text.startswith("```"):
-        text = text.split("\n", 1)[1]
-        text = text.rsplit("```", 1)[0]
+    # Try to extract JSON from the response — it may be wrapped in
+    # markdown fences or preceded by explanatory text
+    import re
+    # First try: extract from code fences
+    fence_match = re.search(r"```(?:json)?\s*\n(.*?)```", text, re.DOTALL)
+    if fence_match:
+        text = fence_match.group(1).strip()
+    else:
+        # Second try: find the first { ... } block
+        brace_match = re.search(r"\{.*\}", text, re.DOTALL)
+        if brace_match:
+            text = brace_match.group(0)
 
     try:
         return json.loads(text)
