@@ -73,7 +73,6 @@
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
       justify-content: center;
-      flex-wrap: wrap;
     }
     .day-filter::-webkit-scrollbar { display: none; }
 
@@ -235,7 +234,14 @@
       .page-header h1 { font-size: 1.6rem; }
       .container { padding: 1rem 0.75rem 2rem; }
       .restaurant-header h2 { font-size: 1.15rem; }
-      .day-filter { justify-content: flex-start; }
+      .day-filter {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .day-filter button {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.65rem;
+      }
       .dish {
         flex-wrap: wrap;
         gap: 0;
