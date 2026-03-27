@@ -349,8 +349,24 @@
         return;
       }
 
+      // Custom sort order
+      const order = ['Bryggan', 'Golfkrogen'];
+      const bottom = ['Kalimera'];
+      const sorted = [...data.restaurants].sort((a, b) => {
+        const ai = order.indexOf(a.name);
+        const bi = order.indexOf(b.name);
+        const ab = bottom.indexOf(a.name) !== -1;
+        const bb = bottom.indexOf(b.name) !== -1;
+        if (ab && !bb) return 1;
+        if (!ab && bb) return -1;
+        if (ai !== -1 && bi !== -1) return ai - bi;
+        if (ai !== -1) return -1;
+        if (bi !== -1) return 1;
+        return 0;
+      });
+
       let html = '';
-      for (const r of data.restaurants) {
+      for (const r of sorted) {
         // Filter days
         const days = (r.days || []).filter(d =>
           activeDay === null || d.day === activeDay
