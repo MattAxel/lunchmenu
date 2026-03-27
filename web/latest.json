@@ -1,94 +1,7 @@
 {
   "week": "2026-W13",
-  "generated": "2026-03-27T16:03:30",
+  "generated": "2026-03-27T16:08:49",
   "restaurants": [
-    {
-      "name": "Golfkrogen",
-      "area": "Torslanda",
-      "url": "https://www.torslandagolfkrog.com/lunch-meny",
-      "days": [
-        {
-          "day": "Måndag",
-          "dishes": [
-            {
-              "name": "Pyttipanna serveras med solägg & rödbetor",
-              "price": "145 kr"
-            },
-            {
-              "name": "Dagens fisk är panerad och serveras med kallsås, potatis",
-              "price": "145 kr"
-            },
-            {
-              "name": "Vego Lasagne",
-              "price": "145 kr"
-            }
-          ]
-        },
-        {
-          "day": "Tisdag",
-          "dishes": [
-            {
-              "name": "Stekt fläsk med löksås eller bruna bönor potatis, lingon (GF)",
-              "price": "145 kr"
-            },
-            {
-              "name": "Stekt fläsk serveras med raggmunk, lingon",
-              "price": "145 kr"
-            },
-            {
-              "name": "Dagens fisk är pocherad och serveras i dillsås, potatis",
-              "price": "145 kr"
-            },
-            {
-              "name": "Vego Lasagne",
-              "price": "145 kr"
-            }
-          ]
-        },
-        {
-          "day": "Onsdag",
-          "dishes": [
-            {
-              "name": "Husets Lasagne (N)",
-              "price": "145 kr"
-            },
-            {
-              "name": "Strömming serveras med skirat smör, potatismos, lingon",
-              "price": "145 kr"
-            },
-            {
-              "name": "Vego Lasagne",
-              "price": "145 kr"
-            }
-          ]
-        },
-        {
-          "day": "Torsdag",
-          "dishes": [
-            {
-              "name": "Husets Gulaschsoppa serveras med vitlökskräm (GF)(N)",
-              "price": "145 kr"
-            },
-            {
-              "name": "Ärtsoppa serveras med köttkorv (GF)",
-              "price": "145 kr"
-            },
-            {
-              "name": "Vegetarisk Ärtsoppa (GF)",
-              "price": "145 kr"
-            },
-            {
-              "name": "Husets fisksoppa serveras med vitlökskräm (GF)",
-              "price": "145 kr"
-            },
-            {
-              "name": "Hemmagjorda pannkakor med sylt & grädde",
-              "price": "145 kr"
-            }
-          ]
-        }
-      ]
-    },
     {
       "name": "Bryggan",
       "area": "Amhult",
@@ -803,6 +716,90 @@
             {
               "name": "Moussaka, serveras med tzatziki",
               "price": "139 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Golfkrogen",
+      "area": "Torslanda",
+      "url": "https://www.torslandagolfkrog.com/lunch-meny",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Kyckling pesto serveras med jasminris",
+              "price": "145 kr"
+            },
+            {
+              "name": "Dagens fisk är panerad och serveras med kallsås, potatis",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Stekt fläsk med löksås eller bruna bönor potatis, lingon",
+              "price": "145 kr"
+            },
+            {
+              "name": "Dagens fisk är pocherad och serveras i örtig tomatsås, potatis",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Chorizokorv serveras med potatismos och dijonsenapsås, rostadlök",
+              "price": "145 kr"
+            },
+            {
+              "name": "Strömming serveras med skirat smör, potatismos, lingon",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Husets Gulaschsoppa serveras med vitlökskräm",
+              "price": "145 kr"
+            },
+            {
+              "name": "Ärtsoppa serveras med köttkorv",
+              "price": "145 kr"
+            },
+            {
+              "name": "Vegetarisk Ärtsoppa",
+              "price": "145 kr"
+            },
+            {
+              "name": "Husets fisksoppa serveras med vitlökskräm",
+              "price": "145 kr"
+            },
+            {
+              "name": "Hemmagjorda pannkakor med sylt & grädde",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Helstekt fläskkarré serveras med pepparsås och potatisgratäng",
+              "price": "145 kr"
+            },
+            {
+              "name": "Husets fisksoppa serveras med vitlökskräm",
+              "price": "145 kr"
             }
           ]
         }

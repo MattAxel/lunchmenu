@@ -356,8 +356,7 @@
           activeDay === null || d.day === activeDay
         );
 
-        // Skip restaurant if no matching days and filtering
-        if (activeDay !== null && days.length === 0 && !r.error) continue;
+        // Don't skip — show all restaurants even if no menu for that day
 
         html += `<div class="restaurant-card">`;
         html += `<div class="restaurant-header">`;
@@ -367,6 +366,8 @@
 
         if (r.error) {
           html += `<div class="error-msg">Kunde inte hämta menyn</div>`;
+        } else if (days.length === 0 && activeDay !== null) {
+          html += `<div class="day"><div class="day-name">${esc(activeDay)}</div><div class="dish"><span class="dish-name" style="color:var(--muted);font-style:italic">Ingen lunch denna dag</span></div></div>`;
         } else if (days.length === 0) {
           html += `<div class="error-msg">Ingen meny hittades.</div>`;
         } else {
