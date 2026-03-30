@@ -352,7 +352,7 @@
 
     async function loadMenu() {
       try {
-        const resp = await fetch('latest.json');
+        const resp = await fetch('latest.json?t=' + Date.now());
         if (!resp.ok) throw new Error('Kunde inte ladda menydata');
         menuData = await resp.json();
         buildDayFilter();

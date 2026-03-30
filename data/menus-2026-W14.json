@@ -1,6 +1,6 @@
 {
   "week": "2026-W14",
-  "generated": "2026-03-30T15:32:54",
+  "generated": "2026-03-30T15:33:55",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -850,14 +850,6 @@
       ]
     },
     {
-      "name": "Björkmans Skafferi",
-      "area": "Platinan",
-      "region": "platinan",
-      "url": "https://www.bjorkmansskafferi.se/",
-      "days": [],
-      "error": "Page.goto: Timeout 60000ms exceeded.\nCall log:\n  - navigating to \"https://www.bjorkmansskafferi.se/\", waiting until \"networkidle\"\n"
-    },
-    {
       "name": "Pagoden",
       "area": "Platinan",
       "region": "platinan",
@@ -1043,6 +1035,98 @@
             {
               "name": "KOLJA eller TOFU - Thai fish cakes med ris, grön curry, gurksallad, crispy chili & mynta",
               "price": "145 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Björkmans Skafferi",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.bjorkmansskafferi.se/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Stekt vegfärs & spetskål med sötsur plommonsås, jasminris, sallad på broccoli, salladslök & rostade cashewnötter",
+              "price": "135 kr"
+            },
+            {
+              "name": "Kyckling i ostronsås med jasminris, sallad på broccoli, salladslök & rostade cashewnötter",
+              "price": "135 kr"
+            },
+            {
+              "name": "Örtbakad sejfilé med potatispuré & varm dragonvinegrette, tärnad tomat & kronärtskocka",
+              "price": "135 kr"
+            },
+            {
+              "name": "Köttbullar i gräddsås med potatismos, pressgurka & rårörda lingon",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Sesamstekt broccoli med nudlar i teriyakisås samt sallad på gurka & picklad ingefära",
+              "price": "135 kr"
+            },
+            {
+              "name": "Sesamgrillad kyckling med nudlar i teriyakisås samt sallad på gurka & picklad ingefära",
+              "price": "135 kr"
+            },
+            {
+              "name": "Halstrad lax med persiljestekta morötter, krossad potatis & kräftsmörsås",
+              "price": "135 kr"
+            },
+            {
+              "name": "Långbakad fläsksida med potatis & purjolök i ramslökssås, toppat med sallad på rädisor & babayspenat",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Beans tikka masala med basmatiris, myntayoghurt & naanbröd, toppat med morot & koriandersallad",
+              "price": "135 kr"
+            },
+            {
+              "name": "Chicken tikka masala med basmatiris, myntayoghurt & naanbröd, toppat med morot & koriandersallad",
+              "price": "135 kr"
+            },
+            {
+              "name": "Fish & chips med smashade ärtor, chiliaioli, citron & dill",
+              "price": "135 kr"
+            },
+            {
+              "name": "Viltfärsbiffar med karljohansvampsås, rostade jordärtskockor & vinbärspicklade rödbetor",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Falafel på mungbönor med rosmarinpotatis, chilisaltgurka, tzatziki, sallad på röd spetskål",
+              "price": "135 kr"
+            },
+            {
+              "name": "Kyckling gyros med rosmarinpotatis, tzatziki, chilisaltgurka, sallad på röd spetskål",
+              "price": "135 kr"
+            },
+            {
+              "name": "Bouillabaisse med fisk & skaldjur, potatis, selleri & fänkål serverad med saffransaioli & rostade vitlökskrutonger",
+              "price": "135 kr"
+            },
+            {
+              "name": "Texas pork chili med tomatsalsa, limemajo & pommes frites kryddade med tajin",
+              "price": "135 kr"
             }
           ]
         }

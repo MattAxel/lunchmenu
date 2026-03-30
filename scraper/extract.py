@@ -62,7 +62,7 @@ def extract_menu_from_image(image_bytes: bytes, restaurant_name: str) -> dict:
 
 def extract_menu(content: str | bytes, restaurant: dict) -> dict:
     """Extract menu based on content type."""
-    if restaurant["type"] == "text":
+    if restaurant["type"] in ("text", "text_js"):
         return extract_menu_from_text(content, restaurant["name"])
     elif restaurant["type"] == "image":
         return extract_menu_from_image(content, restaurant["name"])

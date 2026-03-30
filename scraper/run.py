@@ -11,8 +11,14 @@ from scraper.extract import extract_menu
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
+OVERRIDES_DIR = DATA_DIR / "overrides"
 WEB_DIR = ROOT / "web"
 RESTAURANTS_FILE = ROOT / "restaurants.json"
+
+
+def _slug(name: str) -> str:
+    """Convert restaurant name to a filename slug."""
+    return name.lower().replace(" ", "-").replace("&", "").replace("--", "-")
 
 
 def current_week_label() -> str:
@@ -63,18 +69,31 @@ def run(restaurant_filter: str | None = None):
             if r["name"] != restaurant["name"]
         ]
 
+        # Check for manual override file
+        override_file = OVERRIDES_DIR / f"{_slug(restaurant['name'])}.txt"
+        use_override = override_file.exists()
+        if use_override:
+            print(f"  Using override file: {override_file.name}")
+
         max_retries = 2
         for attempt in range(1, max_retries + 1):
             try:
-                print(f"  Fetching from {restaurant['url']}...")
-                content = fetch_content(restaurant)
+                if use_override:
+                    content = override_file.read_text(encoding="utf-8")
+                else:
+                    print(f"  Fetching from {restaurant['url']}...")
+                    content = fetch_content(restaurant)
                 content_desc = (
                     f"{len(content)} chars" if isinstance(content, str)
                     else f"{len(content)} bytes"
                 )
                 print(f"  Got {content_desc}. Extracting menu...")
 
-                menu_data = extract_menu(content, restaurant)
+                if use_override:
+                    from scraper.extract import extract_menu_from_text
+                    menu_data = extract_menu_from_text(content, restaurant["name"])
+                else:
+                    menu_data = extract_menu(content, restaurant)
 
                 entry = {
                     "name": restaurant["name"],

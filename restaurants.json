@@ -54,5 +54,26 @@
     "type": "text",
     "area": "Amhult",
     "region": "torslanda"
+  },
+  {
+    "name": "Björkmans Skafferi",
+    "url": "https://www.bjorkmansskafferi.se/",
+    "type": "text_js",
+    "area": "Platinan",
+    "region": "platinan"
+  },
+  {
+    "name": "Pagoden",
+    "url": "https://pagoden.se/",
+    "type": "text",
+    "area": "Platinan",
+    "region": "platinan"
+  },
+  {
+    "name": "Poppels Citybryggeriet",
+    "url": "https://www.poppels.se/citybryggeriet/lunch/",
+    "type": "image",
+    "area": "Platinan",
+    "region": "platinan"
   }
 ]

@@ -21,7 +21,11 @@ Supports multiple regions — each region gets its own page and URL.
 
 ### Platinan
 
-Coming soon.
+| Name | Area | Method |
+|------|------|--------|
+| Björkmans Skafferi | Platinan | Text scraping (JS) |
+| Pagoden | Platinan | Text scraping |
+| Poppels Citybryggeriet | Platinan | Manual override |
 
 ## Setup
 
@@ -81,7 +85,10 @@ Add an entry to `restaurants.json`:
 
 Supported types:
 - `"text"` — fetches HTML and extracts text
+- `"text_js"` — uses Playwright for JS-rendered pages, then extracts text
 - `"image"` — uses Playwright to capture menu image, then Claude Code CLI to read it
+
+For restaurants that can't be scraped automatically, place a text file in `data/overrides/{restaurant-slug}.txt` with the menu text. The scraper will use the override instead of fetching.
 
 ## Adding a new region
 
