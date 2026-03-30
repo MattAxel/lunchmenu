@@ -1,10 +1,11 @@
 {
   "week": "2026-W14",
-  "generated": "2026-03-30T13:26:00",
+  "generated": "2026-03-30T15:32:54",
   "restaurants": [
     {
       "name": "Golfkrogen",
       "area": "Torslanda",
+      "region": "torslanda",
       "url": "https://www.torslandagolfkrog.com/lunch-meny",
       "days": [
         {
@@ -80,6 +81,7 @@
     {
       "name": "Bryggan",
       "area": "Amhult",
+      "region": "torslanda",
       "url": "https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/",
       "days": [
         {
@@ -112,7 +114,7 @@
           "day": "Onsdag",
           "dishes": [
             {
-              "name": "KÖTT: Smoked brisket, gruyér-/potatispuré, lökringa, bbq sås, persilja",
+              "name": "KÖTT: Smoked brisket, gruyér-/potatispuré, lökringar, bbq sås, persilja",
               "price": "139 kr"
             },
             {
@@ -139,6 +141,7 @@
     {
       "name": "Masala Corner",
       "area": "Amhult",
+      "region": "torslanda",
       "url": "https://masalacorner.kvartersmenyn.se/",
       "days": [
         {
@@ -287,6 +290,7 @@
     {
       "name": "Tsuki Hana",
       "area": "Amhult",
+      "region": "torslanda",
       "url": "https://tsukihana.net/lunch#husmanskost",
       "days": [
         {
@@ -345,6 +349,7 @@
     {
       "name": "Tilda & Josper",
       "area": "Amhult",
+      "region": "torslanda",
       "url": "https://tildajosper.se/lunch",
       "days": [
         {
@@ -388,7 +393,15 @@
               "price": "129 kr"
             },
             {
-              "name": "Stekt fläsk med löksås och kokt potatis / husets raggmunkar och lingonsylt / bruna bönor och kokt potatis",
+              "name": "Stekt fläsk med löksås och kokt potatis",
+              "price": "129 kr"
+            },
+            {
+              "name": "Stekt fläsk med husets raggmunkar och lingonsylt",
+              "price": "129 kr"
+            },
+            {
+              "name": "Stekt fläsk med bruna bönor och kokt potatis",
               "price": "129 kr"
             },
             {
@@ -454,7 +467,7 @@
               "price": "129 kr"
             },
             {
-              "name": "Grönpepparfärsbiff med gräddsås, lingonsylt, potatismos",
+              "name": "Grönpepparfärsbiff med gräddås, lingonsylt, potatismos",
               "price": "129 kr"
             },
             {
@@ -484,6 +497,7 @@
     {
       "name": "Restaurang Hörnet",
       "area": "Torslanda",
+      "region": "torslanda",
       "url": "https://www.restaurang-hornet.se/",
       "days": [
         {
@@ -552,25 +566,26 @@
     {
       "name": "Masala Zone",
       "area": "Torslanda",
+      "region": "torslanda",
       "url": "https://www.masalazone.se/masala-zone-torslanda/",
       "days": [
         {
           "day": "Måndag",
           "dishes": [
             {
-              "name": "TANDOORI CHICKEN",
+              "name": "TANDOORI CHICKEN - Grillad kycklingklubbs med ben marinrad i yoghurt. Tandoori masala, ingefära, vitlök, gräddsås",
               "price": "98 kr"
             },
             {
-              "name": "MURGH METHI MALAI",
+              "name": "MURGH METHI MALAI - Kycklingfile, ingefära, vitlök, grädde",
               "price": "98 kr"
             },
             {
-              "name": "MALWANI GOSHT",
+              "name": "MALWANI GOSHT - Lammbitar, rostad cocos, tomat, grön chili",
               "price": "98 kr"
             },
             {
-              "name": "MIX TALLRIK",
+              "name": "MIX TALLRIK - Två små vegetariska rätter",
               "price": "98 kr"
             }
           ]
@@ -579,19 +594,19 @@
           "day": "Tisdag",
           "dishes": [
             {
-              "name": "TANDOORI CHICKEN",
+              "name": "TANDOORI CHICKEN - Grillad kycklingklubbs med ben marinrad i yoghurt. Tandoori masala, ingefära, vitlök, gräddsås",
               "price": "98 kr"
             },
             {
-              "name": "TIKKA MASALA",
+              "name": "TIKKA MASALA - Kycklingfile med tomat, lök, i en smakfull gräddig kryddsås",
               "price": "98 kr"
             },
             {
-              "name": "BEEF KADAHI",
+              "name": "BEEF KADAHI - Oxkött med vitlök, ingefära, grön chili, tomat, paprika i kryddig currysås",
               "price": "98 kr"
             },
             {
-              "name": "MIX TALLRIK",
+              "name": "MIX TALLRIK - Två små vegetariska rätter",
               "price": "98 kr"
             }
           ]
@@ -600,19 +615,19 @@
           "day": "Onsdag",
           "dishes": [
             {
-              "name": "TANDOORI CHICKEN",
+              "name": "TANDOORI CHICKEN - Grillad kycklingklubbs med ben marinrad i yoghurt. Tandoori masala, ingefära, vitlök, gräddsås",
               "price": "98 kr"
             },
             {
-              "name": "MURGH MADRAS",
+              "name": "MURGH MADRAS - Kycklingfile med lök, kokosmjölk, ingefära, i smakfull currysås",
               "price": "98 kr"
             },
             {
-              "name": "CURRY GOSHT",
+              "name": "CURRY GOSHT - Lammbitar med lök, tomat, chili i en smakfull curry sås",
               "price": "98 kr"
             },
             {
-              "name": "MIX TALLRIK",
+              "name": "MIX TALLRIK - Två små vegetariska rätter",
               "price": "98 kr"
             }
           ]
@@ -621,19 +636,19 @@
           "day": "Torsdag",
           "dishes": [
             {
-              "name": "TANDOORI CHICKEN",
+              "name": "TANDOORI CHICKEN - Grillad kycklingklubbs med ben marinrad i yoghurt. Tandoori masala, ingefära, vitlök, gräddsås",
               "price": "98 kr"
             },
             {
-              "name": "BUTTER CHICKEN",
+              "name": "BUTTER CHICKEN - Kycklingfils i krämig sås. Tomat, grädde",
               "price": "98 kr"
             },
             {
-              "name": "BEEF BALTI",
+              "name": "BEEF BALTI - Oxkött med ingefära, champinjoner paprika, i kryddstark sås",
               "price": "98 kr"
             },
             {
-              "name": "MIX TALLRIK",
+              "name": "MIX TALLRIK - Två små vegetariska rätter",
               "price": "98 kr"
             }
           ]
@@ -642,19 +657,19 @@
           "day": "Fredag",
           "dishes": [
             {
-              "name": "TANDOORI CHICKEN",
+              "name": "TANDOORI CHICKEN - Grillad kycklingklubbs med ben marinrad i yoghurt. Tandoori masala, ingefära, vitlök, gräddsås",
               "price": "98 kr"
             },
             {
-              "name": "BUTTER CHICKEN",
+              "name": "BUTTER CHICKEN - Kycklingfils i krämig sås. Tomat, grädde",
               "price": "98 kr"
             },
             {
-              "name": "BEEF BALTI",
+              "name": "BEEF BALTI - Oxkött med ingefära, champinjoner paprika, i kryddstark sås",
               "price": "98 kr"
             },
             {
-              "name": "MIX TALLRIK",
+              "name": "MIX TALLRIK - Två små vegetariska rätter",
               "price": "98 kr"
             }
           ]
@@ -664,6 +679,7 @@
     {
       "name": "Kalimera",
       "area": "Amhult",
+      "region": "torslanda",
       "url": "https://kalimeramezetapas.se/veckans-lunch/",
       "days": [
         {
@@ -828,6 +844,205 @@
             {
               "name": "Moussaka, serveras med tzatziki",
               "price": "139 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Björkmans Skafferi",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.bjorkmansskafferi.se/",
+      "days": [],
+      "error": "Page.goto: Timeout 60000ms exceeded.\nCall log:\n  - navigating to \"https://www.bjorkmansskafferi.se/\", waiting until \"networkidle\"\n"
+    },
+    {
+      "name": "Pagoden",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://pagoden.se/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Örtstekt fläskfilé",
+              "price": null
+            },
+            {
+              "name": "Chicken Kebab Bowl",
+              "price": null
+            },
+            {
+              "name": "Falafel Bowl",
+              "price": null
+            },
+            {
+              "name": "Cesarsallad",
+              "price": null
+            },
+            {
+              "name": "Dansk Smörrebröd med friterad spättafilé",
+              "price": null
+            },
+            {
+              "name": "Kalvfärsbiff",
+              "price": null
+            },
+            {
+              "name": "Korean fried Chicken",
+              "price": null
+            },
+            {
+              "name": "Vegetariska vårrullar",
+              "price": null
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Chicken BLT",
+              "price": null
+            },
+            {
+              "name": "Chicken Kebab Bowl",
+              "price": null
+            },
+            {
+              "name": "Falafel Bowl",
+              "price": null
+            },
+            {
+              "name": "Cesarsallad",
+              "price": null
+            },
+            {
+              "name": "Havets wallenbergare",
+              "price": null
+            },
+            {
+              "name": "Raggmunk",
+              "price": null
+            },
+            {
+              "name": "Penangcurry Chicken",
+              "price": null
+            },
+            {
+              "name": "Penangcurry Beef",
+              "price": null
+            },
+            {
+              "name": "Penangcurry Tofu",
+              "price": null
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Meatballs Banger! Grekiska köttbullar",
+              "price": null
+            },
+            {
+              "name": "Chicken Kebab Bowl",
+              "price": null
+            },
+            {
+              "name": "Falafel Bowl",
+              "price": null
+            },
+            {
+              "name": "Cesarsallad",
+              "price": null
+            },
+            {
+              "name": "Örtbakad fiskfilé",
+              "price": null
+            },
+            {
+              "name": "Schnitzel Onsdag",
+              "price": null
+            },
+            {
+              "name": "Asian Pulled Chicken Burger",
+              "price": null
+            },
+            {
+              "name": "Asian crispy halloumi burger",
+              "price": null
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Torsdags Grillen – Chilimarinerad fläskytterfilé",
+              "price": null
+            },
+            {
+              "name": "Chicken Kebab Bowl",
+              "price": null
+            },
+            {
+              "name": "Falafel Bowl",
+              "price": null
+            },
+            {
+              "name": "Cesarsallad",
+              "price": null
+            },
+            {
+              "name": "Bohusländsk Fisksoppa",
+              "price": null
+            },
+            {
+              "name": "Pepper jack cheeseburger",
+              "price": null
+            },
+            {
+              "name": "Halloumiburgare",
+              "price": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Poppels Citybryggeriet",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.poppels.se/citybryggeriet/lunch/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "NÖTFÄRS eller SPENAT & OST - Burek med shopska sallad, paprika, persilja, fetaost & ajvarsås",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "FLÄSK eller PUMPA - Czech goulash med knödel, paprika, lök & surkål",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "KOLJA eller TOFU - Thai fish cakes med ris, grön curry, gurksallad, crispy chili & mynta",
+              "price": "145 kr"
             }
           ]
         }
