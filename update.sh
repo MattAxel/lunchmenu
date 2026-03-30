@@ -19,7 +19,7 @@ if ! python3 -m scraper.run; then
   exit 1
 fi
 
-git add data/ web/latest.json
+git add data/ web/*/latest.json
 if git diff --cached --quiet; then
   echo "OK: No changes, nothing to push."
 else

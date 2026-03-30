@@ -79,6 +79,7 @@ def run(restaurant_filter: str | None = None):
                 entry = {
                     "name": restaurant["name"],
                     "area": restaurant["area"],
+                    "region": restaurant.get("region", "torslanda"),
                     "url": restaurant["url"],
                     "days": menu_data.get("days", []),
                 }
@@ -94,6 +95,7 @@ def run(restaurant_filter: str | None = None):
                 existing["restaurants"].append({
                     "name": restaurant["name"],
                     "area": restaurant["area"],
+                    "region": restaurant.get("region", "torslanda"),
                     "url": restaurant["url"],
                     "days": [],
                     "error": str(e),
@@ -106,10 +108,24 @@ def run(restaurant_filter: str | None = None):
         json.dump(existing, f, ensure_ascii=False, indent=2)
     print(f"\nSaved to {output_file}")
 
-    # Copy to web/latest.json for the frontend
-    latest = WEB_DIR / "latest.json"
-    shutil.copy2(output_file, latest)
-    print(f"Copied to {latest}")
+    # Split by region and write to web/{region}/latest.json
+    regions = {}
+    for r in existing["restaurants"]:
+        region = r.get("region", "torslanda")
+        regions.setdefault(region, []).append(r)
+
+    for region, region_restaurants in regions.items():
+        region_dir = WEB_DIR / region
+        region_dir.mkdir(exist_ok=True)
+        region_data = {
+            "week": existing["week"],
+            "generated": existing["generated"],
+            "restaurants": region_restaurants,
+        }
+        region_file = region_dir / "latest.json"
+        with open(region_file, "w", encoding="utf-8") as f:
+            json.dump(region_data, f, ensure_ascii=False, indent=2)
+        print(f"Copied to {region_file}")
 
 
 if __name__ == "__main__":

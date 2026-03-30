@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lunchmeny — Platinan</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🍽%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf9f6;
+      --card-bg: #ffffff;
+      --accent: #2c5f2d;
+      --accent-light: #e8f0e8;
+      --text: #2d2d2d;
+      --text-secondary: #636363;
+      --muted: #9a9a9a;
+      --border: #ebebeb;
+      --today-bg: #f4f9f0;
+      --today-border: #c4d9b8;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+      --radius: 16px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, #2c5f2d 0%, #3a7d44 100%);
+      color: white;
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.35rem;
+    }
+
+    .page-header .subtitle {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0.5rem 1rem 3rem;
+    }
+
+    /* Day filter tabs */
+    .day-filter {
+      display: flex;
+      gap: 0.4rem;
+      padding: 0.75rem 1rem 0;
+      margin-bottom: 0.5rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      justify-content: center;
+    }
+    .day-filter::-webkit-scrollbar { display: none; }
+
+    .day-filter button {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.4rem 0.9rem;
+      border: 1.5px solid var(--border);
+      border-radius: 100px;
+      background: white;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .day-filter button:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .day-filter button.active {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    /* Restaurant cards */
+    .restaurant-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.25rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .restaurant-card:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .restaurant-header {
+      padding: 1.1rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .restaurant-header h2 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    .restaurant-header h2 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .restaurant-header h2 a:hover {
+      color: var(--accent);
+    }
+
+    .area-badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+    }
+
+    /* Day sections within card */
+    .day {
+      padding: 0.85rem 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .day.today {
+      background: var(--today-bg);
+      border-left: 3px solid var(--today-border);
+    }
+
+    .day-name {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .day.today .day-name {
+      color: var(--accent);
+    }
+
+    .today-label {
+      font-size: 0.65rem;
+      background: var(--accent);
+      color: white;
+      padding: 0.1rem 0.45rem;
+      border-radius: 100px;
+      margin-left: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      vertical-align: middle;
+      font-weight: 600;
+    }
+
+    .dish {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.2rem 0;
+      gap: 1rem;
+    }
+
+    .dish-name {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .dish-dots {
+      flex: 1;
+      border-bottom: 1px dotted var(--border);
+      min-width: 20px;
+      margin-bottom: 0.3em;
+    }
+
+    .dish-price {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+
+    /* States */
+    .error-msg {
+      padding: 1rem 1.25rem;
+      color: #9a4040;
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .no-data {
+      text-align: center;
+      padding: 4rem 1rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.75rem;
+      padding: 1rem 0 2rem;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .page-header { padding: 2rem 1rem 1.5rem; }
+      .page-header h1 { font-size: 1.6rem; }
+      .container { padding: 1rem 0.75rem 2rem; }
+      .restaurant-header h2 { font-size: 1.15rem; }
+      .day-filter {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .day-filter button {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.65rem;
+      }
+      .dish {
+        flex-wrap: wrap;
+        gap: 0;
+      }
+      .dish-name {
+        flex: 1 1 100%;
+      }
+      .dish-dots { display: none; }
+      .dish-price {
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+    }
+    .back-bar {
+      background: #f0efe9;
+      padding: 0.45rem 1rem;
+      font-size: 0.8rem;
+    }
+
+    .back-bar a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .back-bar a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="back-bar"><a href="../">&larr; Alla områden</a></div>
+  <div class="page-header">
+    <h1>Platinan</h1>
+    <div class="subtitle" id="week-label">Laddar...</div>
+  </div>
+
+  <div class="day-filter" id="day-filter"></div>
+
+  <div class="container">
+    <main id="content">
+      <div class="no-data">Laddar menyer...</div>
+    </main>
+    <div class="footer" id="updated"></div>
+  </div>
+
+  <script>
+    const SWEDISH_DAYS = ['Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag'];
+    let menuData = null;
+    let activeDay = null;
+
+    function getTodaySwedish() {
+      const jsDay = new Date().getDay();
+      const idx = (jsDay + 6) % 7;
+      return idx < 5 ? SWEDISH_DAYS[idx] : null;
+    }
+
+    function buildDayFilter() {
+      const container = document.getElementById('day-filter');
+      const today = getTodaySwedish();
+
+      const allBtn = document.createElement('button');
+      allBtn.textContent = 'Alla dagar';
+      allBtn.addEventListener('click', () => setActiveDay(null));
+      container.appendChild(allBtn);
+
+      for (const day of SWEDISH_DAYS) {
+        const btn = document.createElement('button');
+        btn.textContent = day.substring(0, 3);
+        btn.dataset.day = day;
+        btn.addEventListener('click', () => setActiveDay(day));
+        container.appendChild(btn);
+      }
+
+      // Default to today if weekday
+      activeDay = today;
+      updateFilterButtons();
+    }
+
+    function setActiveDay(day) {
+      activeDay = day;
+      updateFilterButtons();
+      if (menuData) render(menuData);
+    }
+
+    function updateFilterButtons() {
+      const buttons = document.querySelectorAll('.day-filter button');
+      buttons.forEach(btn => {
+        if (activeDay === null && !btn.dataset.day) {
+          btn.classList.add('active');
+        } else if (btn.dataset.day === activeDay) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    }
+
+    async function loadMenu() {
+      try {
+        const resp = await fetch('latest.json');
+        if (!resp.ok) throw new Error('Kunde inte ladda menydata');
+        menuData = await resp.json();
+        buildDayFilter();
+        render(menuData);
+      } catch (e) {
+        document.getElementById('content').innerHTML =
+          `<div class="no-data">Ingen menydata tillgänglig ännu.</div>`;
+        document.getElementById('week-label').textContent = '';
+      }
+    }
+
+    function render(data) {
+      const today = getTodaySwedish();
+      document.getElementById('week-label').textContent =
+        `Lunchmeny \u00b7 Vecka ${data.week.split('-W')[1]}`;
+
+      if (!data.restaurants || data.restaurants.length === 0) {
+        document.getElementById('content').innerHTML =
+          `<div class="no-data">Inga menyer hittades denna vecka.</div>`;
+        return;
+      }
+
+      const sorted = [...data.restaurants].sort((a, b) =>
+        a.name.localeCompare(b.name, 'sv')
+      );
+
+      let html = '';
+      for (const r of sorted) {
+        // Filter days
+        const days = (r.days || []).filter(d =>
+          activeDay === null || d.day === activeDay
+        );
+
+        // Don't skip — show all restaurants even if no menu for that day
+
+        html += `<div class="restaurant-card">`;
+        html += `<div class="restaurant-header">`;
+        html += `<h2><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.name)}</a></h2>`;
+        html += `<span class="area-badge">${esc(r.area)}</span>`;
+        html += `</div>`;
+
+        if (r.error) {
+          html += `<div class="error-msg">Kunde inte hämta menyn</div>`;
+        } else if (days.length === 0 && activeDay !== null) {
+          html += `<div class="day"><div class="day-name">${esc(activeDay)}</div><div class="dish"><span class="dish-name" style="color:var(--muted);font-style:italic">Ingen lunch denna dag</span></div></div>`;
+        } else if (days.length === 0) {
+          html += `<div class="error-msg">Ingen meny hittades.</div>`;
+        } else {
+          for (const day of days) {
+            const isToday = day.day === today;
+            html += `<div class="day${isToday ? ' today' : ''}">`;
+            html += `<div class="day-name">${esc(day.day)}`;
+            if (isToday) html += `<span class="today-label">idag</span>`;
+            html += `</div>`;
+            for (const dish of day.dishes || []) {
+              html += `<div class="dish">`;
+              html += `<span class="dish-name">${esc(dish.name)}</span>`;
+              html += `<span class="dish-dots"></span>`;
+              if (dish.price) {
+                html += `<span class="dish-price">${esc(dish.price)}</span>`;
+              }
+              html += `</div>`;
+            }
+            html += `</div>`;
+          }
+        }
+        html += `</div>`;
+      }
+
+      document.getElementById('content').innerHTML = html;
+
+      if (data.generated) {
+        const d = new Date(data.generated);
+        document.getElementById('updated').textContent =
+          `Uppdaterad ${d.toLocaleDateString('sv-SE')} kl ${d.toLocaleTimeString('sv-SE', {hour:'2-digit', minute:'2-digit'})}`;
+      }
+    }
+
+    function esc(s) {
+      const d = document.createElement('div');
+      d.textContent = s || '';
+      return d.innerHTML;
+    }
+
+    loadMenu();
+  </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+{
+  "week": "2026-W14",
+  "generated": "2026-03-30T12:00:00",
+  "restaurants": [
+    {
+      "name": "Testrestaurang A",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://example.com",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {"name": "Stekt lax med potatis och dillsås", "price": "139 kr"},
+            {"name": "Köttbullar med potatismos och lingon", "price": "129 kr"}
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {"name": "Kycklinggryta med ris", "price": "135 kr"},
+            {"name": "Vegetarisk lasagne", "price": "125 kr"}
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {"name": "Pannbiff med löksås", "price": "129 kr"},
+            {"name": "Pasta carbonara", "price": "125 kr"}
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {"name": "Fiskgratäng med räkor", "price": "145 kr"},
+            {"name": "Pulled pork med coleslaw", "price": "139 kr"}
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {"name": "Fish & chips", "price": "135 kr"},
+            {"name": "Hamburgare med pommes", "price": "145 kr"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Testrestaurang B",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://example.com",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {"name": "Tacos med guacamole", "price": "119 kr"},
+            {"name": "Soppa med bröd", "price": "99 kr"}
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {"name": "Wokade nudlar med tofu", "price": "125 kr"},
+            {"name": "Biff Stroganoff", "price": "139 kr"}
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {"name": "Caesarsallad med kyckling", "price": "129 kr"},
+            {"name": "Ärtsoppa med pannkakor", "price": "109 kr"}
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {"name": "Korv Stroganoff", "price": "115 kr"},
+            {"name": "Lammgryta med couscous", "price": "145 kr"}
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {"name": "Pizza Margherita", "price": "125 kr"},
+            {"name": "Sushi bowl", "price": "139 kr"}
+          ]
+        }
+      ]
+    }
+  ]
+}

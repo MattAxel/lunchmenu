@@ -1,10 +1,12 @@
-# Lunch Menu — Torslanda & Amhult
+# Lunch Menu
 
-Weekly lunch menu aggregator for restaurants in Torslanda and Amhult, Gothenburg.
+Weekly lunch menu aggregator for restaurants in Gothenburg. Scrapes restaurant websites, extracts structured menu data using the Claude Code CLI, and publishes a clean web page via GitHub Pages with day filtering and mobile support.
 
-Scrapes restaurant websites every Monday, extracts structured menu data using the Claude Code CLI, and publishes a clean web page via GitHub Pages with day filtering and mobile support.
+Supports multiple regions — each region gets its own page and URL.
 
-## Restaurants
+## Regions
+
+### Torslanda & Amhult
 
 | Name | Area | Method |
 |------|------|--------|
@@ -17,7 +19,9 @@ Scrapes restaurant websites every Monday, extracts structured menu data using th
 | Tilda & Josper | Amhult | Text scraping |
 | Kalimera | Amhult | Text scraping |
 
-Add new restaurants by editing `restaurants.json` — no code changes needed.
+### Platinan
+
+Coming soon.
 
 ## Setup
 
@@ -48,7 +52,7 @@ Start the web server:
 # Open http://localhost:8000
 ```
 
-Output goes to `data/menus-YYYY-WNN.json` and `web/latest.json`.
+Output goes to `data/menus-YYYY-WNN.json` and `web/{region}/latest.json`.
 
 ## GitHub Actions
 
@@ -67,10 +71,20 @@ Add an entry to `restaurants.json`:
   "name": "Restaurant Name",
   "url": "https://example.com/lunch",
   "type": "text",
-  "area": "Torslanda"
+  "area": "Platinan",
+  "region": "platinan"
 }
 ```
+
+- `area` — displayed as a badge on the web page
+- `region` — determines which subdirectory the restaurant appears in (`web/{region}/`)
 
 Supported types:
 - `"text"` — fetches HTML and extracts text
 - `"image"` — uses Playwright to capture menu image, then Claude Code CLI to read it
+
+## Adding a new region
+
+1. Add restaurants to `restaurants.json` with the new `region` value
+2. Create `web/{region}/index.html` (copy from an existing region page and adjust the title)
+3. Add a link to the new region on `web/index.html`
