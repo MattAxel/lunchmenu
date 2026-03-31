@@ -20,8 +20,10 @@ if ! python3 -m scraper.run; then
 fi
 
 git add data/ web/*/latest.json
-if git diff --cached --quiet; then
-  echo "OK: No changes, nothing to push."
+# Ignore timestamp-only changes (just "generated" field)
+if git diff --cached --quiet || git diff --cached -I '"generated"' --quiet; then
+  git reset HEAD -- . > /dev/null 2>&1
+  echo "OK: No meaningful changes, nothing to push."
 else
   if git commit -m "Update lunch menus $(date +%Y-W%V)" && git push; then
     echo "OK: Pushed to GitHub."
