@@ -1,289 +1,30 @@
 {
-  "week": "2026-W14",
-  "generated": "2026-03-31T10:00:05",
+  "week": "2026-W15",
+  "generated": "2026-04-06T06:27:28",
   "restaurants": [
+    {
+      "name": "Björkmans Skafferi",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.bjorkmansskafferi.se/",
+      "days": [],
+      "error": "claude CLI failed (exit 1): "
+    },
     {
       "name": "Pagoden",
       "area": "Platinan",
       "region": "platinan",
       "url": "https://pagoden.se/",
-      "days": [
-        {
-          "day": "Måndag",
-          "dishes": [
-            {
-              "name": "Örtstekt fläskfilé",
-              "price": null
-            },
-            {
-              "name": "Chicken Kebab Bowl",
-              "price": null
-            },
-            {
-              "name": "Falafel Bowl",
-              "price": null
-            },
-            {
-              "name": "Cesarsallad",
-              "price": null
-            },
-            {
-              "name": "Dansk Smörrebröd med friterad spättafilé",
-              "price": null
-            },
-            {
-              "name": "Kalvfärsbiff",
-              "price": null
-            },
-            {
-              "name": "Korean fried Chicken",
-              "price": null
-            },
-            {
-              "name": "Vegetariska vårrullar",
-              "price": null
-            }
-          ]
-        },
-        {
-          "day": "Tisdag",
-          "dishes": [
-            {
-              "name": "Chicken BLT",
-              "price": null
-            },
-            {
-              "name": "Chicken Kebab Bowl",
-              "price": null
-            },
-            {
-              "name": "Falafel Bowl",
-              "price": null
-            },
-            {
-              "name": "Cesarsallad",
-              "price": null
-            },
-            {
-              "name": "Havets wallenbergare",
-              "price": null
-            },
-            {
-              "name": "Raggmunk",
-              "price": null
-            },
-            {
-              "name": "Penangcurry Chicken",
-              "price": null
-            },
-            {
-              "name": "Penangcurry Beef",
-              "price": null
-            },
-            {
-              "name": "Penangcurry Tofu",
-              "price": null
-            }
-          ]
-        },
-        {
-          "day": "Onsdag",
-          "dishes": [
-            {
-              "name": "Meatballs Banger! Grekiska köttbullar",
-              "price": null
-            },
-            {
-              "name": "Chicken Kebab Bowl",
-              "price": null
-            },
-            {
-              "name": "Falafel Bowl",
-              "price": null
-            },
-            {
-              "name": "Cesarsallad",
-              "price": null
-            },
-            {
-              "name": "Örtbakad fiskfilé",
-              "price": null
-            },
-            {
-              "name": "Schnitzel Onsdag",
-              "price": null
-            },
-            {
-              "name": "Asian Pulled Chicken Burger",
-              "price": null
-            },
-            {
-              "name": "Asian crispy halloumi burger",
-              "price": null
-            }
-          ]
-        },
-        {
-          "day": "Torsdag",
-          "dishes": [
-            {
-              "name": "Torsdags Grillen – Chilimarinerad fläskytterfilé",
-              "price": null
-            },
-            {
-              "name": "Chicken Kebab Bowl",
-              "price": null
-            },
-            {
-              "name": "Falafel Bowl",
-              "price": null
-            },
-            {
-              "name": "Cesarsallad",
-              "price": null
-            },
-            {
-              "name": "Bohusländsk Fisksoppa",
-              "price": null
-            },
-            {
-              "name": "Pepper jack cheeseburger",
-              "price": null
-            },
-            {
-              "name": "Halloumiburgare",
-              "price": null
-            }
-          ]
-        }
-      ]
+      "days": [],
+      "error": "claude CLI failed (exit 1): "
     },
     {
       "name": "Poppels Citybryggeriet",
       "area": "Platinan",
       "region": "platinan",
       "url": "https://www.poppels.se/citybryggeriet/lunch/",
-      "days": [
-        {
-          "day": "Måndag",
-          "dishes": [
-            {
-              "name": "NÖTFÄRS eller SPENAT & OST - Burek med shopska sallad, paprika, persilja, fetaost & ajvarsås",
-              "price": "145 kr"
-            }
-          ]
-        },
-        {
-          "day": "Tisdag",
-          "dishes": [
-            {
-              "name": "FLÄSK eller PUMPA - Czech goulash med knödel, paprika, lök & surkål",
-              "price": "145 kr"
-            }
-          ]
-        },
-        {
-          "day": "Onsdag",
-          "dishes": [
-            {
-              "name": "KOLJA eller TOFU - Thai fish cakes med ris, grön curry, gurksallad, crispy chili & mynta",
-              "price": "145 kr"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Björkmans Skafferi",
-      "area": "Platinan",
-      "region": "platinan",
-      "url": "https://www.bjorkmansskafferi.se/",
-      "days": [
-        {
-          "day": "Måndag",
-          "dishes": [
-            {
-              "name": "Stekt vegfärs & spetskål med sötsur plommonsås, jasminris, sallad på broccoli, salladslök & rostade cashewnötter",
-              "price": "135 kr"
-            },
-            {
-              "name": "Kyckling i ostronsås med jasminris, sallad på broccoli, salladslök & rostade cashewnötter",
-              "price": "135 kr"
-            },
-            {
-              "name": "Örtbakad sejfilé med potatispuré & varm dragonvinegrette, tärnad tomat & kronärtskocka",
-              "price": "135 kr"
-            },
-            {
-              "name": "Köttbullar i gräddsås med potatismos, pressgurka & rårörda lingon",
-              "price": "135 kr"
-            }
-          ]
-        },
-        {
-          "day": "Tisdag",
-          "dishes": [
-            {
-              "name": "Sesamstekt broccoli med nudlar i teriyakisås samt sallad på gurka & picklad ingefära",
-              "price": "135 kr"
-            },
-            {
-              "name": "Sesamgrillad kyckling med nudlar i teriyakisås samt sallad på gurka & picklad ingefära",
-              "price": "135 kr"
-            },
-            {
-              "name": "Halstrad lax med persiljestekta morötter, krossad potatis & kräftsmörsås",
-              "price": "135 kr"
-            },
-            {
-              "name": "Långbakad fläsksida med potatis & purjolök i ramslökssås, toppat med sallad på rädisor & babayspenat",
-              "price": "135 kr"
-            }
-          ]
-        },
-        {
-          "day": "Onsdag",
-          "dishes": [
-            {
-              "name": "Beans tikka masala med basmatiris, myntayoghurt & naanbröd, toppat med morot & koriandersallad",
-              "price": "135 kr"
-            },
-            {
-              "name": "Chicken tikka masala med basmatiris, myntayoghurt & naanbröd, toppat med morot & koriandersallad",
-              "price": "135 kr"
-            },
-            {
-              "name": "Fish & chips med smashade ärtor, chiliaioli, citron & dill",
-              "price": "135 kr"
-            },
-            {
-              "name": "Viltfärsbiffar med karljohansvampsås, rostade jordärtskockor & vinbärspicklade rödbetor",
-              "price": "135 kr"
-            }
-          ]
-        },
-        {
-          "day": "Torsdag",
-          "dishes": [
-            {
-              "name": "Falafel på mungbönor med rosmarinpotatis, chilisaltgurka, tzatziki, sallad på röd spetskål",
-              "price": "135 kr"
-            },
-            {
-              "name": "Kyckling gyros med rosmarinpotatis, tzatziki, chilisaltgurka, sallad på röd spetskål",
-              "price": "135 kr"
-            },
-            {
-              "name": "Bouillabaisse med fisk & skaldjur, potatis, selleri & fänkål serverad med saffransaioli & rostade vitlökskrutonger",
-              "price": "135 kr"
-            },
-            {
-              "name": "Texas pork chili med tomatsalsa, limemajo & pommes frites kryddade med tajin",
-              "price": "135 kr"
-            }
-          ]
-        }
-      ]
+      "days": [],
+      "error": "claude CLI failed (exit 1): "
     }
   ]
 }

@@ -65,6 +65,30 @@
       "url": "https://kalimeramezetapas.se/veckans-lunch/",
       "days": [],
       "error": "claude CLI failed (exit 1): "
+    },
+    {
+      "name": "Björkmans Skafferi",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.bjorkmansskafferi.se/",
+      "days": [],
+      "error": "claude CLI failed (exit 1): "
+    },
+    {
+      "name": "Pagoden",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://pagoden.se/",
+      "days": [],
+      "error": "claude CLI failed (exit 1): "
+    },
+    {
+      "name": "Poppels Citybryggeriet",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.poppels.se/citybryggeriet/lunch/",
+      "days": [],
+      "error": "claude CLI failed (exit 1): "
     }
   ]
 }
