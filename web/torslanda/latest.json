@@ -1,6 +1,6 @@
 {
   "week": "2026-W15",
-  "generated": "2026-04-06T06:27:28",
+  "generated": "2026-04-07T09:26:29",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -25,14 +25,6 @@
       "url": "https://masalacorner.kvartersmenyn.se/",
       "days": [],
       "error": "403 Client Error: Forbidden for url: https://masalacorner.kvartersmenyn.se/"
-    },
-    {
-      "name": "Tsuki Hana",
-      "area": "Amhult",
-      "region": "torslanda",
-      "url": "https://tsukihana.net/lunch#husmanskost",
-      "days": [],
-      "error": "claude CLI failed (exit 1): "
     },
     {
       "name": "Tilda & Josper",
@@ -65,6 +57,259 @@
       "url": "https://kalimeramezetapas.se/veckans-lunch/",
       "days": [],
       "error": "claude CLI failed (exit 1): "
+    },
+    {
+      "name": "Tsuki Hana",
+      "area": "Amhult",
+      "region": "torslanda",
+      "url": "https://tsukihana.net/lunch#husmanskost",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Nigiri 8 biter",
+              "price": "110 kr"
+            },
+            {
+              "name": "Liten sushi 8 bitar",
+              "price": "95 kr"
+            },
+            {
+              "name": "Mellan sushi 10 bitar",
+              "price": "109 kr"
+            },
+            {
+              "name": "Stor sushi 12 bitar",
+              "price": "119 kr"
+            },
+            {
+              "name": "Extra stor sushi 15 bitar",
+              "price": "145 kr"
+            },
+            {
+              "name": "Grillad Sushi 10 bitar",
+              "price": "119 kr"
+            },
+            {
+              "name": "Mamma Sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Vegetarisk sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Vegansk sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Tokyo Special 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "San Special 10 bitar",
+              "price": "110 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Nigiri 8 biter",
+              "price": "110 kr"
+            },
+            {
+              "name": "Liten sushi 8 bitar",
+              "price": "95 kr"
+            },
+            {
+              "name": "Mellan sushi 10 bitar",
+              "price": "109 kr"
+            },
+            {
+              "name": "Stor sushi 12 bitar",
+              "price": "119 kr"
+            },
+            {
+              "name": "Extra stor sushi 15 bitar",
+              "price": "145 kr"
+            },
+            {
+              "name": "Grillad Sushi 10 bitar",
+              "price": "119 kr"
+            },
+            {
+              "name": "Mamma Sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Vegetarisk sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Vegansk sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Tokyo Special 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "San Special 10 bitar",
+              "price": "110 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Nigiri 8 biter",
+              "price": "110 kr"
+            },
+            {
+              "name": "Liten sushi 8 bitar",
+              "price": "95 kr"
+            },
+            {
+              "name": "Mellan sushi 10 bitar",
+              "price": "109 kr"
+            },
+            {
+              "name": "Stor sushi 12 bitar",
+              "price": "119 kr"
+            },
+            {
+              "name": "Extra stor sushi 15 bitar",
+              "price": "145 kr"
+            },
+            {
+              "name": "Grillad Sushi 10 bitar",
+              "price": "119 kr"
+            },
+            {
+              "name": "Mamma Sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Vegetarisk sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Vegansk sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Tokyo Special 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "San Special 10 bitar",
+              "price": "110 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Nigiri 8 biter",
+              "price": "110 kr"
+            },
+            {
+              "name": "Liten sushi 8 bitar",
+              "price": "95 kr"
+            },
+            {
+              "name": "Mellan sushi 10 bitar",
+              "price": "109 kr"
+            },
+            {
+              "name": "Stor sushi 12 bitar",
+              "price": "119 kr"
+            },
+            {
+              "name": "Extra stor sushi 15 bitar",
+              "price": "145 kr"
+            },
+            {
+              "name": "Grillad Sushi 10 bitar",
+              "price": "119 kr"
+            },
+            {
+              "name": "Mamma Sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Vegetarisk sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Vegansk sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Tokyo Special 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "San Special 10 bitar",
+              "price": "110 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Nigiri 8 biter",
+              "price": "110 kr"
+            },
+            {
+              "name": "Liten sushi 8 bitar",
+              "price": "95 kr"
+            },
+            {
+              "name": "Mellan sushi 10 bitar",
+              "price": "109 kr"
+            },
+            {
+              "name": "Stor sushi 12 bitar",
+              "price": "119 kr"
+            },
+            {
+              "name": "Extra stor sushi 15 bitar",
+              "price": "145 kr"
+            },
+            {
+              "name": "Grillad Sushi 10 bitar",
+              "price": "119 kr"
+            },
+            {
+              "name": "Mamma Sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Vegetarisk sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Vegansk sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Tokyo Special 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "San Special 10 bitar",
+              "price": "110 kr"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
