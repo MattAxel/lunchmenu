@@ -1,51 +1,16 @@
-name: Weekly Lunch Menu
+name: Deploy Lunch Menu
 
 on:
-  schedule:
-    # Every Monday at 07:00 Stockholm time (05:00 UTC in winter, 06:00 UTC in summer)
-    # Using 05:00 UTC to cover CET (UTC+1)
-    - cron: '0 5 * * 1'
+  push:
+    branches: [main]
   workflow_dispatch: # Allow manual trigger
 
 permissions:
-  contents: write
   pages: write
   id-token: write
 
 jobs:
-  fetch-menus:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-          playwright install chromium --with-deps
-
-      - name: Install Claude Code CLI
-        run: npm install -g @anthropic-ai/claude-code
-
-      - name: Fetch menus
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python -m scraper.run
-
-      - name: Commit updated data
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/ web/*/latest.json
-          git diff --cached --quiet || git commit -m "Update lunch menus $(date +%Y-W%V)"
-          git push
-
   deploy:
-    needs: fetch-menus
     runs-on: ubuntu-latest
     environment:
       name: github-pages
