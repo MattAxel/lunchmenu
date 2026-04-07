@@ -1,62 +1,303 @@
 {
   "week": "2026-W15",
-  "generated": "2026-04-07T09:26:29",
+  "generated": "2026-04-07T09:37:41",
   "restaurants": [
     {
       "name": "Golfkrogen",
       "area": "Torslanda",
       "region": "torslanda",
       "url": "https://www.torslandagolfkrog.com/lunch-meny",
-      "days": [],
-      "error": "claude CLI failed (exit 1): "
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Pyttipanna serveras med solägg & rödbetor",
+              "price": "145 kr"
+            },
+            {
+              "name": "Dagens fisk är panerad och serveras med kallsås, potatis",
+              "price": "145 kr"
+            },
+            {
+              "name": "Vego Lasagne",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Stekt fläsk med löksås eller bruna bönor potatis, lingon (GF)",
+              "price": "145 kr"
+            },
+            {
+              "name": "Stekt fläsk serveras med raggmunk, lingon",
+              "price": "145 kr"
+            },
+            {
+              "name": "Dagens fisk är pocherad och serveras i dillsås, potatis",
+              "price": "145 kr"
+            },
+            {
+              "name": "Vego Lasagne",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Husets Lasagne (N)",
+              "price": "145 kr"
+            },
+            {
+              "name": "Strömming serveras med skirat smör, potatismos, lingon",
+              "price": "145 kr"
+            },
+            {
+              "name": "Vego Lasagne",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Husets Gulaschsoppa serveras med vitlökskräm (GF)(N)",
+              "price": "145 kr"
+            },
+            {
+              "name": "Ärtsoppa serveras med köttkorv (GF)",
+              "price": "145 kr"
+            },
+            {
+              "name": "Vegetarisk Ärtsoppa (GF)",
+              "price": "145 kr"
+            },
+            {
+              "name": "Husets fisksoppa serveras med vitlökskräm (GF)",
+              "price": "145 kr"
+            },
+            {
+              "name": "Hemmagjorda pannkakor med sylt & grädde",
+              "price": "145 kr"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Bryggan",
       "area": "Amhult",
       "region": "torslanda",
       "url": "https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/",
-      "days": [],
-      "error": "claude CLI failed (exit 1): "
+      "days": [
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "KÖTT: Stekt rimmat fläsk med raggmunk, rårörda lingon, alt, löksås, kokt potatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "FISK: Stekt strömming, potatispuré, brynt smör, rårörda lingon",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "KÖTT: Kalvhögrev, örtrostad potatis, rödvinsky, rosépepparcremé, broccoli",
+              "price": "139 kr"
+            },
+            {
+              "name": "FISK: Tomatbakad kolja, potatisstomp, vitvinsås, örtolja",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "KÖTT: Tunnbrödsrulle, lammkorv, potatispuré, råkröra, rostad lök, picklad lök",
+              "price": "139 kr"
+            },
+            {
+              "name": "FISK: Havets Wallenbergare, potatispuré, råkröra, gröna ärtor",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "KÖTT: Helstekt fläskfilé, pepparsås, stekt potatis, bakad tomat",
+              "price": "139 kr"
+            },
+            {
+              "name": "FISK: Citronbakad lax, ramslöksmajo, dillkokt potatis, sockerärta",
+              "price": "139 kr"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Masala Corner",
       "area": "Amhult",
       "region": "torslanda",
       "url": "https://masalacorner.kvartersmenyn.se/",
-      "days": [],
-      "error": "403 Client Error: Forbidden for url: https://masalacorner.kvartersmenyn.se/"
-    },
-    {
-      "name": "Tilda & Josper",
-      "area": "Amhult",
-      "region": "torslanda",
-      "url": "https://tildajosper.se/lunch",
-      "days": [],
-      "error": "claude CLI failed (exit 1): "
-    },
-    {
-      "name": "Restaurang Hörnet",
-      "area": "Torslanda",
-      "region": "torslanda",
-      "url": "https://www.restaurang-hornet.se/",
-      "days": [],
-      "error": "claude CLI failed (exit 1): "
-    },
-    {
-      "name": "Masala Zone",
-      "area": "Torslanda",
-      "region": "torslanda",
-      "url": "https://www.masalazone.se/masala-zone-torslanda/",
-      "days": [],
-      "error": "claude CLI failed (exit 1): "
-    },
-    {
-      "name": "Kalimera",
-      "area": "Amhult",
-      "region": "torslanda",
-      "url": "https://kalimeramezetapas.se/veckans-lunch/",
-      "days": [],
-      "error": "claude CLI failed (exit 1): "
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Chicken Tandori",
+              "price": "105 kr"
+            },
+            {
+              "name": "Chicken Tikka Masala",
+              "price": "105 kr"
+            },
+            {
+              "name": "Lamm Karahi",
+              "price": "105 kr"
+            },
+            {
+              "name": "Mix Vegetables",
+              "price": "105 kr"
+            },
+            {
+              "name": "Vegetarisk Thali",
+              "price": "115 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Chicken Tikka",
+              "price": "105 kr"
+            },
+            {
+              "name": "Saag Chicken",
+              "price": "105 kr"
+            },
+            {
+              "name": "Beef Karahi",
+              "price": "105 kr"
+            },
+            {
+              "name": "Dal Spicy",
+              "price": "105 kr"
+            },
+            {
+              "name": "Chicken Tikka Masala",
+              "price": "115 kr"
+            },
+            {
+              "name": "Vegetarisk Thali",
+              "price": "115 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Seekh Kebab",
+              "price": "105 kr"
+            },
+            {
+              "name": "Chicken Karahi",
+              "price": "105 kr"
+            },
+            {
+              "name": "Madrasi Lammgryta",
+              "price": "105 kr"
+            },
+            {
+              "name": "Palak Paneer",
+              "price": "105 kr"
+            },
+            {
+              "name": "Chicken Tikka Masala",
+              "price": "115 kr"
+            },
+            {
+              "name": "Vegetarisk Thali",
+              "price": "115 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Lasooni Chicken Kebab",
+              "price": "105 kr"
+            },
+            {
+              "name": "Madrasi Chicken",
+              "price": "105 kr"
+            },
+            {
+              "name": "Beef Spicy Special",
+              "price": "105 kr"
+            },
+            {
+              "name": "Aloo Gobi",
+              "price": "105 kr"
+            },
+            {
+              "name": "Chicken Tikka Masala",
+              "price": "115 kr"
+            },
+            {
+              "name": "Vegetarisk Thali",
+              "price": "115 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Fish Tandoori",
+              "price": "105 kr"
+            },
+            {
+              "name": "Butter Chicken",
+              "price": "105 kr"
+            },
+            {
+              "name": "Chicken Vindaloo",
+              "price": "105 kr"
+            },
+            {
+              "name": "Chana Masala",
+              "price": "105 kr"
+            },
+            {
+              "name": "Chicken Tikka Masala",
+              "price": "115 kr"
+            },
+            {
+              "name": "Vegetarisk Thali",
+              "price": "115 kr"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Tsuki Hana",
@@ -110,6 +351,74 @@
             {
               "name": "San Special 10 bitar",
               "price": "110 kr"
+            },
+            {
+              "name": "New York Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Hana Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Tempura Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Crispy chicken Tempura roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Rainbow Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Grillad Lax Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "California Roll",
+              "price": "110 kr"
+            },
+            {
+              "name": "Dragon Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Kawasaki Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Vegetarisk Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Special Roll",
+              "price": "155 kr"
+            },
+            {
+              "name": "THE SALMON ROLL",
+              "price": "139 kr"
+            },
+            {
+              "name": "Salmon PokeBowl",
+              "price": "135 kr"
+            },
+            {
+              "name": "Tuna Bowl",
+              "price": "135 kr"
+            },
+            {
+              "name": "Vegetarisk Bowl",
+              "price": "125 kr"
+            },
+            {
+              "name": "Pokebowl Tempura",
+              "price": "135 kr"
+            },
+            {
+              "name": "Crispy Chicken Pokebowl",
+              "price": "130 kr"
             }
           ]
         },
@@ -159,6 +468,74 @@
             {
               "name": "San Special 10 bitar",
               "price": "110 kr"
+            },
+            {
+              "name": "New York Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Hana Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Tempura Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Crispy chicken Tempura roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Rainbow Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Grillad Lax Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "California Roll",
+              "price": "110 kr"
+            },
+            {
+              "name": "Dragon Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Kawasaki Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Vegetarisk Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Special Roll",
+              "price": "155 kr"
+            },
+            {
+              "name": "THE SALMON ROLL",
+              "price": "139 kr"
+            },
+            {
+              "name": "Salmon PokeBowl",
+              "price": "135 kr"
+            },
+            {
+              "name": "Tuna Bowl",
+              "price": "135 kr"
+            },
+            {
+              "name": "Vegetarisk Bowl",
+              "price": "125 kr"
+            },
+            {
+              "name": "Pokebowl Tempura",
+              "price": "135 kr"
+            },
+            {
+              "name": "Crispy Chicken Pokebowl",
+              "price": "130 kr"
             }
           ]
         },
@@ -208,6 +585,74 @@
             {
               "name": "San Special 10 bitar",
               "price": "110 kr"
+            },
+            {
+              "name": "New York Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Hana Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Tempura Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Crispy chicken Tempura roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Rainbow Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Grillad Lax Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "California Roll",
+              "price": "110 kr"
+            },
+            {
+              "name": "Dragon Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Kawasaki Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Vegetarisk Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Special Roll",
+              "price": "155 kr"
+            },
+            {
+              "name": "THE SALMON ROLL",
+              "price": "139 kr"
+            },
+            {
+              "name": "Salmon PokeBowl",
+              "price": "135 kr"
+            },
+            {
+              "name": "Tuna Bowl",
+              "price": "135 kr"
+            },
+            {
+              "name": "Vegetarisk Bowl",
+              "price": "125 kr"
+            },
+            {
+              "name": "Pokebowl Tempura",
+              "price": "135 kr"
+            },
+            {
+              "name": "Crispy Chicken Pokebowl",
+              "price": "130 kr"
             }
           ]
         },
@@ -257,6 +702,74 @@
             {
               "name": "San Special 10 bitar",
               "price": "110 kr"
+            },
+            {
+              "name": "New York Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Hana Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Tempura Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Crispy chicken Tempura roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Rainbow Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Grillad Lax Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "California Roll",
+              "price": "110 kr"
+            },
+            {
+              "name": "Dragon Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Kawasaki Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Vegetarisk Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Special Roll",
+              "price": "155 kr"
+            },
+            {
+              "name": "THE SALMON ROLL",
+              "price": "139 kr"
+            },
+            {
+              "name": "Salmon PokeBowl",
+              "price": "135 kr"
+            },
+            {
+              "name": "Tuna Bowl",
+              "price": "135 kr"
+            },
+            {
+              "name": "Vegetarisk Bowl",
+              "price": "125 kr"
+            },
+            {
+              "name": "Pokebowl Tempura",
+              "price": "135 kr"
+            },
+            {
+              "name": "Crispy Chicken Pokebowl",
+              "price": "130 kr"
             }
           ]
         },
@@ -306,6 +819,576 @@
             {
               "name": "San Special 10 bitar",
               "price": "110 kr"
+            },
+            {
+              "name": "New York Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Hana Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Tempura Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Crispy chicken Tempura roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Rainbow Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Grillad Lax Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "California Roll",
+              "price": "110 kr"
+            },
+            {
+              "name": "Dragon Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Kawasaki Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Vegetarisk Roll",
+              "price": "139 kr"
+            },
+            {
+              "name": "Special Roll",
+              "price": "155 kr"
+            },
+            {
+              "name": "THE SALMON ROLL",
+              "price": "139 kr"
+            },
+            {
+              "name": "Salmon PokeBowl",
+              "price": "135 kr"
+            },
+            {
+              "name": "Tuna Bowl",
+              "price": "135 kr"
+            },
+            {
+              "name": "Vegetarisk Bowl",
+              "price": "125 kr"
+            },
+            {
+              "name": "Pokebowl Tempura",
+              "price": "135 kr"
+            },
+            {
+              "name": "Crispy Chicken Pokebowl",
+              "price": "130 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tilda & Josper",
+      "area": "Amhult",
+      "region": "torslanda",
+      "url": "https://tildajosper.se/lunch",
+      "days": [
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Jägarebiff med gräddsås, lingonsylt, potatismos",
+              "price": "129 kr"
+            },
+            {
+              "name": "Stekt fläsk med: A. Löksås och kokt potatis, B. Husets raggmunkar och lingonsylt, C. Bruna bönor och kokt potatis",
+              "price": "129 kr"
+            },
+            {
+              "name": "Pasta med strimlat kyckling i gräslök-cremefraichesås, riven grana padano",
+              "price": "129 kr"
+            },
+            {
+              "name": "Stekt panerad koljafile med remouladsås, kokt potatis",
+              "price": "129 kr"
+            },
+            {
+              "name": "Ädelost med päron, bacon, valnötter, honung, balsamico",
+              "price": "129 kr"
+            },
+            {
+              "name": "Ryggbiff med bearnaisesås, pommes frites",
+              "price": "155 kr"
+            },
+            {
+              "name": "Grönsaksburgare med chilimajo, sallad, tomat, picklad lök, aioli, cheddar, pommes frites",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Ärt-vitlöksmarinerad fläskfilé med grönpepparssås, potatisgratäng",
+              "price": "129 kr"
+            },
+            {
+              "name": "Pyttipanna med stekt ägg, rödbetor",
+              "price": "129 kr"
+            },
+            {
+              "name": "Pasta med strimlat kyckling i gräslök-cremefraichesås, riven grana padano",
+              "price": "129 kr"
+            },
+            {
+              "name": "Stekt panerad koljafile med remouladsås, kokt potatis",
+              "price": "129 kr"
+            },
+            {
+              "name": "Ädelost med päron, bacon, valnötter, honung, balsamico",
+              "price": "129 kr"
+            },
+            {
+              "name": "Ryggbiff med bearnaisesås, pommes frites",
+              "price": "155 kr"
+            },
+            {
+              "name": "Grönsaksburgare med chilimajo, sallad, tomat, picklad lök, aioli, cheddar, pommes frites",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Högrevsburgare med chilimajo, sallad, tomat, picklad lök, cheddar, aioli, pommes frites",
+              "price": "129 kr"
+            },
+            {
+              "name": "Krispig am ankbröst med mongolisk bbq-sås, stekta äggnudlar",
+              "price": "129 kr"
+            },
+            {
+              "name": "Pasta med strimlat kyckling i gräslök-cremefraichesås, riven grana padano",
+              "price": "129 kr"
+            },
+            {
+              "name": "Stekt panerad koljafile med remouladsås, kokt potatis",
+              "price": "129 kr"
+            },
+            {
+              "name": "Ädelost med päron, bacon, valnötter, honung, balsamico",
+              "price": "129 kr"
+            },
+            {
+              "name": "Ryggbiff med bearnaisesås, pommes frites",
+              "price": "155 kr"
+            },
+            {
+              "name": "Grönsaksburgare med chilimajo, sallad, tomat, picklad lök, aioli, cheddar, pommes frites",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Entrecote med chilibearnaiesås, pommes frites",
+              "price": "129 kr"
+            },
+            {
+              "name": "Köttfärslimpa med champinjonsås, lingonsylt, potatismos",
+              "price": "129 kr"
+            },
+            {
+              "name": "Pasta med strimlat kyckling i gräslök-cremefraichesås, riven grana padano",
+              "price": "129 kr"
+            },
+            {
+              "name": "Stekt panerad koljafile med remouladsås, kokt potatis",
+              "price": "129 kr"
+            },
+            {
+              "name": "Ädelost med päron, bacon, valnötter, honung, balsamico",
+              "price": "129 kr"
+            },
+            {
+              "name": "Ryggbiff med bearnaisesås, pommes frites",
+              "price": "155 kr"
+            },
+            {
+              "name": "Grönsaksburgare med chilimajo, sallad, tomat, picklad lök, aioli, cheddar, pommes frites",
+              "price": "135 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Restaurang Hörnet",
+      "area": "Torslanda",
+      "region": "torslanda",
+      "url": "https://www.restaurang-hornet.se/",
+      "days": [
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Stekt fläsk med löksås, bruna bönor, raggmunk samt kokt potatis och lingonsylt",
+              "price": "135 kr"
+            },
+            {
+              "name": "Hörnets fisk och skaldjursgryta serveras med ris",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Köttbullar med gräddsås samt potatismos och lingonsylt",
+              "price": "135 kr"
+            },
+            {
+              "name": "Ångad fiskfile serveras med vitvinssås samt potatismos",
+              "price": "135 kr"
+            },
+            {
+              "name": "Paj med vaniljvisp",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Oxbringa med rotmos, pepparrotssås",
+              "price": "135 kr"
+            },
+            {
+              "name": "Ärtsoppa serveras med korv och fläsk samt pannkaka sylt och grädde",
+              "price": "135 kr"
+            },
+            {
+              "name": "Ungersk gulaschsoppa serveras med gräddfil",
+              "price": "135 kr"
+            },
+            {
+              "name": "Friterad fiskfile serveras med remouladsås samt kokt potatis",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Helstekt marinerad fläskfile serveras med madeirasås, samt potatis och paprikagratäng",
+              "price": "135 kr"
+            },
+            {
+              "name": "Stekt laxfjäril serveras med hollandisesås, räkor och sparris samt kokt potatis",
+              "price": "135 kr"
+            },
+            {
+              "name": "Paj med vaniljvisp",
+              "price": "135 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Masala Zone",
+      "area": "Torslanda",
+      "region": "torslanda",
+      "url": "https://www.masalazone.se/masala-zone-torslanda/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "TANDOORI CHICKEN - Grillad kycklingklubbs med ben marinrad i yoghurt. Tandoori masala, ingefära, vitlök, gräddsås",
+              "price": "98 kr"
+            },
+            {
+              "name": "MURGH METHI MALAI - Kycklingfile, ingefära, vitlök, grädde",
+              "price": "98 kr"
+            },
+            {
+              "name": "MALWANI GOSHT - Lammbitar, rostad cocos, tomat, grön chili",
+              "price": "98 kr"
+            },
+            {
+              "name": "MIX TALLRIK - Två små vegetariska rätter",
+              "price": "98 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "TANDOORI CHICKEN - Grillad kycklingklubbs med ben marinrad i yoghurt. Tandoori masala, ingefära, vitlök, gräddsås",
+              "price": "98 kr"
+            },
+            {
+              "name": "TIKKA MASALA - Kycklingfile med tomat, lök, i en smakfull gräddig kryddsås",
+              "price": "98 kr"
+            },
+            {
+              "name": "BEEF KADAHI - Oxkött med vitlök, ingefära, grön chili, tomat, paprika i kryddig currysås",
+              "price": "98 kr"
+            },
+            {
+              "name": "MIX TALLRIK - Två små vegetariska rätter",
+              "price": "98 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "TANDOORI CHICKEN - Grillad kycklingklubbs med ben marinrad i yoghurt. Tandoori masala, ingefära, vitlök, gräddsås",
+              "price": "98 kr"
+            },
+            {
+              "name": "MURGH MADRAS - Kycklingfile med lök, kokosmjölk, ingefära, i smakfull currysås",
+              "price": "98 kr"
+            },
+            {
+              "name": "CURRY GOSHT - Lammbitar med lök, tomat, chili i en smakfull curry sås",
+              "price": "98 kr"
+            },
+            {
+              "name": "MIX TALLRIK - Två små vegetariska rätter",
+              "price": "98 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "TANDOORI CHICKEN - Grillad kycklingklubbs med ben marinrad i yoghurt. Tandoori masala, ingefära, vitlök, gräddsås",
+              "price": "98 kr"
+            },
+            {
+              "name": "BUTTER CHICKEN - Kycklingfils i krämig sås. Tomat, grädde",
+              "price": "98 kr"
+            },
+            {
+              "name": "BEEF BALTI - Oxkött med ingefära, champinjoner paprika, i kryddstark sås",
+              "price": "98 kr"
+            },
+            {
+              "name": "MIX TALLRIK - Två små vegetariska rätter",
+              "price": "98 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "TANDOORI CHICKEN - Grillad kycklingklubbs med ben marinrad i yoghurt. Tandoori masala, ingefära, vitlök, gräddsås",
+              "price": "98 kr"
+            },
+            {
+              "name": "BUTTER CHICKEN - Kycklingfils i krämig sås. Tomat, grädde",
+              "price": "98 kr"
+            },
+            {
+              "name": "BEEF BALTI - Oxkött med ingefära, champinjoner paprika, i kryddstark sås",
+              "price": "98 kr"
+            },
+            {
+              "name": "MIX TALLRIK - Två små vegetariska rätter",
+              "price": "98 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kalimera",
+      "area": "Amhult",
+      "region": "torslanda",
+      "url": "https://kalimeramezetapas.se/veckans-lunch/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Efes Pilic (grillad Kycklingfilé) serveras med rotfrukter, cheddarsås & rostad potatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "Hickory glaserade Kamben, coleslaw, bbq sås & pommes frites",
+              "price": "139 kr"
+            },
+            {
+              "name": "Sac Kavurma (turkisk oxgryta) serveras med pilavris & tzatziki",
+              "price": "139 kr"
+            },
+            {
+              "name": "Ugnsbakad Spättafilé timbal, hummersås, handskalade räkor & potatisstomp",
+              "price": "139 kr"
+            },
+            {
+              "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp",
+              "price": "139 kr"
+            },
+            {
+              "name": "Pasta Amore med fläskfilé, bacon, lök, vitlök & grädde",
+              "price": "139 kr"
+            },
+            {
+              "name": "Moussaka, serveras med tzatziki",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Efes Pilic (grillad Kycklingfilé) serveras med rotfrukter, cheddarsås & rostad potatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "Hickory glaserade Kamben, coleslaw, bbq sås & pommes frites",
+              "price": "139 kr"
+            },
+            {
+              "name": "Sac Kavurma (turkisk oxgryta) serveras med pilavris & tzatziki",
+              "price": "139 kr"
+            },
+            {
+              "name": "Ugnsbakad Spättafilé timbal, hummersås, handskalade räkor & potatisstomp",
+              "price": "139 kr"
+            },
+            {
+              "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp",
+              "price": "139 kr"
+            },
+            {
+              "name": "Pasta Amore med fläskfilé, bacon, lök, vitlök & grädde",
+              "price": "139 kr"
+            },
+            {
+              "name": "Moussaka, serveras med tzatziki",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Efes Pilic (grillad Kycklingfilé) serveras med rotfrukter, cheddarsås & rostad potatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "Hickory glaserade Kamben, coleslaw, bbq sås & pommes frites",
+              "price": "139 kr"
+            },
+            {
+              "name": "Sac Kavurma (turkisk oxgryta) serveras med pilavris & tzatziki",
+              "price": "139 kr"
+            },
+            {
+              "name": "Ugnsbakad Spättafilé timbal, hummersås, handskalade räkor & potatisstomp",
+              "price": "139 kr"
+            },
+            {
+              "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp",
+              "price": "139 kr"
+            },
+            {
+              "name": "Pasta Amore med fläskfilé, bacon, lök, vitlök & grädde",
+              "price": "139 kr"
+            },
+            {
+              "name": "Moussaka, serveras med tzatziki",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Efes Pilic (grillad Kycklingfilé) serveras med rotfrukter, cheddarsås & rostad potatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "Hickory glaserade Kamben, coleslaw, bbq sås & pommes frites",
+              "price": "139 kr"
+            },
+            {
+              "name": "Sac Kavurma (turkisk oxgryta) serveras med pilavris & tzatziki",
+              "price": "139 kr"
+            },
+            {
+              "name": "Ugnsbakad Spättafilé timbal, hummersås, handskalade räkor & potatisstomp",
+              "price": "139 kr"
+            },
+            {
+              "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp",
+              "price": "139 kr"
+            },
+            {
+              "name": "Pasta Amore med fläskfilé, bacon, lök, vitlök & grädde",
+              "price": "139 kr"
+            },
+            {
+              "name": "Moussaka, serveras med tzatziki",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Efes Pilic (grillad Kycklingfilé) serveras med rotfrukter, cheddarsås & rostad potatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "Hickory glaserade Kamben, coleslaw, bbq sås & pommes frites",
+              "price": "139 kr"
+            },
+            {
+              "name": "Sac Kavurma (turkisk oxgryta) serveras med pilavris & tzatziki",
+              "price": "139 kr"
+            },
+            {
+              "name": "Ugnsbakad Spättafilé timbal, hummersås, handskalade räkor & potatisstomp",
+              "price": "139 kr"
+            },
+            {
+              "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp",
+              "price": "139 kr"
+            },
+            {
+              "name": "Pasta Amore med fläskfilé, bacon, lök, vitlök & grädde",
+              "price": "139 kr"
+            },
+            {
+              "name": "Moussaka, serveras med tzatziki",
+              "price": "139 kr"
             }
           ]
         }
