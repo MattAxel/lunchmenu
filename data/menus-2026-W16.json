@@ -1,6 +1,6 @@
 {
   "week": "2026-W16",
-  "generated": "2026-04-13T12:17:49",
+  "generated": "2026-04-13T20:25:08",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -1372,6 +1372,91 @@
             {
               "name": "Fläskfärs eller tempeh, bibimbap, kimchi, spenat & pocherat ägg",
               "price": "145 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Monopolet",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://monopolet.nu/#lunch",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Fried Rice / Ägg / Pork / Kålsallad / Sesam- & Chilisky / Koriander / Lime",
+              "price": "139 kr"
+            },
+            {
+              "name": "Halstrad Röding / Potatispuré / Dragon- & Basilikasås / Bakade Gulbetor / Citron / Gräslök",
+              "price": "139 kr"
+            },
+            {
+              "name": "Veg: Marinerad & Friterad Halloumi / Potatispuré / Dragon- & Basilikasås / Bakade Gulbetor / Citron / Gräslök",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Kycklingschnitzel / Rostad Potatis / Krämig Paprikasås / Friterad Kapris & Persilja / Gröna Ärtor / Citron",
+              "price": "139 kr"
+            },
+            {
+              "name": "Friterad Kolja / Äggnudelwok / Soyamajonnäs / Picklad Ingefära & Chili",
+              "price": "139 kr"
+            },
+            {
+              "name": "Veg: Misofritters / Äggnudelwok / Soyamajonnäs / Picklad Ingefära & Chili",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Högrevsburgare / Egenbakat Hamburgerbröd / Cheddarost / Smokey Bacon- & Bourbon Jam / Krispsallad / Tomat / Dirty Fries",
+              "price": "139 kr"
+            },
+            {
+              "name": "Monopolets Fisk & Skaldjurssoppa / Aioli / Handskalade Räkor / Vitlöksbröd / Färska Örter",
+              "price": "139 kr"
+            },
+            {
+              "name": "Veg: Haloumi Burger / Egenbakat Hamburgerbröd / Cheddarost / Krispsallad / Tomat / Dirty Fries",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Kött Grillbricka – Korean BBQ – Gochujang Kyckling / Pulled Bulgogi Pork / Kimchi / Friterad Krossad Potatis / Misomajonnäs / Rostad Sesam / Koriander / Grillad Lime",
+              "price": "139 kr"
+            },
+            {
+              "name": "FiskBricka – Smördegsbakad Lax / Räkkräm / Picklad Morot / Palsternackspuré",
+              "price": "139 kr"
+            },
+            {
+              "name": "Veg Bricka – Korean BBQ – Gochujangbiff på Sojafärs / Kimchi / Friterad Krossad Potatis / Misomajonnäs / Rostad Sesam / Koriander / Grillad Lime",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Vår populära Pizza & Tacobuffé",
+              "price": "139 kr"
             }
           ]
         }

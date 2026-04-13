@@ -75,5 +75,12 @@
     "type": "image",
     "area": "Platinan",
     "region": "platinan"
+  },
+  {
+    "name": "Monopolet",
+    "url": "https://monopolet.nu/#lunch",
+    "type": "text",
+    "area": "Platinan",
+    "region": "platinan"
   }
 ]
