@@ -1,6 +1,6 @@
 {
   "week": "2026-W17",
-  "generated": "2026-04-20T10:25:36",
+  "generated": "2026-04-20T10:30:03",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -312,101 +312,6 @@
             {
               "name": "Vegetarisk Thali",
               "price": "115 kr"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Tsuki Hana",
-      "area": "Amhult",
-      "region": "torslanda",
-      "url": "https://tsukihana.net/lunch#husmanskost",
-      "days": [
-        {
-          "day": "Onsdag",
-          "dishes": [
-            {
-              "name": "Oxfilépasta med en krämig svamp-pepparsås, tomat salsa, färskriven parmesan och örtsallad",
-              "price": "120 kr"
-            },
-            {
-              "name": "Pankofriterad fiskfilé med en kall dill-sås, smörvända ärtor, kokt potatis, citron och dill",
-              "price": "120 kr"
-            },
-            {
-              "name": "Chicken tandoori: grillad kyckling med en god balti curry, ris, grönsaker och koriander",
-              "price": "120 kr"
-            },
-            {
-              "name": "10 krispiga vårrullar med sojadipp, sweet chilisås, ris och grönsallad",
-              "price": "120 kr"
-            },
-            {
-              "name": "Caesarsallad med kycklingbröst, bacon, parmesan, krutonger och caesardressing",
-              "price": "120 kr"
-            },
-            {
-              "name": "En god räksallad med handskalade räkor och ägg",
-              "price": "130 kr"
-            }
-          ]
-        },
-        {
-          "day": "Torsdag",
-          "dishes": [
-            {
-              "name": "Grillad högrevsbiff med 3-pepparsås, grova pommes, pressgurka, tomat-löksallad och gröna blad",
-              "price": "120 kr"
-            },
-            {
-              "name": "Smörsteker dagens fångst, brynt smör, potatispuré, handskalade räkor, smörvända ärtor, citron och dill",
-              "price": "120 kr"
-            },
-            {
-              "name": "Grillad kyckling med röd curry, ris, grönsaker, sesamfrön och salladslök",
-              "price": "120 kr"
-            },
-            {
-              "name": "10 krispiga vårrullar med sojadipp, sweet chilisås, ris och grönsallad",
-              "price": "120 kr"
-            },
-            {
-              "name": "Caesarsallad med kycklingbröst, bacon, parmesan, krutonger och caesardressing",
-              "price": "120 kr"
-            },
-            {
-              "name": "En god räksallad med handskalade räkor och ägg",
-              "price": "130 kr"
-            }
-          ]
-        },
-        {
-          "day": "Fredag",
-          "dishes": [
-            {
-              "name": "Mixed grill: ryggbiff, grillad kyckling, lammkorv med BBQ-sås, klyftpotatis, chimichurri, pico de gallo och gröna blad",
-              "price": "120 kr"
-            },
-            {
-              "name": "Vänder dagens fångst i ströbröd och steks gyllene, med en kall dragonsås, smörvända ärtor, kokt potatis, citron och dill",
-              "price": "120 kr"
-            },
-            {
-              "name": "Japansk crispy chicken bowl med mango-chilisås, ris, picklade grönsaker, pokesås, mango, röstade lök, sesam och gröna blad",
-              "price": "120 kr"
-            },
-            {
-              "name": "10 krispiga vårrullar med sojadipp, sweet chilisås, ris och grönsallad",
-              "price": "120 kr"
-            },
-            {
-              "name": "Caesarsallad med kycklingbröst, bacon, parmesan, krutonger och caesardressing",
-              "price": "120 kr"
-            },
-            {
-              "name": "En god räksallad med handskalade räkor och ägg",
-              "price": "130 kr"
             }
           ]
         }
@@ -1427,6 +1332,355 @@
             {
               "name": "Vår populära Pizza & Tacobuffé",
               "price": "139 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tsuki Hana",
+      "area": "Amhult",
+      "region": "torslanda",
+      "url": "https://tsukihana.net/lunch#husmanskost",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Veckans vegetarisk - 10 krispiga vårrullar med sojadipp, sweet chilisås, ris och grönsallad",
+              "price": "120 kr"
+            },
+            {
+              "name": "Caesarsallad med kycklingbröst, bacon, parmesan, krutonger och caesardressing",
+              "price": "120 kr"
+            },
+            {
+              "name": "Räksallad med handskalade räkor och ägg",
+              "price": "130 kr"
+            },
+            {
+              "name": "Nigiri 8 biter",
+              "price": "110 kr"
+            },
+            {
+              "name": "Liten sushi 8 bitar",
+              "price": "95 kr"
+            },
+            {
+              "name": "Mellan sushi 10 bitar",
+              "price": "109 kr"
+            },
+            {
+              "name": "Stor sushi 12 bitar",
+              "price": "119 kr"
+            },
+            {
+              "name": "Extra stor sushi 15 bitar",
+              "price": "145 kr"
+            },
+            {
+              "name": "Grillad Sushi 10 bitar",
+              "price": "119 kr"
+            },
+            {
+              "name": "Mamma Sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Vegetarisk sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Vegansk sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Tokyo Special 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "San Special 10 bitar",
+              "price": "110 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Veckans vegetarisk - 10 krispiga vårrullar med sojadipp, sweet chilisås, ris och grönsallad",
+              "price": "120 kr"
+            },
+            {
+              "name": "Caesarsallad med kycklingbröst, bacon, parmesan, krutonger och caesardressing",
+              "price": "120 kr"
+            },
+            {
+              "name": "Räksallad med handskalade räkor och ägg",
+              "price": "130 kr"
+            },
+            {
+              "name": "Nigiri 8 biter",
+              "price": "110 kr"
+            },
+            {
+              "name": "Liten sushi 8 bitar",
+              "price": "95 kr"
+            },
+            {
+              "name": "Mellan sushi 10 bitar",
+              "price": "109 kr"
+            },
+            {
+              "name": "Stor sushi 12 bitar",
+              "price": "119 kr"
+            },
+            {
+              "name": "Extra stor sushi 15 bitar",
+              "price": "145 kr"
+            },
+            {
+              "name": "Grillad Sushi 10 bitar",
+              "price": "119 kr"
+            },
+            {
+              "name": "Mamma Sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Vegetarisk sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Vegansk sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Tokyo Special 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "San Special 10 bitar",
+              "price": "110 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Oxfilépasta med en krämig svamp-pepparsås, tomat salsa, färskriven parmesan och örtsallad",
+              "price": "120 kr"
+            },
+            {
+              "name": "Pankofriterad fiskfilé med en kall dill-sås, smörvända ärtor, kokt potatis, citron och dill",
+              "price": "120 kr"
+            },
+            {
+              "name": "Chicken tandoori: grillad kyckling med en god balti curry, ris, grönsaker och koriander",
+              "price": "120 kr"
+            },
+            {
+              "name": "Veckans vegetarisk - 10 krispiga vårrullar med sojadipp, sweet chilisås, ris och grönsallad",
+              "price": "120 kr"
+            },
+            {
+              "name": "Caesarsallad med kycklingbröst, bacon, parmesan, krutonger och caesardressing",
+              "price": "120 kr"
+            },
+            {
+              "name": "Räksallad med handskalade räkor och ägg",
+              "price": "130 kr"
+            },
+            {
+              "name": "Nigiri 8 biter",
+              "price": "110 kr"
+            },
+            {
+              "name": "Liten sushi 8 bitar",
+              "price": "95 kr"
+            },
+            {
+              "name": "Mellan sushi 10 bitar",
+              "price": "109 kr"
+            },
+            {
+              "name": "Stor sushi 12 bitar",
+              "price": "119 kr"
+            },
+            {
+              "name": "Extra stor sushi 15 bitar",
+              "price": "145 kr"
+            },
+            {
+              "name": "Grillad Sushi 10 bitar",
+              "price": "119 kr"
+            },
+            {
+              "name": "Mamma Sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Vegetarisk sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Vegansk sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Tokyo Special 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "San Special 10 bitar",
+              "price": "110 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Grillad högrevsbiff med 3-pepparsås, grova pommes, pressgurka, tomat-löksallad och gröna blad",
+              "price": "120 kr"
+            },
+            {
+              "name": "Smörsteker dagens fångst, brynt smör, potatispuré, handskalade räkor, smörvända ärtor, citron och dill",
+              "price": "120 kr"
+            },
+            {
+              "name": "Grillad kyckling med röd curry, ris, grönsaker, sesamfrön och salladslök",
+              "price": "120 kr"
+            },
+            {
+              "name": "Veckans vegetarisk - 10 krispiga vårrullar med sojadipp, sweet chilisås, ris och grönsallad",
+              "price": "120 kr"
+            },
+            {
+              "name": "Caesarsallad med kycklingbröst, bacon, parmesan, krutonger och caesardressing",
+              "price": "120 kr"
+            },
+            {
+              "name": "Räksallad med handskalade räkor och ägg",
+              "price": "130 kr"
+            },
+            {
+              "name": "Nigiri 8 biter",
+              "price": "110 kr"
+            },
+            {
+              "name": "Liten sushi 8 bitar",
+              "price": "95 kr"
+            },
+            {
+              "name": "Mellan sushi 10 bitar",
+              "price": "109 kr"
+            },
+            {
+              "name": "Stor sushi 12 bitar",
+              "price": "119 kr"
+            },
+            {
+              "name": "Extra stor sushi 15 bitar",
+              "price": "145 kr"
+            },
+            {
+              "name": "Grillad Sushi 10 bitar",
+              "price": "119 kr"
+            },
+            {
+              "name": "Mamma Sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Vegetarisk sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Vegansk sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Tokyo Special 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "San Special 10 bitar",
+              "price": "110 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Mixed grill: ryggbiff, grillad kyckling, lammkorv med BBQ-sås, klyftpotatis, chimichurri, pico de gallo och gröna blad",
+              "price": "120 kr"
+            },
+            {
+              "name": "Vänder dagens fångst i ströbröd och steks gyllene, med en kall dragonsås, smörvända ärtor, kokt potatis, citron och dill",
+              "price": "120 kr"
+            },
+            {
+              "name": "Japansk crispy chicken bowl med mango-chilisås, ris, picklade grönsaker, pokesås, mango, röstade lök, sesam och gröna blad",
+              "price": "120 kr"
+            },
+            {
+              "name": "Veckans vegetarisk - 10 krispiga vårrullar med sojadipp, sweet chilisås, ris och grönsallad",
+              "price": "120 kr"
+            },
+            {
+              "name": "Caesarsallad med kycklingbröst, bacon, parmesan, krutonger och caesardressing",
+              "price": "120 kr"
+            },
+            {
+              "name": "Räksallad med handskalade räkor och ägg",
+              "price": "130 kr"
+            },
+            {
+              "name": "Nigiri 8 biter",
+              "price": "110 kr"
+            },
+            {
+              "name": "Liten sushi 8 bitar",
+              "price": "95 kr"
+            },
+            {
+              "name": "Mellan sushi 10 bitar",
+              "price": "109 kr"
+            },
+            {
+              "name": "Stor sushi 12 bitar",
+              "price": "119 kr"
+            },
+            {
+              "name": "Extra stor sushi 15 bitar",
+              "price": "145 kr"
+            },
+            {
+              "name": "Grillad Sushi 10 bitar",
+              "price": "119 kr"
+            },
+            {
+              "name": "Mamma Sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Vegetarisk sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Vegansk sushi 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "Tokyo Special 10 bitar",
+              "price": "110 kr"
+            },
+            {
+              "name": "San Special 10 bitar",
+              "price": "110 kr"
             }
           ]
         }
