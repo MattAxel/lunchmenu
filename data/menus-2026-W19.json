@@ -1,6 +1,6 @@
 {
   "week": "2026-W19",
-  "generated": "2026-05-04T17:41:12",
+  "generated": "2026-05-04T19:12:41",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -1271,59 +1271,6 @@
       ]
     },
     {
-      "name": "Poppels Citybryggeriet",
-      "area": "Platinan",
-      "region": "platinan",
-      "url": "https://www.poppels.se/citybryggeriet/lunch/",
-      "days": [
-        {
-          "day": "Måndag",
-          "dishes": [
-            {
-              "name": "Kyckling eller blomkål shawarma serverad med libabröd, picklad rödkål, tomat, gurka & vitlössås",
-              "price": "145 kr"
-            }
-          ]
-        },
-        {
-          "day": "Tisdag",
-          "dishes": [
-            {
-              "name": "Högrev eller svamp tacos med tortillas, bönsalsa, picklad lök, koriander & chipotlemajo",
-              "price": "145 kr"
-            }
-          ]
-        },
-        {
-          "day": "Onsdag",
-          "dishes": [
-            {
-              "name": "Kyckling eller kikärtor & sötpotatis västafrikansk tomatgryta med ris, chili, koriander & jordnötter",
-              "price": "145 kr"
-            }
-          ]
-        },
-        {
-          "day": "Torsdag",
-          "dishes": [
-            {
-              "name": "Fläsk eller tofu koreansk gryta med gochuajang, ris, sesam, kålsallad & picklad gurka",
-              "price": "145 kr"
-            }
-          ]
-        },
-        {
-          "day": "Fredag",
-          "dishes": [
-            {
-              "name": "Lamm eller aubergine indiska lammfärsbullar med couscous, tomat-& örtsallad, yoghurt & citron",
-              "price": "145 kr"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "Monopolet",
       "area": "Platinan",
       "region": "platinan",
@@ -1403,6 +1350,59 @@
             {
               "name": "Pizza & Tacobuffé",
               "price": "139 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Poppels Citybryggeriet",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.poppels.se/citybryggeriet/lunch/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "KOLJA eller BLOMKÅL - Krispig burgare med potato bun, coleslaw, picklad gurka, citron- & chilimajo",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "LAMM eller AUBERGINE - Serveras med tunt bröd, tomat- & örtsallad, yoghurt & citron",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "KYCKLING eller SÖTPOTATIS & BÖNOR - \"Jerk style\" serveras med ris, mangosalsa & lime",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "NÖTFÄRS eller VEGOFÄRS - Chili con carne serverad med ris, crème fraiche, koriander & lime",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "KYCKLING eller KIKÄRTOR - Serveras med couscous, tagine, örter, citron & mandel",
+              "price": "145 kr"
             }
           ]
         }
