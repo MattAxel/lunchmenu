@@ -172,6 +172,67 @@ def fetch_text_playwright(url: str) -> str:
     return soup.get_text(separator="\n", strip=True)
 
 
+def fetch_canva(url: str) -> str:
+    """Fetch text from a page that embeds a Canva design.
+
+    First loads the parent page to discover the Canva design URL,
+    then navigates directly to the Canva view URL in headed mode
+    (Canva blocks headless browsers) and extracts the text content.
+    """
+    from bs4 import BeautifulSoup as _BS
+
+    # Step 1: find the Canva embed URL from the parent page
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        ctx = browser.new_context()
+        ctx.add_cookies([{
+            "name": "CookieInformationConsent",
+            "value": '{"consents_approved":["cookie_cat_necessary","cookie_cat_functional","cookie_cat_statistic","cookie_cat_marketing"],"consents_denied":[]}',
+            "domain": f".{url.split('/')[2].replace('www.', '')}",
+            "path": "/",
+        }])
+        page = ctx.new_page()
+        try:
+            page.goto(url, wait_until="domcontentloaded", timeout=30000)
+        except Exception:
+            pass
+        page.wait_for_timeout(3000)
+
+        canva_url = page.evaluate("""
+        (() => {
+            const el = document.querySelector('iframe[data-src*="canva"]')
+                    || document.querySelector('iframe[src*="canva"]');
+            if (!el) return null;
+            const raw = el.getAttribute('data-src') || el.getAttribute('src');
+            return raw ? raw.replace('/view?embed', '/view') : null;
+        })()
+        """)
+        browser.close()
+
+    if not canva_url:
+        raise RuntimeError("No Canva embed found on the page")
+
+    # Step 2: open the Canva design directly in headed mode
+    with sync_playwright() as p:
+        browser = p.chromium.launch(
+            headless=False,
+            args=["--disable-blink-features=AutomationControlled"],
+        )
+        page = browser.new_page()
+        try:
+            page.goto(canva_url, wait_until="domcontentloaded", timeout=30000)
+        except Exception:
+            pass
+        page.wait_for_timeout(10000)
+
+        text = page.evaluate(
+            "document.body ? document.body.innerText : ''"
+        )
+        browser.close()
+
+    return text
+
+
 def fetch_content(restaurant: dict) -> str | bytes:
     """Fetch content based on restaurant type."""
     if restaurant["type"] == "text":
@@ -180,5 +241,7 @@ def fetch_content(restaurant: dict) -> str | bytes:
         return fetch_text_playwright(restaurant["url"])
     elif restaurant["type"] == "image":
         return fetch_image(restaurant["url"])
+    elif restaurant["type"] == "canva":
+        return fetch_canva(restaurant["url"])
     else:
         raise ValueError(f"Unknown restaurant type: {restaurant['type']}")

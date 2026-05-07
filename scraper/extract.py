@@ -62,7 +62,7 @@ def extract_menu_from_image(image_bytes: bytes, restaurant_name: str) -> dict:
 
 def extract_menu(content: str | bytes, restaurant: dict) -> dict:
     """Extract menu based on content type."""
-    if restaurant["type"] in ("text", "text_js"):
+    if restaurant["type"] in ("text", "text_js", "canva"):
         return extract_menu_from_text(content, restaurant["name"])
     elif restaurant["type"] == "image":
         return extract_menu_from_image(content, restaurant["name"])
@@ -70,8 +70,14 @@ def extract_menu(content: str | bytes, restaurant: dict) -> dict:
         raise ValueError(f"Unknown type: {restaurant['type']}")
 
 
-def _call_claude(prompt: str, allowed_tools: str | None = None) -> dict:
-    """Call the Claude Code CLI and return parsed menu JSON."""
+def _call_claude(prompt: str, allowed_tools: str | None = None, max_retries: int = 3) -> dict:
+    """Call the Claude Code CLI and return parsed menu JSON.
+
+    Retries up to *max_retries* times on parse failures (the most
+    common transient error) without re-fetching the page content.
+    """
+    import re
+
     cmd = [
         "claude",
         "-p",
@@ -84,40 +90,44 @@ def _call_claude(prompt: str, allowed_tools: str | None = None) -> dict:
     if allowed_tools:
         cmd.extend(["--allowedTools", allowed_tools])
 
-    result = subprocess.run(
-        cmd, input=prompt, capture_output=True, text=True, timeout=120
-    )
-
-    if result.returncode != 0:
-        raise RuntimeError(
-            f"claude CLI failed (exit {result.returncode}): {result.stderr}"
+    last_error = None
+    for attempt in range(1, max_retries + 1):
+        result = subprocess.run(
+            cmd, input=prompt, capture_output=True, text=True, timeout=120
         )
 
-    try:
-        envelope = json.loads(result.stdout)
-    except json.JSONDecodeError:
-        raise RuntimeError(
-            f"claude CLI returned invalid JSON.\nstdout: {result.stdout[:500]}\nstderr: {result.stderr[:500]}"
-        )
-    text = envelope.get("result", "").strip()
+        if result.returncode != 0:
+            last_error = RuntimeError(
+                f"claude CLI failed (exit {result.returncode}): {result.stderr}"
+            )
+            continue
 
-    # Try to extract JSON from the response — it may be wrapped in
-    # markdown fences or preceded by explanatory text
-    import re
-    # First try: extract from code fences
-    fence_match = re.search(r"```(?:json)?\s*\n(.*?)```", text, re.DOTALL)
-    if fence_match:
-        text = fence_match.group(1).strip()
-    else:
-        # Second try: find the first { ... } block
-        brace_match = re.search(r"\{.*\}", text, re.DOTALL)
-        if brace_match:
-            text = brace_match.group(0)
+        try:
+            envelope = json.loads(result.stdout)
+        except json.JSONDecodeError:
+            last_error = RuntimeError(
+                f"claude CLI returned invalid JSON.\nstdout: {result.stdout[:500]}\nstderr: {result.stderr[:500]}"
+            )
+            continue
 
-    try:
-        return json.loads(text)
-    except json.JSONDecodeError:
-        raise RuntimeError(
-            f"Failed to parse menu JSON from Claude response.\n"
-            f"Raw result text: {envelope.get('result', '')[:500]}"
-        )
+        text = envelope.get("result", "").strip()
+
+        # Try to extract JSON from the response — it may be wrapped in
+        # markdown fences or preceded by explanatory text
+        fence_match = re.search(r"```(?:json)?\s*\n(.*?)```", text, re.DOTALL)
+        if fence_match:
+            text = fence_match.group(1).strip()
+        else:
+            brace_match = re.search(r"\{.*\}", text, re.DOTALL)
+            if brace_match:
+                text = brace_match.group(0)
+
+        try:
+            return json.loads(text)
+        except json.JSONDecodeError:
+            last_error = RuntimeError(
+                f"Failed to parse menu JSON from Claude response.\n"
+                f"Raw result text: {envelope.get('result', '')[:500]}"
+            )
+
+    raise last_error

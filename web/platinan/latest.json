@@ -1,6 +1,6 @@
 {
   "week": "2026-W19",
-  "generated": "2026-05-04T19:12:41",
+  "generated": "2026-05-07T16:38:39",
   "restaurants": [
     {
       "name": "Björkmans Skafferi",
@@ -12,7 +12,7 @@
           "day": "Måndag",
           "dishes": [
             {
-              "name": "Kung Pao Tofu - Friterad tofu i sojasås med salladslök, chili & jordnötter serverade med jasminris & salladskål",
+              "name": "Kung Pao Tofu - Tofu i sojasås med salladslök, chili & jordnötter serverade med jasminris & salladskål",
               "price": "135 kr"
             },
             {
@@ -41,7 +41,7 @@
               "price": "135 kr"
             },
             {
-              "name": "Fisk & skaldjursbiffar med romsås, kokt potatis, citronklyfta, dill & gräslök",
+              "name": "Fisk & skaldjursbiffar med kaprismajonäs, gurksallad med krondill & rostad potatis",
               "price": "135 kr"
             },
             {
@@ -116,6 +116,144 @@
       ]
     },
     {
+      "name": "Poppels Citybryggeriet",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.poppels.se/citybryggeriet/lunch/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "KOLJA eller BLOMKÅL - Krispig burgare med potato bun, coleslaw, picklad gurka, citron- & chilimajo",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "LAMM eller AUBERGINE - Serveras med tunt bröd, tomat- & örtsallad, yoghurt & citron",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "KYCKLING eller SÖTPOTATIS & BÖNOR - \"Jerk style\" serveras med ris, mangosalsa & lime",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "NÖTFÄRS eller VEGOFÄRS - Chili con carne serverad med ris, crème fraiche, koriander & lime",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "KYCKLING eller KIKÄRTOR - Serveras med couscous, tagine, örter, citron & mandel",
+              "price": "145 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Monopolet",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://monopolet.nu/#lunch",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Schnitzel / Rostad Potatis / Skysås / Grönpepparsmör / Ärtor / Citron",
+              "price": "139 kr"
+            },
+            {
+              "name": "Halstrad Lax / Rostad Potatissallad med Babyspenat & Körsbärstomater / Chimichurri / Hollandaisesås / Citron",
+              "price": "139 kr"
+            },
+            {
+              "name": "Veg: Zucchinibiff / Rostad Potatissallad med Babyspenat & Körsbärstomater / Chimichurri / Hollandaisesås / Citron",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Butter Chicken / Tunnbröd / Myntaraita / Marinerad Lök / Honungsrostade Kikärtor / Basmatiris / Koriander / Lime",
+              "price": "139 kr"
+            },
+            {
+              "name": "Stekt Fångst / Basilikasås / Rostad Potatis / Oliv- & Tomatkompott / Citron",
+              "price": "139 kr"
+            },
+            {
+              "name": "Veg: Soya Butter Masala / Tunnbröd / Myntaraita / Marinerad Lök / Honungsrostade Kikärtor / Basmatiris / Koriander / Lime",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Cheeseburger / Högrev / Egenbakat Hamburgerbröd / Krispsallad / Tomat / Lök / Saltgurka / Dirty Fries",
+              "price": "139 kr"
+            },
+            {
+              "name": "Monopolets Fisk & Skaldjurssoppa / Aioli / Handskalade Räkor / Vitlöksbröd / Färska örter",
+              "price": "139 kr"
+            },
+            {
+              "name": "Veg: Haloumi Burger / Egenbakat Hamburgerbröd / Krispsallad / Tomat / Lök / Saltgurka / Dirty Fries",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Köttbricka – Pulled Smokey Paprika Beef / Friterad Kyckling / Grillad Korv of The Day / Dirty Potato Wedges / Honungsglaserad Majskolv / Coleslaw",
+              "price": "139 kr"
+            },
+            {
+              "name": "Fiskbricka – Granapadano Gratinerad Fångst / Citronaioli / Grillat Grönsaksspett / Potatissallad",
+              "price": "139 kr"
+            },
+            {
+              "name": "Vegbricka – Granapadano Gratinerad & Ostfylld Portabellosvamp / Citronaioli / Grillat Grönsaksspett / Potatissallad",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Vår populära Pizza & Tacobuffé",
+              "price": "139 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "Pagoden",
       "area": "Platinan",
       "region": "platinan",
@@ -125,7 +263,7 @@
           "day": "Måndag",
           "dishes": [
             {
-              "name": "Kolgrillad kycklingfilé serveras med risotto smaksatt med västerbottenost",
+              "name": "Kolgrillad kycklingfilé",
               "price": null
             },
             {
@@ -303,144 +441,6 @@
             {
               "name": "Halloumiburgare",
               "price": null
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Monopolet",
-      "area": "Platinan",
-      "region": "platinan",
-      "url": "https://monopolet.nu/#lunch",
-      "days": [
-        {
-          "day": "Måndag",
-          "dishes": [
-            {
-              "name": "Schnitzel / Rostad Potatis / Skysås / Grönpepparsmör / Ärtor / Citron",
-              "price": "139 kr"
-            },
-            {
-              "name": "Halstrad Lax / Rostad Potatissallad med Babyspenat & Körsbärstomater / Chimichurri / Hollandaisesås / Citron",
-              "price": "139 kr"
-            },
-            {
-              "name": "Veg: Zucchinibiff / Rostad Potatissallad med Babyspenat & Körsbärstomater / Chimichurri / Hollandaisesås / Citron",
-              "price": "139 kr"
-            }
-          ]
-        },
-        {
-          "day": "Tisdag",
-          "dishes": [
-            {
-              "name": "Butter Chicken / Tunnbröd / Myntaraita / Marinerad Lök / Honungsrostade Kikärtor / Basmatiris / Koriander / Lime",
-              "price": "139 kr"
-            },
-            {
-              "name": "Stekt Fångst / Basilikasås / Rostad Potatis / Oliv- & Tomatkompott / Citron",
-              "price": "139 kr"
-            },
-            {
-              "name": "Veg: Soya Butter Masala / Tunnbröd / Myntaraita / Marinerad Lök / Honungsrostade Kikärtor / Basmatiris / Koriander / Lime",
-              "price": "139 kr"
-            }
-          ]
-        },
-        {
-          "day": "Onsdag",
-          "dishes": [
-            {
-              "name": "Cheeseburger / Högrev / Egenbakat Hamburgerbröd / Krispsallad / Tomat / Lök / Saltgurka / Dirty Fries",
-              "price": "139 kr"
-            },
-            {
-              "name": "Monopolets Fisk & Skaldjurssoppa / Aioli / Handskalade Räkor / Vitlöksbröd / Färska örter",
-              "price": "139 kr"
-            },
-            {
-              "name": "Veg: Haloumi Burger / Egenbakat Hamburgerbröd / Krispsallad / Tomat / Lök / Saltgurka / Dirty Fries",
-              "price": "139 kr"
-            }
-          ]
-        },
-        {
-          "day": "Torsdag",
-          "dishes": [
-            {
-              "name": "Köttbricka – Pulled Smokey Paprika Beef / Friterad Kyckling / Grillad Korv of The Day / Dirty Potato Wedges / Honungsglaserad Majskolv / Coleslaw",
-              "price": "139 kr"
-            },
-            {
-              "name": "Fiskbricka – Granapadano Gratinerad Fångst / Citronaioli / Grillat Grönsaksspett / Potatissallad",
-              "price": "139 kr"
-            },
-            {
-              "name": "Vegbricka – Granapadano Gratinerad & Ostfylld Portabellosvamp / Citronaioli / Grillat Grönsaksspett / Potatissallad",
-              "price": "139 kr"
-            }
-          ]
-        },
-        {
-          "day": "Fredag",
-          "dishes": [
-            {
-              "name": "Pizza & Tacobuffé",
-              "price": "139 kr"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Poppels Citybryggeriet",
-      "area": "Platinan",
-      "region": "platinan",
-      "url": "https://www.poppels.se/citybryggeriet/lunch/",
-      "days": [
-        {
-          "day": "Måndag",
-          "dishes": [
-            {
-              "name": "KOLJA eller BLOMKÅL - Krispig burgare med potato bun, coleslaw, picklad gurka, citron- & chilimajo",
-              "price": "145 kr"
-            }
-          ]
-        },
-        {
-          "day": "Tisdag",
-          "dishes": [
-            {
-              "name": "LAMM eller AUBERGINE - Serveras med tunt bröd, tomat- & örtsallad, yoghurt & citron",
-              "price": "145 kr"
-            }
-          ]
-        },
-        {
-          "day": "Onsdag",
-          "dishes": [
-            {
-              "name": "KYCKLING eller SÖTPOTATIS & BÖNOR - \"Jerk style\" serveras med ris, mangosalsa & lime",
-              "price": "145 kr"
-            }
-          ]
-        },
-        {
-          "day": "Torsdag",
-          "dishes": [
-            {
-              "name": "NÖTFÄRS eller VEGOFÄRS - Chili con carne serverad med ris, crème fraiche, koriander & lime",
-              "price": "145 kr"
-            }
-          ]
-        },
-        {
-          "day": "Fredag",
-          "dishes": [
-            {
-              "name": "KYCKLING eller KIKÄRTOR - Serveras med couscous, tagine, örter, citron & mandel",
-              "price": "145 kr"
             }
           ]
         }
