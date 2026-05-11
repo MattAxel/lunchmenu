@@ -912,6 +912,290 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Björkmans Skafferi",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.bjorkmansskafferi.se/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Veg Pad Kra Pao - Stekt baljväxtfärs med chili, plommonsås & thaibasilika, jasminris, stekt ägg samt rostade jordnötter",
+              "price": "135 kr"
+            },
+            {
+              "name": "Pad Kra Pao Chiken - Stekt kycklingfärs med chili, ostronsås & thaibasilika, jasminris, stekt ägg & rostade jordnötter",
+              "price": "135 kr"
+            },
+            {
+              "name": "Sesambakad sej med misosmörsås & potatis i brynt chilismör, Sallad på röd spetskål",
+              "price": "135 kr"
+            },
+            {
+              "name": "Köttbullar i gräddsås med potatismos, Pressgurka & rårörda lingon",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Jerk Artichokes - Rostad kronärtskocka med Jamaica ris och gul chilimajjo & picklad ananas & rostad kokos",
+              "price": "135 kr"
+            },
+            {
+              "name": "Jerk Chicken - Grillad jerkkryddad kyckling med Jamaica ris och gul chilimajjo & picklad ananas & rostad kokos",
+              "price": "135 kr"
+            },
+            {
+              "name": "Dagens fångst med sandefjordsås & grov senap, potatis & babyspenat, Sallad på dill & rödbeta",
+              "price": "135 kr"
+            },
+            {
+              "name": "Nattbakad högrev kokt med rödvin, chorizo & smålökar, Serverad med persiljerostad potatis & aioli",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Kim chi mushroom - Kimchimarinerad svamp & tofu med jasminris, sallad på picklad morot & rättika samt furikake",
+              "price": "135 kr"
+            },
+            {
+              "name": "Kim chi Chicken - Kimchimarinerad kyckling med jasminris, sallad på picklad morot & rättika samt furikake",
+              "price": "135 kr"
+            },
+            {
+              "name": "Fêsk- & skaldjursburgare i briochebröd - Citronaioli och silverlök serveras med sallad på dill och gurka",
+              "price": "135 kr"
+            },
+            {
+              "name": "Grillad kalv picanha med rödvinsås - ramslökssmör, bakad tomat & pommes med riven parmesan",
+              "price": "135 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pagoden",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://pagoden.se/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Piccata Milanese - Grana padano-panerad schnitzel serveras med gräddig tomatsås smaksatt med basilika samt jasminris toppas med plocksallad med rostad zucchini & aubergine",
+              "price": null
+            },
+            {
+              "name": "Asien Bowl - Chilikryddad kycklingfilé serveras med sushiris, picklad rödkål, sojabönor, gurka och mangosallad toppas med srirachacrème, koriander & rostade sesamfrön",
+              "price": null
+            },
+            {
+              "name": "Asien Veg Bowl - Chilikryddade asiatiska bönbollar serveras med sushiris, picklad rödkål, sojabönor, gurka och mangosallad toppas med srirachacrème, koriander & rostade sesamfrön",
+              "price": null
+            },
+            {
+              "name": "Cesarsallad - Kyckling, bacon, grana padano, sallad, gurka, tomat, lök, brödkrutonger samt cesardressing",
+              "price": null
+            },
+            {
+              "name": "Havets wallenbergare serveras med romcrème samt potatispuré, plocksallad och citron",
+              "price": null
+            },
+            {
+              "name": "Kolgrillad kycklingfilé serveras med krämig potatisgratäng samt balsamicosky toppas med örtsallad",
+              "price": null
+            },
+            {
+              "name": "Massamancurry kyckling - Med kokosmjölk, jordnötter samt wokade grönsaker serveras med jasminris",
+              "price": null
+            },
+            {
+              "name": "Massamancurry biff - Med kokosmjölk, jordnötter samt wokade grönsaker serveras med jasminris",
+              "price": null
+            },
+            {
+              "name": "Massamancurry vegetarisk - Med kokosmjölk, jordnötter samt wokade grönsaker serveras med jasminris",
+              "price": null
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Louisana Texas chili Sandwich på rostat surdegsbröd toppad med picklad kål och rostad lök serveras med frasiga waffle fries och chipotlemajonnäs",
+              "price": null
+            },
+            {
+              "name": "Asien Bowl - Chilikryddad kycklingfilé serveras med sushiris, picklad rödkål, sojabönor, gurka och mangosallad toppas med srirachacrème, koriander & rostade sesamfrön",
+              "price": null
+            },
+            {
+              "name": "Asien Veg Bowl - Chilikryddade asiatiska bönbollar serveras med sushiris, picklad rödkål, sojabönor, gurka och mangosallad toppas med srirachacrème, koriander & rostade sesamfrön",
+              "price": null
+            },
+            {
+              "name": "Cesarsallad - Kyckling, bacon, grana padano, sallad, gurka, tomat, lök, brödkrutonger samt cesardressing",
+              "price": null
+            },
+            {
+              "name": "Friterad spätta serveras med gräslökskrossad potatis, fransk tartarsås och citron",
+              "price": null
+            },
+            {
+              "name": "Raggmunk Alt. Löksås & potatis serveras med stekt fläsk & rårörda lingon toppas med persilja",
+              "price": null
+            },
+            {
+              "name": "Sesambakad kycklinglårfilé serveras med mango och papayasallad, sojasås samt jasminris toppas med chilicrème & koriander",
+              "price": null
+            },
+            {
+              "name": "Friterad vegetariska vårrullar serveras med mango och papayasallad, sojasås samt jasminris toppas med chilicrème & koriander",
+              "price": null
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Köttbulle Onsdag - Klassiska köttbullar serveras med gräddsås samt potatispuré toppas med rårörda lingon & pressgurka",
+              "price": null
+            },
+            {
+              "name": "Asien Bowl - Chilikryddad kycklingfilé serveras med sushiris, picklad rödkål, sojabönor, gurka och mangosallad toppas med srirachacrème, koriander & rostade sesamfrön",
+              "price": null
+            },
+            {
+              "name": "Asien Veg Bowl - Chilikryddade asiatiska bönbollar serveras med sushiris, picklad rödkål, sojabönor, gurka och mangosallad toppas med srirachacrème, koriander & rostade sesamfrön",
+              "price": null
+            },
+            {
+              "name": "Cesarsallad - Kyckling, bacon, grana padano, sallad, gurka, tomat, lök, brödkrutonger samt cesardressing",
+              "price": null
+            },
+            {
+              "name": "Fiskgryta Moqueca - Krämig fiskgryta med tomat, kokosmjölk, chili, lime samt räkor serveras med jasminris",
+              "price": null
+            },
+            {
+              "name": "Schnitzel Onsdag - Klassisk schnitzel serveras med rödvinssky, kaprissmör samt rostad potatis och citron och smörslungade ärtor",
+              "price": null
+            },
+            {
+              "name": "Asian crispy halloumi burger - Pancopanerad halloumi i potatobun med hoisin sås samt dirty fries toppas med chilimajjo & Grana padano",
+              "price": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Poppels Citybryggeriet",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.poppels.se/citybryggeriet/lunch/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Kyckling eller Blomkål - Kebab i pitabröd med picklad rödlök, tomat- & örtsallad & harissayoghurt",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Ramslökskorv eller Rotfrukter - Fransk gryta serevrad med surdegsbröd",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Kolja & Blåmusslor eller Rostad Pumpa - Fisk- & skaldjursgryta med potatis, fänkål, dill & aioli",
+              "price": "145 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Monopolet",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://monopolet.nu/#lunch",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Grillad Kyckling / Ört- & Grana Padanorisotto / Tomat- & Löksallad / Rosmarinsky",
+              "price": "139 kr"
+            },
+            {
+              "name": "Fish & Chips / Mushy Peas / Dillaioli / Citron / Friterad Kapris",
+              "price": "139 kr"
+            },
+            {
+              "name": "Veg: Zucchini Fritters & Chips / Mushy Peas / Dillaioli / Citron / Friterad Kapris",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Schnitzel / Rostad Potatis / Balsamicosky / Gröna Ärtor / Citron",
+              "price": "139 kr"
+            },
+            {
+              "name": "Vinpocherad Kolja / Duchesse / Sparrissås / Baconfrästa Haricots Verts",
+              "price": "139 kr"
+            },
+            {
+              "name": "Veg: Fylld Paprika / Duchesse / Sparrissås / Frästa Haricots Verts",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Högrevsburgare / Egenbakat Hamburgerbröd / Cheddarost / Krispsallad / Lök / Tomat / Pfeffakräm / Dirty Fries",
+              "price": "139 kr"
+            },
+            {
+              "name": "Monopolets Fisk & Skaldjurssoppa / Aioli / Handskalade Räkor / Vitlöksbröd / Färska Örter",
+              "price": "139 kr"
+            },
+            {
+              "name": "Veg: Haloumi Burger / Egenbakat Hamburgerbröd / Krispsallad / Lök / Tomat / Pfeffakräm / Dirty Fries",
+              "price": "139 kr"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
