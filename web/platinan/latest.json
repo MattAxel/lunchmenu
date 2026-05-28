@@ -1,6 +1,6 @@
 {
   "week": "2026-W22",
-  "generated": "2026-05-26T10:04:54",
+  "generated": "2026-05-28T14:45:50",
   "restaurants": [
     {
       "name": "Björkmans Skafferi",
@@ -441,6 +441,91 @@
             {
               "name": "Pizza & Taco Buffé",
               "price": "139 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Delissimo",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.delissimo.se",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Biffstekt med stekt lök kalvfondssky & stekt potatis",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta Pesce: Tärnad laxfilé i gräddig vitvinssås med vitlök, dill & parmesan",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Kött: Sauté på fläskfilé med krämig dijonsenapssås & fänkål. Serveras med jasminris",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fisk: Lättpanerad rödspätta med husets remouladsås & kokt potatis",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta Rosso: Stekt salami milano samt rödlök i örtig långkokt tomatsås",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Fågel: Ugnsbakad kycklingfilé med gräddsås, chili samt vitlök. Serveras med råstekt potatis",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fisk: Ugnspocherad koljafilé med dill & limesås. Serveras med räkor & kokt färskpotatis",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta Carbonara: Stekt bacon i gräddig parmesansås med vitlök & nymalen svartpeppar",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Kött: Handrullade köttbullar med gräddsås, husets potatismos, rårörda lingon samt inlagda gurka",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fisk: Smörstekt gössfilé med rom hollandaisesås, broccoli & kokt kulpotatis",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta Risotto: Krämig risotto med stekt ostronskivling, schalottenlök, vittvin & parmesan",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Grillad Entrecote med chilibearnaisesås & fries",
+              "price": "159 kr"
+            },
+            {
+              "name": "Pasta Verde: Stekt kycklingfilé & cocktailtomater i krämig basilikasås med parmesan",
+              "price": "149 kr"
             }
           ]
         }
