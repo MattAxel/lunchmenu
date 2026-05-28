@@ -60,12 +60,29 @@ def extract_menu_from_image(image_bytes: bytes, restaurant_name: str) -> dict:
         os.unlink(tmp.name)
 
 
+def extract_menu_from_pdf(pdf_bytes: bytes, restaurant_name: str) -> dict:
+    """Extract menu from a PDF using Claude Code CLI's file reading capability."""
+    tmp = tempfile.NamedTemporaryFile(suffix=".pdf", delete=False)
+    try:
+        tmp.write(pdf_bytes)
+        tmp.close()
+        prompt = (
+            f"Read the PDF file at {tmp.name} and extract the lunch menu "
+            f"for '{restaurant_name}' from it."
+        )
+        return _call_claude(prompt, allowed_tools="Read")
+    finally:
+        os.unlink(tmp.name)
+
+
 def extract_menu(content: str | bytes, restaurant: dict) -> dict:
     """Extract menu based on content type."""
     if restaurant["type"] in ("text", "text_js", "canva"):
         return extract_menu_from_text(content, restaurant["name"])
     elif restaurant["type"] == "image":
         return extract_menu_from_image(content, restaurant["name"])
+    elif restaurant["type"] == "pdf":
+        return extract_menu_from_pdf(content, restaurant["name"])
     else:
         raise ValueError(f"Unknown type: {restaurant['type']}")
 

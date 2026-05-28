@@ -233,6 +233,29 @@ def fetch_canva(url: str) -> str:
     return text
 
 
+def fetch_pdf(url: str, area: str) -> bytes:
+    """Fetch a PDF menu linked from a page, matched by area name."""
+    resp = requests.get(url, timeout=30)
+    resp.raise_for_status()
+    soup = BeautifulSoup(resp.text, "html.parser")
+
+    for link in soup.find_all("a", href=True):
+        if not link["href"].lower().endswith(".pdf"):
+            continue
+        context_text = link.get_text() + " " + (link.parent.get_text() if link.parent else "")
+        if area.lower() in context_text.lower():
+            pdf_url = link["href"]
+            if pdf_url.startswith("/"):
+                from urllib.parse import urlparse
+                parsed = urlparse(url)
+                pdf_url = f"{parsed.scheme}://{parsed.netloc}{pdf_url}"
+            pdf_resp = requests.get(pdf_url, timeout=30)
+            pdf_resp.raise_for_status()
+            return pdf_resp.content
+
+    raise RuntimeError(f"No PDF link found matching area '{area}' on {url}")
+
+
 def fetch_content(restaurant: dict) -> str | bytes:
     """Fetch content based on restaurant type."""
     if restaurant["type"] == "text":
@@ -243,5 +266,7 @@ def fetch_content(restaurant: dict) -> str | bytes:
         return fetch_image(restaurant["url"])
     elif restaurant["type"] == "canva":
         return fetch_canva(restaurant["url"])
+    elif restaurant["type"] == "pdf":
+        return fetch_pdf(restaurant["url"], restaurant["area"])
     else:
         raise ValueError(f"Unknown restaurant type: {restaurant['type']}")

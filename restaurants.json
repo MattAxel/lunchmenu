@@ -82,5 +82,12 @@
     "type": "text",
     "area": "Platinan",
     "region": "platinan"
+  },
+  {
+    "name": "Delissimo",
+    "url": "https://www.delissimo.se",
+    "type": "pdf",
+    "area": "Platinan",
+    "region": "platinan"
   }
 ]
