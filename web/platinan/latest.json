@@ -1,15 +1,7 @@
 {
   "week": "2026-W25",
-  "generated": "2026-06-15T09:19:48",
+  "generated": "2026-06-15T14:49:09",
   "restaurants": [
-    {
-      "name": "Björkmans Skafferi",
-      "area": "Platinan",
-      "region": "platinan",
-      "url": "https://www.bjorkmansskafferi.se/",
-      "days": [],
-      "error": "Failed to parse menu JSON from Claude response.\nRaw result text: I don't see any text provided after \"from this text:\". Could you please share the text or image containing the lunch menu for Björkmans Skafferi?"
-    },
     {
       "name": "Pagoden",
       "area": "Platinan",
@@ -341,6 +333,94 @@
             {
               "name": "PASTA GAMBERO: Chili samt vitlöksfrästa scampi i gräddig vitvinssås med persilja & parmesan",
               "price": "149 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Björkmans Skafferi",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.bjorkmansskafferi.se/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Dan Dan Mushroom Nudels - stekt sojamarinerad svamp med nudlar & kål i jordnötssås toppat med rödkål & krispig chiliolja",
+              "price": "135 kr"
+            },
+            {
+              "name": "Dan Dan Chicken Nudels - stekt sojamarinerad kyckling med nudlar & kål i jordnötssås toppat med rödkål & krispig chiliojla",
+              "price": "135 kr"
+            },
+            {
+              "name": "Stekt lax i teriyakisås med ris - sallad på gurka, inlagd ingefära & salladslök",
+              "price": "135 kr"
+            },
+            {
+              "name": "Köttbullar i gräddsås med potatismos - pressgurka & rårörda lingon",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Kim Chi Beans - bönor i kimchigryta med jasminris, toppad med picklad morot & rättika samt furikake",
+              "price": "135 kr"
+            },
+            {
+              "name": "Kim Chi Chicken - kyckling i kimchigryta med jasminris toppad med picklad morot & rättika samt furikake",
+              "price": "135 kr"
+            },
+            {
+              "name": "Halstrad gös med haricot verts & färskpotatis i skaldjursbearnaise samt sallad på strimlad röd spetskål",
+              "price": "135 kr"
+            },
+            {
+              "name": "Strimlad biff stekt med örter - potatis & purjolöksgratäng, grönpepparsky samt sallad på tomat & ruccola",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "No fish taco - friterade no fish nuggets & avokadokräm i tortillabröd toppad med sallad på koriander, rödkål & lime",
+              "price": "135 kr"
+            },
+            {
+              "name": "Örtstekt kycklingfilé med rosmarinpotatis - grillad citron, aioli & sallad på gröna blad",
+              "price": "135 kr"
+            },
+            {
+              "name": "Fish taco - Pankofriterad tonfisk & avokadokräm i tortillabröd toppad med sallad på koriander, rödkål & lime",
+              "price": "135 kr"
+            },
+            {
+              "name": "Krispigt fläsk & spetskål i sötsur sås - med jasminris & rostade cashewnötter",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Korean No Chicken Burger - Friterad veg-burgare i briochebröd med misomajo & sallad på gurka & gochujang",
+              "price": "135 kr"
+            },
+            {
+              "name": "Korean Chicken Burger - Friterad kyckling i briochebröd med misomajo & sallad på gurka & gochujang",
+              "price": "135 kr"
+            },
+            {
+              "name": "Mixed Grill - Serverat med chimichurry, äpple & spetskåls \"slaw\" samt rostad potatis med hackade örter",
+              "price": "135 kr"
             }
           ]
         }
