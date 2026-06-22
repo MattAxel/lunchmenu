@@ -53,13 +53,15 @@ def run(restaurant_filter: str | None = None):
         with open(output_file) as f:
             existing = json.load(f)
 
-    existing_names = {r["name"] for r in existing["restaurants"]}
+    existing_ok = {
+        r["name"] for r in existing["restaurants"] if "error" not in r
+    }
 
     for restaurant in restaurants:
         print(f"--- {restaurant['name']} ({restaurant['area']}) ---")
 
-        # Skip if already fetched this week (unless filtering)
-        if restaurant["name"] in existing_names and not restaurant_filter:
+        # Skip if already fetched successfully this week (unless filtering)
+        if restaurant["name"] in existing_ok and not restaurant_filter:
             print("  Already fetched this week, skipping.")
             continue
 
