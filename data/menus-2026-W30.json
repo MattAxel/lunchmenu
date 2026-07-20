@@ -65,6 +65,46 @@
       "url": "https://kalimeramezetapas.se/veckans-lunch/",
       "days": [],
       "error": "[Errno 2] No such file or directory: 'claude'"
+    },
+    {
+      "name": "Björkmans Skafferi",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.bjorkmansskafferi.se/",
+      "days": [],
+      "error": "[Errno 2] No such file or directory: 'claude'"
+    },
+    {
+      "name": "Pagoden",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://pagoden.se/",
+      "days": [],
+      "error": "[Errno 2] No such file or directory: 'claude'"
+    },
+    {
+      "name": "Poppels Citybryggeriet",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.poppels.se/citybryggeriet/lunch/",
+      "days": [],
+      "error": "[Errno 2] No such file or directory: 'claude'"
+    },
+    {
+      "name": "Monopolet",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://monopolet.nu/#lunch",
+      "days": [],
+      "error": "[Errno 2] No such file or directory: 'claude'"
+    },
+    {
+      "name": "Delissimo",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.delissimo.se",
+      "days": [],
+      "error": "[Errno 2] No such file or directory: 'claude'"
     }
   ]
 }
