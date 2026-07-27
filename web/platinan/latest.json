@@ -1,6 +1,6 @@
 {
-  "week": "2026-W30",
-  "generated": "2026-07-20T10:02:24",
+  "week": "2026-W31",
+  "generated": "2026-07-27T10:36:41",
   "restaurants": [
     {
       "name": "Björkmans Skafferi",
@@ -40,7 +40,7 @@
       "region": "platinan",
       "url": "https://www.delissimo.se",
       "days": [],
-      "error": "[Errno 2] No such file or directory: 'claude'"
+      "error": "No PDF link found matching area 'Platinan' on https://www.delissimo.se"
     }
   ]
 }
