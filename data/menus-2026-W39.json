@@ -1,6 +1,6 @@
 {
   "week": "2026-W39",
-  "generated": "2026-09-21T20:54:18",
+  "generated": "2026-09-21T21:02:59",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -106,99 +106,6 @@
             {
               "name": "Vego lasagne",
               "price": "145 kr"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Bryggan",
-      "area": "Amhult",
-      "region": "torslanda",
-      "url": "https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/",
-      "days": [
-        {
-          "day": "Måndag",
-          "dishes": [
-            {
-              "name": "Bryggans Caesarsallad (kyckling, räkor eller halloumi)",
-              "price": "139 kr"
-            },
-            {
-              "name": "Pannbiff, stekt lök, potatispuré, rödvinsås, saltgurka",
-              "price": "139 kr"
-            },
-            {
-              "name": "Vitvinspocherad kolja, potatispuré, pepparrotssås, hackat ägg, dillolja",
-              "price": "139 kr"
-            }
-          ]
-        },
-        {
-          "day": "Tisdag",
-          "dishes": [
-            {
-              "name": "Bryggans Caesarsallad (kyckling, räkor eller halloumi)",
-              "price": "139 kr"
-            },
-            {
-              "name": "Stekt rimmat fläsk med raggmunk, rårörda lingon, alt. löksås, kokt potatis",
-              "price": "139 kr"
-            },
-            {
-              "name": "Havets wallenbergare, potatispuré, brynt smör, pepparrot, gröna ärter",
-              "price": "139 kr"
-            }
-          ]
-        },
-        {
-          "day": "Onsdag",
-          "dishes": [
-            {
-              "name": "Bryggans Caesarsallad (kyckling, räkor eller halloumi)",
-              "price": "139 kr"
-            },
-            {
-              "name": "Helstekt karré, grekisk friterad potatis, citronsky, tzatziki, syrad rödkål, oliver",
-              "price": "139 kr"
-            },
-            {
-              "name": "Parmesanpanerad rödspätta, tartarsås, dillkokt potatis, gröna ärter, citron",
-              "price": "139 kr"
-            }
-          ]
-        },
-        {
-          "day": "Torsdag",
-          "dishes": [
-            {
-              "name": "Bryggans Caesarsallad (kyckling, räkor eller halloumi)",
-              "price": "139 kr"
-            },
-            {
-              "name": "Kålpudding på kalvfärs, kokt potatis, gräddsås, rårörda lingon, pressgurka",
-              "price": "139 kr"
-            },
-            {
-              "name": "Laxburgare i brioche, guacamole med räkor, friterad potatis, citron aioli",
-              "price": "139 kr"
-            }
-          ]
-        },
-        {
-          "day": "Fredag",
-          "dishes": [
-            {
-              "name": "Bryggans Caesarsallad (kyckling, räkor eller halloumi)",
-              "price": "139 kr"
-            },
-            {
-              "name": "Entrecote (200g), dill-/rökt paprika pommes, rödvinsky, bearnaisesås",
-              "price": "139 kr"
-            },
-            {
-              "name": "Wasabi-/sesambakad lax, jasminris, sojabönor, gurka, wakame, chilimayo",
-              "price": "139 kr"
             }
           ]
         }
@@ -622,292 +529,6 @@
             {
               "name": "Äpplepaj med vaniljvisp",
               "price": "135 kr"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Masala Zone",
-      "area": "Torslanda",
-      "region": "torslanda",
-      "url": "https://www.masalazone.se/masala-zone-torslanda/",
-      "days": [
-        {
-          "day": "Måndag",
-          "dishes": [
-            {
-              "name": "Tandoori Chicken",
-              "price": "98 kr"
-            },
-            {
-              "name": "Murgh Methi Malai",
-              "price": "98 kr"
-            },
-            {
-              "name": "Malwani Gosht",
-              "price": "98 kr"
-            },
-            {
-              "name": "Mix tallrik",
-              "price": "98 kr"
-            }
-          ]
-        },
-        {
-          "day": "Tisdag",
-          "dishes": [
-            {
-              "name": "Tandoori Chicken",
-              "price": "98 kr"
-            },
-            {
-              "name": "Tikka Masala",
-              "price": "98 kr"
-            },
-            {
-              "name": "Beef Kadahi",
-              "price": "98 kr"
-            },
-            {
-              "name": "Mix tallrik",
-              "price": "98 kr"
-            }
-          ]
-        },
-        {
-          "day": "Onsdag",
-          "dishes": [
-            {
-              "name": "Tandoori Chicken",
-              "price": "98 kr"
-            },
-            {
-              "name": "Murgh Madras",
-              "price": "98 kr"
-            },
-            {
-              "name": "Curry Gosht",
-              "price": "98 kr"
-            },
-            {
-              "name": "Mix tallrik",
-              "price": "98 kr"
-            }
-          ]
-        },
-        {
-          "day": "Torsdag",
-          "dishes": [
-            {
-              "name": "Tandoori Chicken",
-              "price": "98 kr"
-            },
-            {
-              "name": "Butter Chicken",
-              "price": "98 kr"
-            },
-            {
-              "name": "Beef Balti",
-              "price": "98 kr"
-            },
-            {
-              "name": "Mix tallrik",
-              "price": "98 kr"
-            }
-          ]
-        },
-        {
-          "day": "Fredag",
-          "dishes": [
-            {
-              "name": "Tandoori Chicken",
-              "price": "98 kr"
-            },
-            {
-              "name": "Butter Chicken",
-              "price": "98 kr"
-            },
-            {
-              "name": "Beef Balti",
-              "price": "98 kr"
-            },
-            {
-              "name": "Mix tallrik",
-              "price": "98 kr"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Kalimera",
-      "area": "Amhult",
-      "region": "torslanda",
-      "url": "https://kalimeramezetapas.se/veckans-lunch/",
-      "days": [
-        {
-          "day": "Måndag",
-          "dishes": [
-            {
-              "name": "Fläskfilé Charlemange",
-              "price": "139 kr"
-            },
-            {
-              "name": "Bacon lindad köfte",
-              "price": "149 kr"
-            },
-            {
-              "name": "Sac Kavurma",
-              "price": "149 kr"
-            },
-            {
-              "name": "Fiskgryta på Torsk-laxfilé",
-              "price": "159 kr"
-            },
-            {
-              "name": "200Gr Högrevsburgare",
-              "price": "149 kr"
-            },
-            {
-              "name": "Pasta Indiana",
-              "price": "139 kr"
-            },
-            {
-              "name": "Moussaka",
-              "price": "139 kr"
-            }
-          ]
-        },
-        {
-          "day": "Tisdag",
-          "dishes": [
-            {
-              "name": "Fläskfilé Charlemange",
-              "price": "139 kr"
-            },
-            {
-              "name": "Bacon lindad köfte",
-              "price": "149 kr"
-            },
-            {
-              "name": "Sac Kavurma",
-              "price": "149 kr"
-            },
-            {
-              "name": "Fiskgryta på Torsk-laxfilé",
-              "price": "159 kr"
-            },
-            {
-              "name": "200Gr Högrevsburgare",
-              "price": "149 kr"
-            },
-            {
-              "name": "Pasta Indiana",
-              "price": "139 kr"
-            },
-            {
-              "name": "Moussaka",
-              "price": "139 kr"
-            }
-          ]
-        },
-        {
-          "day": "Onsdag",
-          "dishes": [
-            {
-              "name": "Fläskfilé Charlemange",
-              "price": "139 kr"
-            },
-            {
-              "name": "Bacon lindad köfte",
-              "price": "149 kr"
-            },
-            {
-              "name": "Sac Kavurma",
-              "price": "149 kr"
-            },
-            {
-              "name": "Fiskgryta på Torsk-laxfilé",
-              "price": "159 kr"
-            },
-            {
-              "name": "200Gr Högrevsburgare",
-              "price": "149 kr"
-            },
-            {
-              "name": "Pasta Indiana",
-              "price": "139 kr"
-            },
-            {
-              "name": "Moussaka",
-              "price": "139 kr"
-            }
-          ]
-        },
-        {
-          "day": "Torsdag",
-          "dishes": [
-            {
-              "name": "Fläskfilé Charlemange",
-              "price": "139 kr"
-            },
-            {
-              "name": "Bacon lindad köfte",
-              "price": "149 kr"
-            },
-            {
-              "name": "Sac Kavurma",
-              "price": "149 kr"
-            },
-            {
-              "name": "Fiskgryta på Torsk-laxfilé",
-              "price": "159 kr"
-            },
-            {
-              "name": "200Gr Högrevsburgare",
-              "price": "149 kr"
-            },
-            {
-              "name": "Pasta Indiana",
-              "price": "139 kr"
-            },
-            {
-              "name": "Moussaka",
-              "price": "139 kr"
-            }
-          ]
-        },
-        {
-          "day": "Fredag",
-          "dishes": [
-            {
-              "name": "Fläskfilé Charlemange",
-              "price": "139 kr"
-            },
-            {
-              "name": "Bacon lindad köfte",
-              "price": "149 kr"
-            },
-            {
-              "name": "Sac Kavurma",
-              "price": "149 kr"
-            },
-            {
-              "name": "Fiskgryta på Torsk-laxfilé",
-              "price": "159 kr"
-            },
-            {
-              "name": "200Gr Högrevsburgare",
-              "price": "149 kr"
-            },
-            {
-              "name": "Pasta Indiana",
-              "price": "139 kr"
-            },
-            {
-              "name": "Moussaka",
-              "price": "139 kr"
             }
           ]
         }
@@ -1642,6 +1263,365 @@
             {
               "name": "CHICKEN TIKKA MASALA",
               "price": "120 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bryggan",
+      "area": "Amhult",
+      "region": "torslanda",
+      "url": "https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Pannbiff, stekt lök, potatispuré, rödvinsås, saltgurka",
+              "price": "139 kr"
+            },
+            {
+              "name": "Vitvinspocherad kolja, potatispuré, pepparrotssås, hackat ägg, dillolja",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Stekt rimmat fläsk med raggmunk, rårörda lingon, alt, löksås, kokt potatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "Havets wallenbergare, potatispuré, brynt smör, pepparrot, gröna ärter",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Helstekt karré, grekisk friterad potatis, citronsky, tzatziki, syrad rödkål, oliver",
+              "price": "139 kr"
+            },
+            {
+              "name": "Parmesanpanerad rödspätta, tartarsås, dillkokt potatis, gröna ärter, citron",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Kålpudding på kalvfärs, kokt potatis, gräddsås, rårörda lingon, pressgurka",
+              "price": "139 kr"
+            },
+            {
+              "name": "Laxburgare i brioche, guacamole med räkor, friterad potatis, citron aioli",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Entrecote(200g), dill-/rökt paprika pommes, rödvinsky, bearnaisesås",
+              "price": "139 kr"
+            },
+            {
+              "name": "Wasabi-/sesambakad lax, jasminris, sojabönor, gurka, wakame, chilimayo",
+              "price": "139 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kalimera",
+      "area": "Amhult",
+      "region": "torslanda",
+      "url": "https://kalimeramezetapas.se/veckans-lunch/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Fläskfilé Charlemange ( gratinerad fläskfilé med champinjon stuvning & bearnaisesås ) serveras med pommes duchesse.",
+              "price": "139 kr"
+            },
+            {
+              "name": "Bacon lindad köfte ( köttfärs biffar ) serveras med tomatsås, tzatziki & råstekt vitlökspotatis",
+              "price": "149 kr"
+            },
+            {
+              "name": "Sac Kavurma ( turkisk högrevsgryta ) serveras med pilavris & tzatziki.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fiskgryta på Torsk-laxfilé , kräftsås, potatisstomp med dill, handskalade räkor & saffranaioli.",
+              "price": "159 kr"
+            },
+            {
+              "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta Indiana med kyckling, räkor, ananas & currysås.",
+              "price": "139 kr"
+            },
+            {
+              "name": "Moussaka, serveras med tzatziki.",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Fläskfilé Charlemange ( gratinerad fläskfilé med champinjon stuvning & bearnaisesås ) serveras med pommes duchesse.",
+              "price": "139 kr"
+            },
+            {
+              "name": "Bacon lindad köfte ( köttfärs biffar ) serveras med tomatsås, tzatziki & råstekt vitlökspotatis",
+              "price": "149 kr"
+            },
+            {
+              "name": "Sac Kavurma ( turkisk högrevsgryta ) serveras med pilavris & tzatziki.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fiskgryta på Torsk-laxfilé , kräftsås, potatisstomp med dill, handskalade räkor & saffranaioli.",
+              "price": "159 kr"
+            },
+            {
+              "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta Indiana med kyckling, räkor, ananas & currysås.",
+              "price": "139 kr"
+            },
+            {
+              "name": "Moussaka, serveras med tzatziki.",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Fläskfilé Charlemange ( gratinerad fläskfilé med champinjon stuvning & bearnaisesås ) serveras med pommes duchesse.",
+              "price": "139 kr"
+            },
+            {
+              "name": "Bacon lindad köfte ( köttfärs biffar ) serveras med tomatsås, tzatziki & råstekt vitlökspotatis",
+              "price": "149 kr"
+            },
+            {
+              "name": "Sac Kavurma ( turkisk högrevsgryta ) serveras med pilavris & tzatziki.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fiskgryta på Torsk-laxfilé , kräftsås, potatisstomp med dill, handskalade räkor & saffranaioli.",
+              "price": "159 kr"
+            },
+            {
+              "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta Indiana med kyckling, räkor, ananas & currysås.",
+              "price": "139 kr"
+            },
+            {
+              "name": "Moussaka, serveras med tzatziki.",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Fläskfilé Charlemange ( gratinerad fläskfilé med champinjon stuvning & bearnaisesås ) serveras med pommes duchesse.",
+              "price": "139 kr"
+            },
+            {
+              "name": "Bacon lindad köfte ( köttfärs biffar ) serveras med tomatsås, tzatziki & råstekt vitlökspotatis",
+              "price": "149 kr"
+            },
+            {
+              "name": "Sac Kavurma ( turkisk högrevsgryta ) serveras med pilavris & tzatziki.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fiskgryta på Torsk-laxfilé , kräftsås, potatisstomp med dill, handskalade räkor & saffranaioli.",
+              "price": "159 kr"
+            },
+            {
+              "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta Indiana med kyckling, räkor, ananas & currysås.",
+              "price": "139 kr"
+            },
+            {
+              "name": "Moussaka, serveras med tzatziki.",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Fläskfilé Charlemange ( gratinerad fläskfilé med champinjon stuvning & bearnaisesås ) serveras med pommes duchesse.",
+              "price": "139 kr"
+            },
+            {
+              "name": "Bacon lindad köfte ( köttfärs biffar ) serveras med tomatsås, tzatziki & råstekt vitlökspotatis",
+              "price": "149 kr"
+            },
+            {
+              "name": "Sac Kavurma ( turkisk högrevsgryta ) serveras med pilavris & tzatziki.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fiskgryta på Torsk-laxfilé , kräftsås, potatisstomp med dill, handskalade räkor & saffranaioli.",
+              "price": "159 kr"
+            },
+            {
+              "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta Indiana med kyckling, räkor, ananas & currysås.",
+              "price": "139 kr"
+            },
+            {
+              "name": "Moussaka, serveras med tzatziki.",
+              "price": "139 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Masala Zone",
+      "area": "Torslanda",
+      "region": "torslanda",
+      "url": "https://www.masalazone.se/masala-zone-torslanda/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "TANDOORI CHICKEN – Grillad kycklingklubbs med ben marinrad i yoghurt. Tandoori masala, ingefära,vitlölk, gräddsås.",
+              "price": "98 kr"
+            },
+            {
+              "name": "MURGH METHI MALAI – Kycklingffile,ingefära,vitlök, grädde.",
+              "price": "98 kr"
+            },
+            {
+              "name": "MALWANI GOSHT – Lammbitar,rostad cocos,tomat,grön chili.",
+              "price": "98 kr"
+            },
+            {
+              "name": "MIX TALLRIK – Två små vegetariska rätter",
+              "price": "98 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "TANDOORI CHICKEN – Grillad kycklingklubbs med ben marinrad i yoghurt. Tandoori masala, ingefära,vitlölk, gräddsås.",
+              "price": "98 kr"
+            },
+            {
+              "name": "TIKKA MASALA – Kycldingfile med tornat, lök, i en smakfull gräddig kryddsås",
+              "price": "98 kr"
+            },
+            {
+              "name": "BEEF KADAHI – Oxkött med vitlök, ingefära, grön chili, tomat, paprika i kryddig currysås",
+              "price": "98 kr"
+            },
+            {
+              "name": "MIX TALLRIK – Två små vegetariska rätter",
+              "price": "98 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "TANDOORI CHICKEN – Grillad kycklingklubbs med ben marinrad i yoghurt. Tandoori masala, ingefära,vitlölk, gräddsås.",
+              "price": "98 kr"
+            },
+            {
+              "name": "MURGH MADRAS – Kycklingfile med lök, kokosmjölk, ingefära, i smakfull currysås",
+              "price": "98 kr"
+            },
+            {
+              "name": "CURRY GOSHT – Lammbitar med lök, tomat, chili i en smakfull curry sås",
+              "price": "98 kr"
+            },
+            {
+              "name": "MIX TALLRIK – Två små vegetariska rätter",
+              "price": "98 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "TANDOORI CHICKEN – Grillad kycklingklubbs med ben marinrad i yoghurt. Tandoori masala, ingefära,vitlölk, gräddsås.",
+              "price": "98 kr"
+            },
+            {
+              "name": "BUTTER CHICKEN – Kycklingfils i krämig sås. Tomat, grädde.",
+              "price": "98 kr"
+            },
+            {
+              "name": "BEEF BALTI – Oxkött med ingefära, champinjoner paprika, i kryddstark sås.",
+              "price": "98 kr"
+            },
+            {
+              "name": "MIX TALLRIK – Två små vegetariska rätter",
+              "price": "98 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "TANDOORI CHICKEN – Grillad kycklingklubbs med ben marinrad i yoghurt. Tandoori masala, ingefära,vitlölk, gräddsås.",
+              "price": "98 kr"
+            },
+            {
+              "name": "BUTTER CHICKEN – Kycklingfils i krämig sås. Tomat, grädde.",
+              "price": "98 kr"
+            },
+            {
+              "name": "BEEF BALTI – Oxkött med ingefära, champinjoner paprika, i kryddstark sås.",
+              "price": "98 kr"
+            },
+            {
+              "name": "MIX TALLRIK – Två små vegetariska rätter",
+              "price": "98 kr"
             }
           ]
         }

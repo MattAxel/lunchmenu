@@ -23,11 +23,15 @@ Extract the weekly lunch menu and return ONLY valid JSON with this structure:
 
 Rules:
 - Use Swedish day names: Måndag, Tisdag, Onsdag, Torsdag, Fredag
-- Include prices when visible (format: "125 kr")
+- Include prices when visible (format: "125 kr" or "115kr" normalized to "115 kr")
 - If no price is found for a dish, set price to null
 - If a day has no dishes, omit that day
 - Only include this week's menu, not previous weeks
-- If dishes are NOT assigned to specific days (e.g. numbered 1-6 with "Mån-Fre"), list ALL dishes under EVERY weekday
+- Keep dish names faithful to the source: include the dish title AND the key sides/description as written. Do not invent shorter marketing titles, and do not drop the descriptive part when the source has one.
+- Extract only that day's lunch specials. Do NOT copy "always available" / standing alternatives (e.g. a permanent Caesar salad, house burger, or "stående alternativ") onto each weekday unless that day explicitly lists them among the daily specials.
+- "Veckans" items in a shared weekly box (pizza/salad sold every day) may be listed under every weekday.
+- If dishes are clearly one shared weekly set with NO day labels (e.g. numbered 1-6 with only "Mån-Fre"), list ALL of those under EVERY weekday
+- Never invent dishes that are not visible in the source
 - Return ONLY the JSON, no other text"""
 
 XAI_API_URL = "https://api.x.ai/v1/chat/completions"
