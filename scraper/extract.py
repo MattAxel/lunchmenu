@@ -61,15 +61,86 @@ def extract_menu_from_image(image_bytes: bytes, restaurant_name: str) -> dict:
 
 
 def extract_menu_from_pdf(pdf_bytes: bytes, restaurant_name: str) -> dict:
-    """Extract menu from a PDF by pulling text with pypdf, then calling Grok."""
+    """Extract menu from a PDF via text when clean, else Grok vision on pages.
+
+    Designed menus (e.g. Delissimo) often yield jumbled pypdf text; rendering
+    pages to images and using vision is more reliable then.
+    """
     text = _extract_pdf_text(pdf_bytes)
-    if len(text.strip()) < MIN_PDF_TEXT_CHARS:
+    if _pdf_text_looks_usable(text):
+        return extract_menu_from_text(text, restaurant_name)
+
+    images = _render_pdf_pages(pdf_bytes)
+    if not images:
+        if len(text.strip()) >= MIN_PDF_TEXT_CHARS:
+            return extract_menu_from_text(text, restaurant_name)
         raise RuntimeError(
-            "PDF text extraction returned little or no text (likely a scanned "
-            "image PDF). Re-scrape this restaurant as type 'image' instead, "
-            "or provide a text override under data/overrides/."
+            "PDF text was unusable and page rendering failed. "
+            "Re-scrape as type 'image' or add data/overrides/."
         )
-    return extract_menu_from_text(text, restaurant_name)
+
+    # One vision call with up to first 2 pages (weekly lunch fits on 1)
+    content = [
+        {
+            "type": "text",
+            "text": (
+                f"Extract the lunch menu for '{restaurant_name}' from these "
+                f"PDF page image(s). Ignore decorative repeated logos."
+            ),
+        }
+    ]
+    for image_bytes in images[:2]:
+        mime = _detect_image_mime(image_bytes)
+        b64 = base64.b64encode(image_bytes).decode("ascii")
+        content.append(
+            {
+                "type": "image_url",
+                "image_url": {"url": f"data:{mime};base64,{b64}"},
+            }
+        )
+    return _call_grok(content)
+
+
+def _pdf_text_looks_usable(text: str) -> bool:
+    """Reject decorative/jumbled PDF text that confuses day assignment."""
+    cleaned = text.strip()
+    if len(cleaned) < MIN_PDF_TEXT_CHARS:
+        return False
+    # Delissimo-style PDFs repeat the brand hundreds of times as vector text
+    brand_hits = cleaned.lower().count("delissimo")
+    if brand_hits >= 20:
+        return False
+    letters = sum(ch.isalpha() for ch in cleaned)
+    if letters and brand_hits / max(letters / 10, 1) > 5:
+        return False
+    return True
+
+
+def _render_pdf_pages(pdf_bytes: bytes, scale: float = 2.0) -> list[bytes]:
+    """Render PDF pages to PNG bytes using pypdfium2."""
+    try:
+        import pypdfium2 as pdfium
+    except ImportError as exc:
+        raise RuntimeError(
+            "pypdfium2 is required to render PDF pages for vision extraction"
+        ) from exc
+
+    from io import BytesIO
+
+    pdf = pdfium.PdfDocument(pdf_bytes)
+    images: list[bytes] = []
+    try:
+        for index in range(len(pdf)):
+            page = pdf[index]
+            bitmap = page.render(scale=scale)
+            pil_image = bitmap.to_pil()
+            buf = BytesIO()
+            pil_image.save(buf, format="PNG")
+            images.append(buf.getvalue())
+            page.close()
+    finally:
+        pdf.close()
+    return images
 
 
 def extract_menu(content: str | bytes, restaurant: dict) -> dict:

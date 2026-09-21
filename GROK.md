@@ -41,4 +41,5 @@ python -m http.server -d web 8000
 - Menu JSON schema: `{ week, generated, restaurants: [{ name, area, region, url, days: [{ day, dishes: [{ name, price }] }] }] }`
 - Regions: each restaurant belongs to a `region` (e.g. `torslanda`, `platinan`) which maps to `web/{region}/`
 - Swedish day names: Måndag, Tisdag, Onsdag, Torsdag, Fredag
+- PDFs: `fetch_pdf` matches the link label/filename to the restaurant `area` (not parent nav text). Jumbled design PDFs are rendered with `pypdfium2` and sent to Grok vision.
 - Auth: set `XAI_API_KEY` in the environment (required). Optional `XAI_MODEL` defaults to `grok-4.6`.

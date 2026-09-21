@@ -234,26 +234,44 @@ def fetch_canva(url: str) -> str:
 
 
 def fetch_pdf(url: str, area: str) -> bytes:
-    """Fetch a PDF menu linked from a page, matched by area name."""
+    """Fetch a PDF menu linked from a page, matched by area name.
+
+    Prefer the link's own label and filename. Parent/nav text often lists
+    every location (e.g. "ÖJERSJÖ | PARTILLE | … | PLATINAN"), so matching
+    on parent alone picks the wrong PDF.
+    """
+    from urllib.parse import urljoin, urlparse
+
     resp = requests.get(url, timeout=30)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 
-    for link in soup.find_all("a", href=True):
-        if not link["href"].lower().endswith(".pdf"):
-            continue
-        context_text = link.get_text() + " " + (link.parent.get_text() if link.parent else "")
-        if area.lower() in context_text.lower():
-            pdf_url = link["href"]
-            if pdf_url.startswith("/"):
-                from urllib.parse import urlparse
-                parsed = urlparse(url)
-                pdf_url = f"{parsed.scheme}://{parsed.netloc}{pdf_url}"
-            pdf_resp = requests.get(pdf_url, timeout=30)
-            pdf_resp.raise_for_status()
-            return pdf_resp.content
+    area_l = area.lower()
+    candidates: list[tuple[int, str, str]] = []
 
-    raise RuntimeError(f"No PDF link found matching area '{area}' on {url}")
+    for link in soup.find_all("a", href=True):
+        href = link["href"]
+        if not href.lower().endswith(".pdf"):
+            continue
+        pdf_url = urljoin(url, href)
+        link_text = link.get_text(" ", strip=True)
+        filename = urlparse(pdf_url).path.rsplit("/", 1)[-1].lower()
+        score = 0
+        if area_l in link_text.lower():
+            score += 100
+        if area_l in filename:
+            score += 50
+        if score:
+            candidates.append((score, pdf_url, link_text))
+
+    if not candidates:
+        raise RuntimeError(f"No PDF link found matching area '{area}' on {url}")
+
+    candidates.sort(key=lambda item: (-item[0], item[1]))
+    pdf_url = candidates[0][1]
+    pdf_resp = requests.get(pdf_url, timeout=30)
+    pdf_resp.raise_for_status()
+    return pdf_resp.content
 
 
 def fetch_content(restaurant: dict) -> str | bytes:
