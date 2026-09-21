@@ -2,12 +2,22 @@
 
 import requests
 from bs4 import BeautifulSoup
+from urllib.parse import urljoin
 from playwright.sync_api import sync_playwright
+
+DEFAULT_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/122.0.0.0 Safari/537.36"
+    ),
+    "Accept-Language": "sv-SE,sv;q=0.9,en;q=0.8",
+}
 
 
 def fetch_text(url: str) -> str:
     """Fetch a text-based menu page and return cleaned text content."""
-    resp = requests.get(url, timeout=30)
+    resp = requests.get(url, headers=DEFAULT_HEADERS, timeout=30)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 
@@ -274,10 +284,36 @@ def fetch_pdf(url: str, area: str) -> bytes:
     return pdf_resp.content
 
 
+def fetch_text_days(base_url: str, day_paths: list[str]) -> str:
+    """Fetch one page per weekday and concatenate with day labels.
+
+    Used when a restaurant publishes lunch on separate day URLs
+    (e.g. Masala Corner on masalacorner.se/mandag/ … /fredag/).
+    """
+    parts: list[str] = []
+    day_names = {
+        "mandag": "Måndag",
+        "måndag": "Måndag",
+        "tisdag": "Tisdag",
+        "onsdag": "Onsdag",
+        "torsdag": "Torsdag",
+        "fredag": "Fredag",
+    }
+    for path in day_paths:
+        slug = path.strip("/")
+        url = urljoin(base_url if base_url.endswith("/") else base_url + "/", slug + "/")
+        label = day_names.get(slug.lower(), slug.capitalize())
+        parts.append(f"=== {label} ===\n{fetch_text(url)}")
+    return "\n\n".join(parts)
+
+
+
 def fetch_content(restaurant: dict) -> str | bytes:
     """Fetch content based on restaurant type."""
     if restaurant["type"] == "text":
         return fetch_text(restaurant["url"])
+    elif restaurant["type"] == "text_days":
+        return fetch_text_days(restaurant["url"], restaurant["day_paths"])
     elif restaurant["type"] == "text_js":
         return fetch_text_playwright(restaurant["url"])
     elif restaurant["type"] == "image":

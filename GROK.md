@@ -28,6 +28,7 @@ python -m http.server -d web 8000
 ## Architecture
 
 - **`restaurants.json`** — single config file for all restaurants. Each entry has a `region` field that determines which subdirectory it appears in.
+- **`text_days` restaurants** — `day_paths` under a base `url` (Masala Corner → masalacorner.se weekday pages) bypass Cloudflare-blocked kvartersmenyn.
 - **`scraper/fetch.py`** — two strategies: `fetch_text` (requests + BeautifulSoup) for HTML menus, `fetch_image` (Playwright) for image-based menus.
 - **`scraper/extract.py`** — calls the xAI Grok chat completions API (OpenAI-compatible) with a structured system prompt, returns JSON with days/dishes/prices. Text uses system+user messages; images are sent as base64 data URLs (multimodal); PDFs use `pypdf` text extraction first.
 - **`scraper/run.py`** — orchestrator. Loads config, iterates restaurants, calls fetch→extract, writes `data/menus-YYYY-WNN.json` and splits output to `web/{region}/latest.json`.

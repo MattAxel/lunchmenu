@@ -91,6 +91,8 @@ Add an entry to `restaurants.json`:
 
 Supported types:
 - `"text"` — fetches HTML and extracts text
+- `"text"` — plain HTTP fetch of a single menu page
+- `"text_days"` — fetches separate weekday pages under one site (e.g. Masala Corner) and extracts the full week
 - `"text_js"` — uses Playwright for JS-rendered pages, then extracts text
 - `"image"` — uses Playwright to capture menu image, then Grok vision to read it
 - `"pdf"` — downloads a PDF, extracts text with pypdf, then Grok; scanned PDFs should use `"image"` instead

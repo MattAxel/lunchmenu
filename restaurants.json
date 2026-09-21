@@ -15,10 +15,17 @@
   },
   {
     "name": "Masala Corner",
-    "url": "https://masalacorner.kvartersmenyn.se/",
-    "type": "text",
+    "url": "https://www.masalacorner.se/",
+    "type": "text_days",
     "area": "Amhult",
-    "region": "torslanda"
+    "region": "torslanda",
+    "day_paths": [
+      "mandag",
+      "tisdag",
+      "onsdag",
+      "torsdag",
+      "fredag"
+    ]
   },
   {
     "name": "Tsuki Hana",

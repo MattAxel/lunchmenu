@@ -145,7 +145,7 @@ def _render_pdf_pages(pdf_bytes: bytes, scale: float = 2.0) -> list[bytes]:
 
 def extract_menu(content: str | bytes, restaurant: dict) -> dict:
     """Extract menu based on content type."""
-    if restaurant["type"] in ("text", "text_js", "canva"):
+    if restaurant["type"] in ("text", "text_days", "text_js", "canva"):
         return extract_menu_from_text(content, restaurant["name"])
     elif restaurant["type"] == "image":
         return extract_menu_from_image(content, restaurant["name"])
