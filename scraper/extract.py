@@ -1,9 +1,11 @@
-"""Extract structured menu data using the Claude Code CLI."""
+"""Extract structured menu data using the xAI Grok API."""
 
+import base64
 import json
 import os
-import subprocess
-import tempfile
+import re
+
+import requests
 
 SYSTEM_PROMPT = """You are a lunch menu extractor for Swedish restaurants.
 Extract the weekly lunch menu and return ONLY valid JSON with this structure:
@@ -28,51 +30,46 @@ Rules:
 - If dishes are NOT assigned to specific days (e.g. numbered 1-6 with "Mån-Fre"), list ALL dishes under EVERY weekday
 - Return ONLY the JSON, no other text"""
 
+XAI_API_URL = "https://api.x.ai/v1/chat/completions"
+DEFAULT_MODEL = "grok-4.6"
+MIN_PDF_TEXT_CHARS = 50
+
 
 def extract_menu_from_text(text: str, restaurant_name: str) -> dict:
-    """Extract menu from text content using Claude Code CLI."""
+    """Extract menu from text content using the xAI Grok API."""
     prompt = (
         f"Extract the lunch menu for '{restaurant_name}' from this text:\n\n"
         f"{text[:8000]}"
     )
-    return _call_claude(prompt)
+    return _call_grok([{"type": "text", "text": prompt}])
 
 
 def extract_menu_from_image(image_bytes: bytes, restaurant_name: str) -> dict:
-    """Extract menu from an image using Claude Code CLI's vision capability."""
-    if image_bytes[:3] == b"\xff\xd8\xff":
-        ext = ".jpg"
-    elif image_bytes[:4] == b"RIFF":
-        ext = ".webp"
-    else:
-        ext = ".png"
-
-    tmp = tempfile.NamedTemporaryFile(suffix=ext, delete=False)
-    try:
-        tmp.write(image_bytes)
-        tmp.close()
-        prompt = (
-            f"Read the image file at {tmp.name} and extract the lunch menu "
-            f"for '{restaurant_name}' from it."
-        )
-        return _call_claude(prompt, allowed_tools="Read")
-    finally:
-        os.unlink(tmp.name)
+    """Extract menu from an image using Grok vision (multimodal)."""
+    mime = _detect_image_mime(image_bytes)
+    b64 = base64.b64encode(image_bytes).decode("ascii")
+    data_url = f"data:{mime};base64,{b64}"
+    prompt = (
+        f"Extract the lunch menu for '{restaurant_name}' from this image."
+    )
+    return _call_grok(
+        [
+            {"type": "text", "text": prompt},
+            {"type": "image_url", "image_url": {"url": data_url}},
+        ]
+    )
 
 
 def extract_menu_from_pdf(pdf_bytes: bytes, restaurant_name: str) -> dict:
-    """Extract menu from a PDF using Claude Code CLI's file reading capability."""
-    tmp = tempfile.NamedTemporaryFile(suffix=".pdf", delete=False)
-    try:
-        tmp.write(pdf_bytes)
-        tmp.close()
-        prompt = (
-            f"Read the PDF file at {tmp.name} and extract the lunch menu "
-            f"for '{restaurant_name}' from it."
+    """Extract menu from a PDF by pulling text with pypdf, then calling Grok."""
+    text = _extract_pdf_text(pdf_bytes)
+    if len(text.strip()) < MIN_PDF_TEXT_CHARS:
+        raise RuntimeError(
+            "PDF text extraction returned little or no text (likely a scanned "
+            "image PDF). Re-scrape this restaurant as type 'image' instead, "
+            "or provide a text override under data/overrides/."
         )
-        return _call_claude(prompt, allowed_tools="Read")
-    finally:
-        os.unlink(tmp.name)
+    return extract_menu_from_text(text, restaurant_name)
 
 
 def extract_menu(content: str | bytes, restaurant: dict) -> dict:
@@ -87,64 +84,122 @@ def extract_menu(content: str | bytes, restaurant: dict) -> dict:
         raise ValueError(f"Unknown type: {restaurant['type']}")
 
 
-def _call_claude(prompt: str, allowed_tools: str | None = None, max_retries: int = 3) -> dict:
-    """Call the Claude Code CLI and return parsed menu JSON.
+def _detect_image_mime(image_bytes: bytes) -> str:
+    """Return a MIME type for common image formats."""
+    if image_bytes[:3] == b"\xff\xd8\xff":
+        return "image/jpeg"
+    if image_bytes[:8] == b"\x89PNG\r\n\x1a\n":
+        return "image/png"
+    if image_bytes[:4] == b"RIFF" and image_bytes[8:12] == b"WEBP":
+        return "image/webp"
+    # Fallback: treat unknown as PNG (Playwright screenshots are usually PNG)
+    return "image/png"
+
+
+def _extract_pdf_text(pdf_bytes: bytes) -> str:
+    """Extract text from PDF bytes using pypdf."""
+    from io import BytesIO
+
+    from pypdf import PdfReader
+
+    reader = PdfReader(BytesIO(pdf_bytes))
+    parts = []
+    for page in reader.pages:
+        page_text = page.extract_text() or ""
+        if page_text.strip():
+            parts.append(page_text)
+    return "\n\n".join(parts)
+
+
+def _parse_menu_json(text: str) -> dict:
+    """Parse menu JSON from model output, stripping fences/extra prose."""
+    text = text.strip()
+    fence_match = re.search(r"```(?:json)?\s*\n(.*?)```", text, re.DOTALL)
+    if fence_match:
+        text = fence_match.group(1).strip()
+    else:
+        brace_match = re.search(r"\{.*\}", text, re.DOTALL)
+        if brace_match:
+            text = brace_match.group(0)
+    return json.loads(text)
+
+
+def _call_grok(user_content, max_retries: int = 3) -> dict:
+    """Call the xAI Grok chat completions API and return parsed menu JSON.
 
     Retries up to *max_retries* times on parse failures (the most
     common transient error) without re-fetching the page content.
     """
-    import re
+    api_key = os.environ.get("XAI_API_KEY")
+    if not api_key:
+        raise RuntimeError(
+            "XAI_API_KEY is not set. Export it in your environment "
+            "(see .env.example) before running the scraper."
+        )
 
-    cmd = [
-        "claude",
-        "-p",
-        "--output-format", "json",
-        "--no-session-persistence",
-        "--bare",
-        "--model", "sonnet",
-        "--system-prompt", SYSTEM_PROMPT,
-    ]
-    if allowed_tools:
-        cmd.extend(["--allowedTools", allowed_tools])
+    model = os.environ.get("XAI_MODEL", DEFAULT_MODEL)
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json",
+    }
+    payload = {
+        "model": model,
+        "messages": [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": user_content},
+        ],
+        "temperature": 0,
+    }
 
     last_error = None
     for attempt in range(1, max_retries + 1):
-        result = subprocess.run(
-            cmd, input=prompt, capture_output=True, text=True, timeout=120
-        )
+        try:
+            resp = requests.post(
+                XAI_API_URL, headers=headers, json=payload, timeout=120
+            )
+        except requests.RequestException as exc:
+            last_error = RuntimeError(f"Grok API request failed: {exc}")
+            continue
 
-        if result.returncode != 0:
+        if resp.status_code != 200:
             last_error = RuntimeError(
-                f"claude CLI failed (exit {result.returncode}): {result.stderr}"
+                f"Grok API failed (HTTP {resp.status_code}): {resp.text[:500]}"
             )
             continue
 
         try:
-            envelope = json.loads(result.stdout)
+            data = resp.json()
         except json.JSONDecodeError:
             last_error = RuntimeError(
-                f"claude CLI returned invalid JSON.\nstdout: {result.stdout[:500]}\nstderr: {result.stderr[:500]}"
+                f"Grok API returned invalid JSON.\nbody: {resp.text[:500]}"
             )
             continue
 
-        text = envelope.get("result", "").strip()
-
-        # Try to extract JSON from the response — it may be wrapped in
-        # markdown fences or preceded by explanatory text
-        fence_match = re.search(r"```(?:json)?\s*\n(.*?)```", text, re.DOTALL)
-        if fence_match:
-            text = fence_match.group(1).strip()
-        else:
-            brace_match = re.search(r"\{.*\}", text, re.DOTALL)
-            if brace_match:
-                text = brace_match.group(0)
+        try:
+            text = data["choices"][0]["message"]["content"]
+            if not isinstance(text, str):
+                # Some multimodal responses may return content parts
+                if isinstance(text, list):
+                    text = "".join(
+                        part.get("text", "") if isinstance(part, dict) else str(part)
+                        for part in text
+                    )
+                else:
+                    text = str(text)
+        except (KeyError, IndexError, TypeError) as exc:
+            last_error = RuntimeError(
+                f"Unexpected Grok API response shape: {exc}\n"
+                f"body: {json.dumps(data)[:500]}"
+            )
+            continue
 
         try:
-            return json.loads(text)
+            return _parse_menu_json(text)
         except json.JSONDecodeError:
             last_error = RuntimeError(
-                f"Failed to parse menu JSON from Claude response.\n"
-                f"Raw result text: {envelope.get('result', '')[:500]}"
+                f"Failed to parse menu JSON from Grok response "
+                f"(attempt {attempt}/{max_retries}).\n"
+                f"Raw content: {text[:500]}"
             )
 
     raise last_error
