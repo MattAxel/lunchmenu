@@ -1,6 +1,6 @@
 # Lunch Menu
 
-Weekly lunch menu aggregator for restaurants in Gothenburg. Scrapes restaurant websites, extracts structured menu data using the Claude Code CLI, and publishes a clean web page via GitHub Pages with day filtering and mobile support.
+Weekly lunch menu aggregator for restaurants in Gothenburg. Scrapes restaurant websites, extracts structured menu data using the xAI Grok API, and publishes a clean web page via GitHub Pages with day filtering and mobile support.
 
 Supports multiple regions — each region gets its own page and URL.
 
@@ -13,7 +13,7 @@ Supports multiple regions — each region gets its own page and URL.
 | Golfkrogen | Torslanda | Text scraping |
 | Restaurang Hörnet | Torslanda | Text scraping |
 | Masala Zone | Torslanda | Text scraping |
-| Bryggan (ICA Maxi) | Amhult | Image → Claude Vision |
+| Bryggan (ICA Maxi) | Amhult | Image → Grok Vision |
 | Masala Corner | Amhult | Text scraping |
 | Tsuki Hana | Amhult | Text scraping |
 | Tilda & Josper | Amhult | Text scraping |
@@ -36,7 +36,13 @@ pip install -r requirements.txt
 playwright install chromium
 ```
 
-Make sure `claude` (Claude Code CLI) is on your `$PATH` and authenticated.
+Copy `.env.example` to `.env` and set `XAI_API_KEY` (get a key from https://console.x.ai/). Optionally set `XAI_MODEL` (defaults to `grok-4.6`).
+
+```bash
+export XAI_API_KEY=your_xai_api_key_here
+# optional:
+# export XAI_MODEL=grok-4.6
+```
 
 ## Usage
 
@@ -60,9 +66,9 @@ Output goes to `data/menus-YYYY-WNN.json` and `web/{region}/latest.json`.
 
 ## GitHub Actions
 
-The workflow runs every Monday at 07:00 Stockholm time. To use it:
+The workflow deploys `web/` to GitHub Pages on push to `main`. To use it:
 
-1. Add `ANTHROPIC_API_KEY` as a repository secret (Settings → Secrets and variables → Actions)
+1. Add `XAI_API_KEY` as a repository secret if you also run scraping in CI (Settings → Secrets and variables → Actions)
 2. Enable GitHub Pages (Settings → Pages → Source: GitHub Actions)
 3. The workflow can also be triggered manually from the Actions tab
 
@@ -85,8 +91,11 @@ Add an entry to `restaurants.json`:
 
 Supported types:
 - `"text"` — fetches HTML and extracts text
+- `"text"` — plain HTTP fetch of a single menu page
+- `"text_days"` — fetches separate weekday pages under one site (e.g. Masala Corner) and extracts the full week
 - `"text_js"` — uses Playwright for JS-rendered pages, then extracts text
-- `"image"` — uses Playwright to capture menu image, then Claude Code CLI to read it
+- `"image"` — uses Playwright to capture menu image, then Grok vision to read it
+- `"pdf"` — downloads a PDF, extracts text with pypdf, then Grok; scanned PDFs should use `"image"` instead
 
 For restaurants that can't be scraped automatically, place a text file in `data/overrides/{restaurant-slug}.txt` with the menu text. The scraper will use the override instead of fetching.
 

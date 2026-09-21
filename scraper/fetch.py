@@ -2,12 +2,22 @@
 
 import requests
 from bs4 import BeautifulSoup
+from urllib.parse import urljoin
 from playwright.sync_api import sync_playwright
+
+DEFAULT_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/122.0.0.0 Safari/537.36"
+    ),
+    "Accept-Language": "sv-SE,sv;q=0.9,en;q=0.8",
+}
 
 
 def fetch_text(url: str) -> str:
     """Fetch a text-based menu page and return cleaned text content."""
-    resp = requests.get(url, timeout=30)
+    resp = requests.get(url, headers=DEFAULT_HEADERS, timeout=30)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 
@@ -234,32 +244,76 @@ def fetch_canva(url: str) -> str:
 
 
 def fetch_pdf(url: str, area: str) -> bytes:
-    """Fetch a PDF menu linked from a page, matched by area name."""
+    """Fetch a PDF menu linked from a page, matched by area name.
+
+    Prefer the link's own label and filename. Parent/nav text often lists
+    every location (e.g. "ÖJERSJÖ | PARTILLE | … | PLATINAN"), so matching
+    on parent alone picks the wrong PDF.
+    """
+    from urllib.parse import urljoin, urlparse
+
     resp = requests.get(url, timeout=30)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 
-    for link in soup.find_all("a", href=True):
-        if not link["href"].lower().endswith(".pdf"):
-            continue
-        context_text = link.get_text() + " " + (link.parent.get_text() if link.parent else "")
-        if area.lower() in context_text.lower():
-            pdf_url = link["href"]
-            if pdf_url.startswith("/"):
-                from urllib.parse import urlparse
-                parsed = urlparse(url)
-                pdf_url = f"{parsed.scheme}://{parsed.netloc}{pdf_url}"
-            pdf_resp = requests.get(pdf_url, timeout=30)
-            pdf_resp.raise_for_status()
-            return pdf_resp.content
+    area_l = area.lower()
+    candidates: list[tuple[int, str, str]] = []
 
-    raise RuntimeError(f"No PDF link found matching area '{area}' on {url}")
+    for link in soup.find_all("a", href=True):
+        href = link["href"]
+        if not href.lower().endswith(".pdf"):
+            continue
+        pdf_url = urljoin(url, href)
+        link_text = link.get_text(" ", strip=True)
+        filename = urlparse(pdf_url).path.rsplit("/", 1)[-1].lower()
+        score = 0
+        if area_l in link_text.lower():
+            score += 100
+        if area_l in filename:
+            score += 50
+        if score:
+            candidates.append((score, pdf_url, link_text))
+
+    if not candidates:
+        raise RuntimeError(f"No PDF link found matching area '{area}' on {url}")
+
+    candidates.sort(key=lambda item: (-item[0], item[1]))
+    pdf_url = candidates[0][1]
+    pdf_resp = requests.get(pdf_url, timeout=30)
+    pdf_resp.raise_for_status()
+    return pdf_resp.content
+
+
+def fetch_text_days(base_url: str, day_paths: list[str]) -> str:
+    """Fetch one page per weekday and concatenate with day labels.
+
+    Used when a restaurant publishes lunch on separate day URLs
+    (e.g. Masala Corner on masalacorner.se/mandag/ … /fredag/).
+    """
+    parts: list[str] = []
+    day_names = {
+        "mandag": "Måndag",
+        "måndag": "Måndag",
+        "tisdag": "Tisdag",
+        "onsdag": "Onsdag",
+        "torsdag": "Torsdag",
+        "fredag": "Fredag",
+    }
+    for path in day_paths:
+        slug = path.strip("/")
+        url = urljoin(base_url if base_url.endswith("/") else base_url + "/", slug + "/")
+        label = day_names.get(slug.lower(), slug.capitalize())
+        parts.append(f"=== {label} ===\n{fetch_text(url)}")
+    return "\n\n".join(parts)
+
 
 
 def fetch_content(restaurant: dict) -> str | bytes:
     """Fetch content based on restaurant type."""
     if restaurant["type"] == "text":
         return fetch_text(restaurant["url"])
+    elif restaurant["type"] == "text_days":
+        return fetch_text_days(restaurant["url"], restaurant["day_paths"])
     elif restaurant["type"] == "text_js":
         return fetch_text_playwright(restaurant["url"])
     elif restaurant["type"] == "image":
