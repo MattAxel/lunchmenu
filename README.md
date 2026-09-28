@@ -13,7 +13,7 @@ Supports multiple regions — each region gets its own page and URL.
 | Golfkrogen | Torslanda | Text scraping |
 | Restaurang Hörnet | Torslanda | Text scraping |
 | Masala Zone | Torslanda | Text scraping |
-| Bryggan (ICA Maxi) | Amhult | Image → Grok Vision |
+| Bryggan (ICA Maxi) | Amhult | Menu image (`img[alt^="meny v."]`) → Grok Vision, week-checked |
 | Masala Corner | Amhult | Text scraping |
 | Tsuki Hana | Amhult | Text scraping |
 | Tilda & Josper | Amhult | Text scraping |
@@ -56,6 +56,13 @@ Fetch a single restaurant:
 python -m scraper.run Golfkrogen
 ```
 
+Restaurants that already have a good menu for the current week are skipped. Re-fetch some anyway (a failed re-fetch keeps the existing menu):
+```bash
+python -m scraper.run --force Bryggan,Poppels   # or --force all (also via $SCRAPER_FORCE)
+```
+
+Poppels (Canva) needs a display for its headed browser; on a headless machine use `xvfb-run -a python -m scraper.run`.
+
 Start the web server:
 ```bash
 ./serve.sh
@@ -66,11 +73,10 @@ Output goes to `data/menus-YYYY-WNN.json` and `web/{region}/latest.json`.
 
 ## GitHub Actions
 
-The workflow deploys `web/` to GitHub Pages on push to `main`. To use it:
+- **Scrape Lunch Menus** (`.github/workflows/scrape.yml`) runs every Monday at 05:37 UTC (07:37 Stockholm summer / 06:37 winter) with a retry run at 08:07 UTC (10:07 / 09:07). The retry only fetches restaurants that are still missing or failed. It runs `xvfb-run … python -m scraper.run` with `TZ=Europe/Stockholm` and commits `data/` and `web/*/latest.json` as github-actions[bot] if anything besides the timestamp changed. Run it manually from the Actions tab (**Run workflow**). The optional `force` input (`all` or e.g. `Bryggan,Poppels`) re-fetches restaurants that are already done. Screenshots and the log are uploaded as a `scraper-debug-*` artifact when the run fails or a restaurant has an error.
+- **Deploy Lunch Menu** (`.github/workflows/weekly.yml`) deploys `web/` from the tip of `main` to GitHub Pages on push to `main`, and also after a successful scrape run. That second trigger is needed because commits pushed with `GITHUB_TOKEN` don't trigger `push` workflows.
 
-1. Add `XAI_API_KEY` as a repository secret if you also run scraping in CI (Settings → Secrets and variables → Actions)
-2. Enable GitHub Pages (Settings → Pages → Source: GitHub Actions)
-3. The workflow can also be triggered manually from the Actions tab
+Setup: add the `XAI_API_KEY` repository secret (Settings → Secrets and variables → Actions) and set Pages to use GitHub Actions as its source.
 
 ## Adding a restaurant
 
@@ -94,7 +100,7 @@ Supported types:
 - `"text"` — plain HTTP fetch of a single menu page
 - `"text_days"` — fetches separate weekday pages under one site (e.g. Masala Corner) and extracts the full week
 - `"text_js"` — uses Playwright for JS-rendered pages, then extracts text
-- `"image"` — uses Playwright to capture menu image, then Grok vision to read it
+- `"image"` — loads the page with Playwright, downloads the menu `<img>` (first `img[alt^="meny v." i]`, then generic menu selectors, then a screenshot as a last resort), then Grok vision reads it. With `"week_check": true`, a week number in the alt text or file name (e.g. `meny v.40`) must match the current week.
 - `"pdf"` — downloads a PDF, extracts text with pypdf, then Grok; scanned PDFs should use `"image"` instead
 
 - `"canva"` — finds the Canva embed on the restaurant page and reads the design's text in a plain visible Chromium window (Canva challenges headless browsers; needs a display, e.g. `xvfb-run` in CI). Optional `"canva_url"` is used when the page can't be loaded (e.g. Poppels blocks our network); if the page embeds a different design than `canva_url`, a NOTE is logged.

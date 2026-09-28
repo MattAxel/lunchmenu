@@ -3,34 +3,47 @@ name: Deploy Lunch Menu
 on:
   push:
     branches: [main]
+  # Pushes made by the scrape workflow (GITHUB_TOKEN) don't trigger "push"
+  # workflows, so deploy after a successful scrape run instead.
+  workflow_run:
+    workflows: ["Scrape Lunch Menus"]
+    types: [completed]
+    branches: [main]
   workflow_dispatch: # Allow manual trigger
 
 permissions:
+  contents: read
   pages: write
   id-token: write
 
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      # Always the current tip of main (includes the scrape run's commit)
+      - uses: actions/checkout@v7
         with:
           ref: main
 
-      - name: Pull latest changes
-        run: git pull origin main
+      - name: Show deployed commit
+        run: git log -1 --format='Deploying %h %s (%an)'
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v6
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: web/
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

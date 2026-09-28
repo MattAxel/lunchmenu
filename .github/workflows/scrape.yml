@@ -1,0 +1,98 @@
+name: Scrape Lunch Menus
+
+# Mondays. GitHub cron is UTC and runs can start late, so off-the-hour minutes:
+#   05:37 UTC = 07:37 Stockholm summer (CEST) / 06:37 winter (CET)
+#   08:07 UTC = 10:07 Stockholm summer (CEST) / 09:07 winter (CET)  (retry:
+#   restaurants already fetched this week are skipped, failed ones retried)
+on:
+  schedule:
+    - cron: "37 5 * * 1"
+    - cron: "7 8 * * 1"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Re-fetch even if already fetched this week: "all" or comma list of names, e.g. "Bryggan,Poppels"'
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scrape-lunch-menus
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      TZ: Europe/Stockholm
+      XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+      SCRAPER_FORCE: ${{ inputs.force }}
+      SCRAPER_DEBUG_DIR: ${{ github.workspace }}/scraper-debug
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+          sudo apt-get install -y xvfb > /dev/null
+
+      - name: Scrape menus
+        run: |
+          mkdir -p "$SCRAPER_DEBUG_DIR"
+          echo "Stockholm time: $(date '+%Y-%m-%d %H:%M %Z'), ISO week $(date +%G-W%V), force='${SCRAPER_FORCE}'"
+          set -o pipefail
+          xvfb-run -a -s "-screen 0 1920x1080x24" python -m scraper.run 2>&1 | tee "$SCRAPER_DEBUG_DIR/scraper.log"
+
+      - name: Check for restaurant errors
+        id: check
+        run: |
+          python - <<'PY'
+          import json, os
+          errors = []
+          for region in ("platinan", "torslanda"):
+              for r in json.load(open(f"web/{region}/latest.json"))["restaurants"]:
+                  if "error" in r or not r.get("days"):
+                      errors.append(r["name"])
+          print("Restaurants with errors:", ", ".join(errors) or "none")
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"errors={'true' if errors else 'false'}\n")
+          PY
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ web/*/latest.json
+          # Ignore timestamp-only changes (just the "generated" field)
+          if git diff --cached --quiet || git diff --cached -I '"generated"' --quiet; then
+            echo "No meaningful changes, nothing to commit."
+            exit 0
+          fi
+          git commit -m "Update lunch menus $(date +%G-W%V)"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            echo "Push attempt $attempt failed, retrying..."
+            sleep $((attempt * 10))
+          done
+          exit 1
+
+      - name: Upload debug artifacts
+        if: failure() || steps.check.outputs.errors == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: scraper-debug-${{ github.run_id }}
+          path: scraper-debug/
+          if-no-files-found: ignore
+          retention-days: 14

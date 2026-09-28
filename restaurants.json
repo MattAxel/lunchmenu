@@ -11,7 +11,8 @@
     "url": "https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/",
     "type": "image",
     "area": "Amhult",
-    "region": "torslanda"
+    "region": "torslanda",
+    "week_check": true
   },
   {
     "name": "Masala Corner",

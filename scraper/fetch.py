@@ -1,8 +1,12 @@
 """Fetch raw content from restaurant websites."""
 
+import os
+import re
+from pathlib import Path
+from urllib.parse import unquote, urljoin, urlparse
+
 import requests
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin
 from playwright.sync_api import sync_playwright
 
 DEFAULT_HEADERS = {
@@ -82,96 +86,176 @@ def _dismiss_overlays(page):
     """)
 
 
-def fetch_image(url: str) -> bytes:
-    """Use Playwright to load a page with a menu image and capture it."""
-    from urllib.parse import urlparse
-    parsed = urlparse(url)
-    domain = parsed.netloc
+# Weekly menu image on ica.se store pages (e.g. Bryggan): alt text like
+# "meny v.40", file name like "A4 - meny v.40-26.jpg" on assets.icanet.se.
+MENU_IMAGE_SELECTOR = 'img[alt^="meny v." i]'
+_WEEK_RE = re.compile(r"\b(?:v|vecka|week)\.?\s*(\d{1,2})\b", re.IGNORECASE)
+
+
+class ImageContent(bytes):
+    """Image bytes plus where they came from (used for logging/week checks)."""
+
+    source_url: str | None = None
+    alt: str | None = None
+    printed_week: int | None = None
+
+
+def _week_from_label(*labels: str | None) -> int | None:
+    """Return the first week number found in alt text / file names."""
+    for label in labels:
+        m = _WEEK_RE.search(unquote(label or ""))
+        if m and 1 <= int(m.group(1)) <= 53:
+            return int(m.group(1))
+    return None
+
+
+def _debug_screenshot(page, name: str) -> None:
+    """Save a full-page screenshot to $SCRAPER_DEBUG_DIR if set (CI artifacts)."""
+    debug_dir = os.environ.get("SCRAPER_DEBUG_DIR")
+    if not debug_dir:
+        return
+    try:
+        Path(debug_dir).mkdir(parents=True, exist_ok=True)
+        page.screenshot(path=str(Path(debug_dir) / f"{name}.png"), full_page=True)
+    except Exception as exc:  # debugging aid only
+        print(f"  (debug screenshot failed: {str(exc).splitlines()[0]})")
+
+
+def _goto_loaded(page, url: str, timeout: int = 45000):
+    """Navigate and wait for 'load' (not networkidle: ica.se never goes idle)."""
+    resp = page.goto(url, wait_until="domcontentloaded", timeout=timeout)
+    try:
+        page.wait_for_load_state("load", timeout=20000)
+    except Exception:
+        pass  # DOM is there; slow third-party assets shouldn't fail the fetch
+    return resp
+
+
+def _download_image(src: str, referer: str, context=None) -> bytes:
+    """Download an image URL; fall back to the browser context's request API."""
+    # Ask for formats Grok vision accepts (image CDNs may pick AVIF otherwise)
+    accept = "image/jpeg,image/png,image/webp;q=0.9,*/*;q=0.5"
+    headers = dict(DEFAULT_HEADERS, Referer=referer, Accept=accept)
+    try:
+        resp = requests.get(src, headers=headers, timeout=30)
+        if resp.status_code == 200 and len(resp.content) > 5000:
+            return resp.content
+        err = f"HTTP {resp.status_code}, {len(resp.content)} bytes"
+    except requests.RequestException as exc:
+        err = str(exc)
+    if context is not None:
+        r = context.request.get(
+            src, headers={"Referer": referer, "Accept": accept}, timeout=30000
+        )
+        body = r.body()
+        if r.ok and len(body) > 5000:
+            return body
+        err += f"; browser request HTTP {r.status}, {len(body)} bytes"
+    raise RuntimeError(f"Could not download menu image {src}: {err}")
+
+
+def fetch_image(url: str, expected_week: str | None = None) -> bytes:
+    """Load a page with a weekly menu image and return the image bytes.
+
+    Looks for ``img[alt^="meny v." i]`` first (ica.se / assets.icanet.se),
+    then generic menu-image selectors, and finally falls back to a screenshot.
+    If *expected_week* (e.g. "2026-W40") is given and the image's alt text or
+    file name carries a different week number, raises instead of returning
+    last week's menu (Grok's reading of the printed week is checked too).
+    """
+    domain = urlparse(url).hostname or ""
+    expected_no = int(expected_week.split("-W")[1]) if expected_week else None
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
-        context = browser.new_context()
-
-        # Pre-set cookie consent for sites that block content without it
-        context.add_cookies([{
-            "name": "CookieInformationConsent",
-            "value": '{"consents_approved":["cookie_cat_necessary","cookie_cat_functional","cookie_cat_statistic","cookie_cat_marketing"],"consents_denied":[]}',
-            "domain": f".{domain.replace('www.', '')}",
-            "path": "/",
-        }])
-
-        page = context.new_page()
-        resp = page.goto(url, wait_until="networkidle", timeout=60000)
         try:
-            _check_blocked(url, resp.status if resp else None, page.title())
-        except BlockedError:
+            context = browser.new_context(viewport={"width": 1366, "height": 900})
+            # Pre-set cookie consent for sites that block content without it
+            try:
+                context.add_cookies([{
+                    "name": "CookieInformationConsent",
+                    "value": '{"consents_approved":["cookie_cat_necessary","cookie_cat_functional","cookie_cat_statistic","cookie_cat_marketing"],"consents_denied":[]}',
+                    "domain": f".{domain.replace('www.', '')}",
+                    "path": "/",
+                }])
+            except Exception:
+                pass  # e.g. IP/localhost URLs; consent cookie is best-effort
+            page = context.new_page()
+            try:
+                resp = _goto_loaded(page, url)
+            except Exception as exc:
+                raise RuntimeError(
+                    f"Could not load {url}: {str(exc).splitlines()[0]}"
+                ) from exc
+            page.wait_for_timeout(2000)
+            try:
+                _check_blocked(url, resp.status if resp else None, page.title())
+            except BlockedError:
+                _debug_screenshot(page, _slug_from_url(url) + "-blocked")
+                raise
+
+            _dismiss_overlays(page)
+            page.evaluate("window.scrollBy(0, 800)")
+            page.wait_for_timeout(2000)
+            _debug_screenshot(page, _slug_from_url(url))
+
+            image_selectors = [
+                MENU_IMAGE_SELECTOR,
+                "img[alt*='meny v' i]",
+                "img[alt*='vecka' i]",
+                "img[alt*='lunch' i]",
+                "img[src*='lunch' i]",
+                "img[src*='meny' i]",
+                "img[alt*='meny' i]",
+                "img[src*='menu' i]",
+                "img[alt*='menu' i]",
+            ]
+            for selector in image_selectors:
+                loc = page.locator(selector).first
+                try:
+                    if loc.count() == 0:
+                        continue
+                    loc.scroll_into_view_if_needed(timeout=5000)
+                    info = loc.evaluate(
+                        "i => ({src: i.currentSrc || i.src || i.getAttribute('data-src'),"
+                        " alt: i.getAttribute('alt') || ''})"
+                    )
+                except Exception:
+                    continue
+                src = info.get("src")
+                if not src or src.startswith("data:"):
+                    continue
+                src = urljoin(url, src)
+                alt = info.get("alt", "")
+                filename = urlparse(src).path.rsplit("/", 1)[-1]
+                printed = _week_from_label(alt, filename)
+                print(f"  Menu image ({selector}): alt={alt!r} src={src}")
+                if expected_no is not None and printed is not None and printed != expected_no:
+                    raise RuntimeError(
+                        f"Menu image is for week {printed} (alt={alt!r}, "
+                        f"file={unquote(filename)!r}), expected week {expected_no}"
+                    )
+                data = ImageContent(_download_image(src, url, context))
+                data.source_url, data.alt, data.printed_week = src, alt, printed
+                return data
+
+            print("  WARNING: no menu <img> found; falling back to a screenshot")
+            for selector in ["main", "[class*='content']", "[class*='menu']",
+                             "[class*='cafe']", "article"]:
+                try:
+                    el = page.locator(selector).first
+                    if el.is_visible(timeout=2000):
+                        return el.screenshot(type="png")
+                except Exception:
+                    continue
+            return page.screenshot(type="png", full_page=True)
+        finally:
             browser.close()
-            raise
 
-        _dismiss_overlays(page)
-        page.wait_for_timeout(5000)
 
-        # Scroll down to find menu content
-        page.evaluate("window.scrollBy(0, 500)")
-        page.wait_for_timeout(2000)
-
-        # Look for a menu image — prioritize weekly menu indicators
-        image_selectors = [
-            "img[alt*='Meny v']",
-            "img[alt*='meny v']",
-            "img[alt*='vecka']",
-            "img[alt*='lunch']",
-            "img[src*='lunch']",
-            "img[src*='meny']",
-            "img[alt*='meny']",
-            "img[src*='menu']",
-            "img[alt*='menu']",
-        ]
-
-        for selector in image_selectors:
-            try:
-                img = page.locator(selector).first
-                if img.is_visible(timeout=2000):
-                    # Download the image directly
-                    src = img.get_attribute("src")
-                    if src:
-                        if src.startswith("//"):
-                            src = "https:" + src
-                        elif src.startswith("/"):
-                            from urllib.parse import urlparse
-                            parsed = urlparse(url)
-                            src = f"{parsed.scheme}://{parsed.netloc}{src}"
-
-                        img_resp = requests.get(src, timeout=30)
-                        if img_resp.status_code == 200 and len(img_resp.content) > 5000:
-                            browser.close()
-                            return img_resp.content
-            except Exception:
-                continue
-
-        # Fallback: take a screenshot of the main content area
-        content_selectors = [
-            "main",
-            "[class*='content']",
-            "[class*='menu']",
-            "[class*='cafe']",
-            "article",
-        ]
-
-        for selector in content_selectors:
-            try:
-                el = page.locator(selector).first
-                if el.is_visible(timeout=2000):
-                    screenshot = el.screenshot(type="png")
-                    browser.close()
-                    return screenshot
-            except Exception:
-                continue
-
-        # Last resort: full page screenshot
-        screenshot = page.screenshot(type="png", full_page=True)
-        browser.close()
-        return screenshot
+def _slug_from_url(url: str) -> str:
+    parsed = urlparse(url)
+    return re.sub(r"[^a-z0-9]+", "-", (parsed.netloc + parsed.path).lower()).strip("-")[:80]
 
 
 def fetch_text_playwright(url: str) -> str:
@@ -326,6 +410,7 @@ def fetch_canva(url: str, fallback_canva_url: str | None = None) -> str:
                     f"Could not load {canva_url}: {str(exc).splitlines()[0]}"
                 ) from exc
             page.wait_for_timeout(10000)
+            _debug_screenshot(page, "canva-" + (_canva_design_id(canva_url) or "design"))
             _check_blocked(canva_url, resp.status if resp else None, page.title())
             text = page.evaluate("document.body ? document.body.innerText : ''")
         finally:
@@ -411,8 +496,12 @@ def fetch_text_days(base_url: str, day_paths: list[str]) -> str:
 
 
 
-def fetch_content(restaurant: dict) -> str | bytes:
-    """Fetch content based on restaurant type."""
+def fetch_content(restaurant: dict, expected_week: str | None = None) -> str | bytes:
+    """Fetch content based on restaurant type.
+
+    *expected_week* (ISO label, e.g. "2026-W40") lets image fetches reject a
+    stale menu image by its alt text / file name before calling Grok.
+    """
     if restaurant["type"] == "text":
         return fetch_text(restaurant["url"])
     elif restaurant["type"] == "text_days":
@@ -420,7 +509,7 @@ def fetch_content(restaurant: dict) -> str | bytes:
     elif restaurant["type"] == "text_js":
         return fetch_text_playwright(restaurant["url"])
     elif restaurant["type"] == "image":
-        return fetch_image(restaurant["url"])
+        return fetch_image(restaurant["url"], expected_week)
     elif restaurant["type"] == "canva":
         return fetch_canva(restaurant["url"], restaurant.get("canva_url"))
     elif restaurant["type"] == "pdf":

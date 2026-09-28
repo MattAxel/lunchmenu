@@ -1,6 +1,8 @@
 """Orchestrate menu fetching and extraction, save results."""
 
+import argparse
 import json
+import os
 import shutil
 import sys
 from datetime import datetime
@@ -65,12 +67,58 @@ def current_week_label() -> str:
     return f"{year}-W{week:02d}"
 
 
-def run(restaurant_filter: str | None = None):
-    """Fetch and extract menus for all (or one) restaurant(s)."""
+def _parse_force(force: str | None, restaurants: list[dict]) -> set[str]:
+    """Turn "all" or a comma list of (partial) names into restaurant names."""
+    if not force or not force.strip():
+        return set()
+    tokens = [t.strip().lower() for t in force.split(",") if t.strip()]
+    if "all" in tokens:
+        return {r["name"] for r in restaurants}
+    names: set[str] = set()
+    for token in tokens:
+        matched = {r["name"] for r in restaurants if token in r["name"].lower()}
+        if not matched:
+            print(f"--force: no restaurant matching '{token}'")
+            sys.exit(1)
+        names |= matched
+    return names
+
+
+def _write_summary(existing: dict, attempted: set[str]) -> None:
+    """Print a status summary (and a GitHub Actions job summary / warnings)."""
+    lines = ["| Restaurant | Region | Days | Status |", "|---|---|---|---|"]
+    print("\nSummary:")
+    for r in existing["restaurants"]:
+        status = ("ERROR: " + r["error"][:150]) if "error" in r else "ok"
+        if r["name"] in attempted and "error" not in r:
+            status += " (fetched this run)"
+        print(f"  {r['name']}: {len(r.get('days') or [])} days, {status}")
+        lines.append(
+            f"| {r['name']} | {r.get('region', '')} | {len(r.get('days') or [])} "
+            f"| {status.replace('|', '/')} |"
+        )
+        if "error" in r and os.environ.get("GITHUB_ACTIONS"):
+            print(f"::warning title={r['name']}::{r['error'][:300]}")
+    summary_file = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary_file:
+        with open(summary_file, "a", encoding="utf-8") as f:
+            f.write(f"### Lunch menus {existing['week']}\n\n" + "\n".join(lines) + "\n")
+
+
+def run(restaurant_filter: str | None = None, force: str | None = None):
+    """Fetch and extract menus for all (or one) restaurant(s).
+
+    Restaurants that already have a good menu this week are skipped, unless
+    named in *force* ("all" or a comma list of partial names) or selected by
+    *restaurant_filter*. A failed re-fetch keeps the earlier good menu.
+    """
     DATA_DIR.mkdir(exist_ok=True)
 
     with open(RESTAURANTS_FILE) as f:
         restaurants = json.load(f)
+
+    forced = _parse_force(force, restaurants)
+    attempted: set[str] = set()
 
     if restaurant_filter:
         restaurants = [
@@ -98,9 +146,13 @@ def run(restaurant_filter: str | None = None):
         print(f"--- {restaurant['name']} ({restaurant['area']}) ---")
 
         # Skip if already fetched successfully this week (unless filtering)
-        if restaurant["name"] in existing_ok and not restaurant_filter:
+        if (restaurant["name"] in existing_ok and not restaurant_filter
+                and restaurant["name"] not in forced):
             print("  Already fetched this week, skipping.")
             continue
+        if restaurant["name"] in forced:
+            print("  Forced re-fetch.")
+        attempted.add(restaurant["name"])
 
         # Remove old entry if re-fetching (kept aside: if the re-fetch
         # fails, a good entry from earlier this week is restored instead of
@@ -142,7 +194,7 @@ def run(restaurant_filter: str | None = None):
                     content = override_file.read_text(encoding="utf-8")
                 else:
                     print(f"  Fetching from {restaurant['url']}...")
-                    content = fetch_content(restaurant)
+                    content = fetch_content(restaurant, week_label)
                 content_desc = (
                     f"{len(content)} chars" if isinstance(content, str)
                     else f"{len(content)} bytes"
@@ -160,6 +212,13 @@ def run(restaurant_filter: str | None = None):
                 else:
                     menu_data = extract_menu(content, restaurant, expected_week)
 
+                label_week = getattr(content, "printed_week", None)
+                if (expected_week and menu_data.get("week") is None
+                        and label_week is not None):
+                    # Grok didn't report a week, but the image's alt text /
+                    # file name did (fetch already verified it matches).
+                    print(f"  Using week {label_week} from image alt/file name.")
+                    menu_data["week"] = label_week
                 if expected_week:
                     _check_week(
                         menu_data, expected_week,
@@ -229,8 +288,20 @@ def run(restaurant_filter: str | None = None):
             json.dump(region_data, f, ensure_ascii=False, indent=2)
         print(f"Copied to {region_file}")
 
+    _write_summary(existing, attempted)
+
 
 if __name__ == "__main__":
-    # Optional: pass a restaurant name to fetch only that one
-    filter_name = sys.argv[1] if len(sys.argv) > 1 else None
-    run(filter_name)
+    parser = argparse.ArgumentParser(description="Fetch weekly lunch menus.")
+    parser.add_argument(
+        "restaurant", nargs="?",
+        help="only fetch restaurants whose name contains this (always re-fetches)",
+    )
+    parser.add_argument(
+        "--force", default=os.environ.get("SCRAPER_FORCE", ""),
+        help='re-fetch these even if already fetched this week: "all" or a '
+             'comma list of (partial) names, e.g. "Bryggan,Poppels" '
+             "(default: $SCRAPER_FORCE)",
+    )
+    args = parser.parse_args()
+    run(args.restaurant, args.force)
