@@ -1,6 +1,6 @@
 {
   "week": "2026-W40",
-  "generated": "2026-09-28T12:03:18",
+  "generated": "2026-09-28T12:04:26",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -911,11 +911,11 @@
           "day": "Måndag",
           "dishes": [
             {
-              "name": "Pulled pork i brioche, syrad kål, chili cheese-sås, lökring, klyftpotatis",
+              "name": "KÖTT: Pulled pork i brioche, syrad kål, chili cheese-sås, lökring, klyftpotatis",
               "price": "139 kr"
             },
             {
-              "name": "Gravad lax, pepparrotstuvad potatis, senapscreme, gruyere",
+              "name": "FISK: Gravad lax, pepparrotstuvad potatis, senapscreme, gruyere",
               "price": "139 kr"
             }
           ]
@@ -924,11 +924,11 @@
           "day": "Tisdag",
           "dishes": [
             {
-              "name": "Stekt rimmat fläsk med raggmunk, rörda lingon, alt, löksås, kokt potatis",
+              "name": "KÖTT: Stekt rimmat fläsk med raggmunk, rårörda lingon, alt, löksås, kokt potatis",
               "price": "139 kr"
             },
             {
-              "name": "Smörstekt sej, fransk tartarsås, pommes frites, grillad citron",
+              "name": "FISK: Smörstekt sej. fransk tartarsås, pommes frites, grillad citron",
               "price": "139 kr"
             }
           ]
@@ -937,11 +937,11 @@
           "day": "Onsdag",
           "dishes": [
             {
-              "name": "Masala gryta, kycklingklubbfilé, spenat, vispad ricotta, jasminris, cashewnötter",
+              "name": "KÖTT: Masala gryta, kycklingklubbfilé, spenat, vispad ricotta, jasminris, cashewnötter",
               "price": "139 kr"
             },
             {
-              "name": "Fiskpudding, kokt potatis, brynt smör, gröna ärter, färskriven pepparrot",
+              "name": "FISK: Fiskpudding, kokt potatis, brynt smör, gröna ärter, färskriven pepparrot",
               "price": "139 kr"
             }
           ]
@@ -950,11 +950,11 @@
           "day": "Torsdag",
           "dishes": [
             {
-              "name": "Bryggans skomakarlåda, ryggbiff, potatispuré, rödvinsky, bacon, purjolök",
+              "name": "KÖTT: Bryggans skomakarlåda, ryggbiff, potatispuré, rödvinsky, bacon, purjolök",
               "price": "139 kr"
             },
             {
-              "name": "Vitvinspocherad kolja, potatispuré, anjovissmörsås, syrad fänkål",
+              "name": "FISK: Vitvinspocherad kolja, potatispuré, anjovissmörsås, syrad fänkål",
               "price": "139 kr"
             }
           ]
@@ -963,11 +963,11 @@
           "day": "Fredag",
           "dishes": [
             {
-              "name": "Entrecote (200g), jalapeno-/cheddarsmör, rostad potatis, balsamicosky, bakad tomat",
+              "name": "KÖTT: Entrecote(200g), jalapeno-/cheddarsmör, rostad potatis, balsamicosky, bakad tomat",
               "price": "139 kr"
             },
             {
-              "name": "Miso-/honungs glaserad lax, jasminris, ingefärscreme, chiligurka",
+              "name": "FISK: Miso-/honungs glaserad lax, jasminris, ingefärscreme, chiligurka",
               "price": "139 kr"
             }
           ]

@@ -29,6 +29,9 @@ Rules:
 - If a day has no dishes, omit that day
 - Only include this week's menu, not previous weeks
 - Keep dish names faithful to the source: include the dish title AND the key sides/description as written. Do not invent shorter marketing titles, and do not drop the descriptive part when the source has one.
+- Transcribe every word exactly as printed (e.g. "rårörda lingon" stays "rårörda lingon"); never drop or change syllables, and keep the source's punctuation.
+- If the source labels dishes with a category (e.g. KÖTT, FISK, VEG, VEGETARISK, VEGANSK), keep it as a prefix in sentence case: "Kött: Pulled pork i brioche, ...".
+- Write ALL-CAPS dish names in normal Swedish sentence case (capitalize only the first word and proper nouns), e.g. "THAILÄNDSKA KYCKLINGBOLLAR" -> "Thailändska kycklingbollar".
 - Extract only that day's lunch specials. Do NOT copy "always available" / standing alternatives (e.g. a permanent Caesar salad, house burger, or "stående alternativ") onto each weekday unless that day explicitly lists them among the daily specials.
 - "Veckans" items in a shared weekly box (pizza/salad sold every day) may be listed under every weekday.
 - If dishes are clearly one shared weekly set with NO day labels (e.g. numbered 1-6 with only "Mån-Fre"), list ALL of those under EVERY weekday

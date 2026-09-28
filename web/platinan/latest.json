@@ -1,6 +1,6 @@
 {
   "week": "2026-W40",
-  "generated": "2026-09-28T12:03:18",
+  "generated": "2026-09-28T12:04:26",
   "restaurants": [
     {
       "name": "Björkmans Skafferi",
@@ -540,11 +540,11 @@
           "day": "Måndag",
           "dishes": [
             {
-              "name": "THAILÄNDSKA KYCKLINGBOLLAR, Fried rice, kokos & chilisås",
+              "name": "Thailändska kycklingbollar. Fried rice, kokos & chilisås",
               "price": "145 kr"
             },
             {
-              "name": "THAILÄNDSKA BÖNBIFFAR, Fried rice, kokos & chilisås",
+              "name": "Thailändska bönbiffar. Fried rice, kokos & chilisås",
               "price": "145 kr"
             }
           ]
@@ -553,11 +553,11 @@
           "day": "Tisdag",
           "dishes": [
             {
-              "name": "KÅLPUDDING, Kokt potatis, gräddsås, lingon, saltgurka",
+              "name": "Kålpudding. Kokt potatis, gräddsås, lingon, saltgurka",
               "price": "145 kr"
             },
             {
-              "name": "VEGETARISK KÅLPUDDING, Kokt potatis, gräddsås, lingon, saltgurka",
+              "name": "Vegetarisk kålpudding. Kokt potatis, gräddsås, lingon, saltgurka",
               "price": "145 kr"
             }
           ]
@@ -566,11 +566,11 @@
           "day": "Onsdag",
           "dishes": [
             {
-              "name": "HAVETS WALLENBERGARE, Pommes, remouladsås, kapris",
+              "name": "Havets wallenbergare. Pommes, remouladsås, kapris",
               "price": "145 kr"
             },
             {
-              "name": "RÖDBETSBIFFAR, Pommes, remouladsås, kapris",
+              "name": "Rödbetsbiffar. Pommes, remouladsås, kapris",
               "price": "145 kr"
             }
           ]
@@ -579,11 +579,11 @@
           "day": "Torsdag",
           "dishes": [
             {
-              "name": "SALCICCIAFÄRSBIFFAR, Rosmarinrostad potatis, rödvinssås, bakad fänkål",
+              "name": "Salcicciafärsbiffar. Rosmarinrostad potatis, rödvinssås, bakad fänkål",
               "price": "145 kr"
             },
             {
-              "name": "STEKT SVAMP, Rosmarinrostad potatis, rödvinssås, bakad fänkål",
+              "name": "Stekt svamp. Rosmarinrostad potatis, rödvinssås, bakad fänkål",
               "price": "145 kr"
             }
           ]
@@ -592,11 +592,11 @@
           "day": "Fredag",
           "dishes": [
             {
-              "name": "PICO DE GALLO FLÄSK, Bönsallad, tortillachips, majskräm",
+              "name": "Pico de gallo fläsk. Bönsallad, tortillachips, majskräm",
               "price": "145 kr"
             },
             {
-              "name": "PICO DE GALLO TZAY, Bönsallad, tortillachips, majskräm",
+              "name": "Pico de gallo tzay. Bönsallad, tortillachips, majskräm",
               "price": "145 kr"
             }
           ]
