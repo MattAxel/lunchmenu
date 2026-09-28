@@ -97,12 +97,17 @@ def run(restaurant_filter: str | None = None):
                 else:
                     menu_data = extract_menu(content, restaurant)
 
+                days = menu_data.get("days", []) or []
+                if not days:
+                    # Don't record an empty menu as success: it hides blocked
+                    # pages / wrong images and prevents a retry next run.
+                    raise RuntimeError("No menu days extracted from source")
                 entry = {
                     "name": restaurant["name"],
                     "area": restaurant["area"],
                     "region": restaurant.get("region", "torslanda"),
                     "url": restaurant["url"],
-                    "days": menu_data.get("days", []),
+                    "days": days,
                 }
                 existing["restaurants"].append(entry)
                 print(f"  Extracted {len(entry['days'])} days.")

@@ -1,6 +1,6 @@
 {
   "week": "2026-W40",
-  "generated": "2026-09-28T10:26:56",
+  "generated": "2026-09-28T11:13:47",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -110,13 +110,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "Bryggan",
-      "area": "Amhult",
-      "region": "torslanda",
-      "url": "https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/",
-      "days": []
     },
     {
       "name": "Masala Corner",
@@ -1219,14 +1212,6 @@
       ]
     },
     {
-      "name": "Poppels Citybryggeriet",
-      "area": "Platinan",
-      "region": "platinan",
-      "url": "https://www.poppels.se/citybryggeriet/lunch/",
-      "days": [],
-      "error": "No Canva embed found on the page"
-    },
-    {
       "name": "Monopolet",
       "area": "Platinan",
       "region": "platinan",
@@ -1316,8 +1301,149 @@
       "area": "Platinan",
       "region": "platinan",
       "url": "https://www.delissimo.se",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Kött: Grillad ryggbiff med grönpepparsås & friterad klyftpotatis",
+              "price": "149 kr"
+            },
+            {
+              "name": "Lasagne al forno: Husets lasagne av nöt, parmesan, örtig tomatsås & bechamelsås",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans pizza - Parma: Frasig surdegspizza med örtig långkokt tomatsås & mozzarella fior di latte & lax. Toppas med prosciutto-Crudo & färsk ruccola & parmesan",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans caesarsallad: Grillad kycklingfilé, hickoryrökt bacon, ugnsbakade krutonger & romansallad. Toppas med ruccola & parmesan samt serveras med caesarsås vid sidan",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Kött: Italiensk biffar med krämig pestosås & ugnsbakad färskpotatis",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fågel: Ångkokt bröstfilé av anka med rödvinssky & potatismos",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fisk: Varmrökt laxfilé med dill & gräddstuvad potatis",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta carbonara: Stekt bacon i parmesansås med vitlök & svartpeppar",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans pizza - Parma: Frasig surdegspizza med örtig långkokt tomatsås & mozzarella fior di latte & lax. Toppas med prosciutto-Crudo & färsk ruccola & parmesan",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans caesarsallad: Grillad kycklingfilé, hickoryrökt bacon, ugnsbakade krutonger & romansallad. Toppas med ruccola & parmesan samt serveras med caesarsås vid sidan",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Kött: Skånsk kalops med rödbetor & kokt potatis",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fågel: Marinerad kycklingspett med rostad potatis, rödvinssås & vitlökskräm",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fisk: Lättpanerad kummelfilé med hollandaisesås & kokt potatis",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta ostrica: Stekt ostronskivling samt champinjoner i vitvinssås med parmesan & persilja",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans pizza - Parma: Frasig surdegspizza med örtig långkokt tomatsås & mozzarella fior di latte & lax. Toppas med prosciutto-Crudo & färsk ruccola & parmesan",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans caesarsallad: Grillad kycklingfilé, hickoryrökt bacon, ugnsbakade krutonger & romansallad. Toppas med ruccola & parmesan samt serveras med caesarsås vid sidan",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Kött: Handrullad högrevsköttbullar med gräddsås, potatismos, rårörda lingon & inlagd gurka",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fågel: Hemlagad kycklingschnitzel med kapris, citron, skirat smör, ärtor & stekt potatis",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta cozze: Vitvinskokta venusmusslor med örter, olivolja, basilikapesto, chili & vitlök. Serveras med färsk spaghetti",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans pizza - Parma: Frasig surdegspizza med örtig långkokt tomatsås & mozzarella fior di latte & lax. Toppas med prosciutto-Crudo & färsk ruccola & parmesan",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans caesarsallad: Grillad kycklingfilé, hickoryrökt bacon, ugnsbakade krutonger & romansallad. Toppas med ruccola & parmesan samt serveras med caesarsås vid sidan",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Grillmix med Entrecote, lammracks & kalvfärsbiff. Serveras med råstekt potatis, chilibearnaisesås samt BBQ-sås",
+              "price": "159 kr"
+            },
+            {
+              "name": "Pasta pesce: Tärnade laxfilé i gräddsås med purjolök, spenat, vitlök & persilja",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans pizza - Parma: Frasig surdegspizza med örtig långkokt tomatsås & mozzarella fior di latte & lax. Toppas med prosciutto-Crudo & färsk ruccola & parmesan",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans caesarsallad: Grillad kycklingfilé, hickoryrökt bacon, ugnsbakade krutonger & romansallad. Toppas med ruccola & parmesan samt serveras med caesarsås vid sidan",
+              "price": "149 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bryggan",
+      "area": "Amhult",
+      "region": "torslanda",
+      "url": "https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/",
       "days": [],
-      "error": "Stream has ended unexpectedly"
+      "error": "HTTP 403 from https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/ (Access Denied)"
+    },
+    {
+      "name": "Poppels Citybryggeriet",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.poppels.se/citybryggeriet/lunch/",
+      "days": [],
+      "error": "Could not load https://www.poppels.se/citybryggeriet/lunch/: Page.goto: net::ERR_CONNECTION_CLOSED at https://www.poppels.se/citybryggeriet/lunch/"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "week": "2026-W40",
-  "generated": "2026-09-28T10:26:56",
+  "generated": "2026-09-28T11:13:47",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -110,13 +110,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "Bryggan",
-      "area": "Amhult",
-      "region": "torslanda",
-      "url": "https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/",
-      "days": []
     },
     {
       "name": "Masala Corner",
@@ -907,6 +900,14 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Bryggan",
+      "area": "Amhult",
+      "region": "torslanda",
+      "url": "https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/",
+      "days": [],
+      "error": "HTTP 403 from https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/ (Access Denied)"
     }
   ]
 }

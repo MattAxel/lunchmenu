@@ -15,9 +15,46 @@ DEFAULT_HEADERS = {
 }
 
 
+# Markers of bot-protection / error interstitials. If we get one of these we
+# must fail loudly instead of handing the error page to Grok (which then
+# "successfully" extracts 0 days and hides the problem).
+BLOCK_MARKERS = (
+    "access denied",           # Akamai (ica.se)
+    "one moment, please",      # hosting JS challenge (poppels.se, delissimo.se over http)
+    "just a moment",           # Cloudflare challenge
+    "attention required",      # Cloudflare block
+)
+
+
+class BlockedError(RuntimeError):
+    """The site served a bot-protection / error page instead of content."""
+
+
+def _check_blocked(url: str, status: int | None, title: str = "", body: str = "") -> None:
+    """Raise BlockedError if the response is an error or challenge page."""
+    title_l = (title or "").strip().lower()
+    head_l = (body or "")[:3000].lower()
+    marker = next(
+        (m for m in BLOCK_MARKERS if m in title_l or f"<title>{m}" in head_l),
+        None,
+    )
+    if status is not None and status >= 400:
+        raise BlockedError(
+            f"HTTP {status} from {url}" + (f" ({title.strip()})" if title else "")
+        )
+    if marker:
+        raise BlockedError(f"Bot-protection page ('{title.strip() or marker}') from {url}")
+
+
+def _https(url: str) -> str:
+    """Upgrade http:// links to https:// (some hosts only challenge plain http)."""
+    return "https://" + url[len("http://"):] if url.startswith("http://") else url
+
+
 def fetch_text(url: str) -> str:
     """Fetch a text-based menu page and return cleaned text content."""
     resp = requests.get(url, headers=DEFAULT_HEADERS, timeout=30)
+    _check_blocked(url, resp.status_code, body=resp.text)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 
@@ -64,7 +101,12 @@ def fetch_image(url: str) -> bytes:
         }])
 
         page = context.new_page()
-        page.goto(url, wait_until="networkidle", timeout=60000)
+        resp = page.goto(url, wait_until="networkidle", timeout=60000)
+        try:
+            _check_blocked(url, resp.status if resp else None, page.title())
+        except BlockedError:
+            browser.close()
+            raise
 
         _dismiss_overlays(page)
         page.wait_for_timeout(5000)
@@ -202,11 +244,23 @@ def fetch_canva(url: str) -> str:
             "path": "/",
         }])
         page = ctx.new_page()
+        nav_error = None
+        resp = None
         try:
-            page.goto(url, wait_until="domcontentloaded", timeout=30000)
-        except Exception:
-            pass
+            resp = page.goto(url, wait_until="domcontentloaded", timeout=30000)
+        except Exception as exc:
+            nav_error = exc
         page.wait_for_timeout(3000)
+        if nav_error is not None and resp is None:
+            browser.close()
+            raise RuntimeError(
+                f"Could not load {url}: {str(nav_error).splitlines()[0]}"
+            )
+        try:
+            _check_blocked(url, resp.status if resp else None, page.title())
+        except BlockedError:
+            browser.close()
+            raise
 
         canva_url = page.evaluate("""
         (() => {
@@ -252,7 +306,8 @@ def fetch_pdf(url: str, area: str) -> bytes:
     """
     from urllib.parse import urljoin, urlparse
 
-    resp = requests.get(url, timeout=30)
+    resp = requests.get(url, headers=DEFAULT_HEADERS, timeout=30)
+    _check_blocked(url, resp.status_code, body=resp.text)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 
@@ -278,9 +333,18 @@ def fetch_pdf(url: str, area: str) -> bytes:
         raise RuntimeError(f"No PDF link found matching area '{area}' on {url}")
 
     candidates.sort(key=lambda item: (-item[0], item[1]))
-    pdf_url = candidates[0][1]
-    pdf_resp = requests.get(pdf_url, timeout=30)
+    # Delissimo links PDFs as http://; its host answers plain http with a JS
+    # bot-challenge HTML page, while https serves the real file.
+    pdf_url = _https(candidates[0][1])
+    pdf_resp = requests.get(pdf_url, headers=DEFAULT_HEADERS, timeout=30)
     pdf_resp.raise_for_status()
+    if not pdf_resp.content.lstrip()[:5] == b"%PDF-":
+        _check_blocked(pdf_url, pdf_resp.status_code, body=pdf_resp.text)
+        raise RuntimeError(
+            f"Expected a PDF from {pdf_url} but got "
+            f"{pdf_resp.headers.get('Content-Type', 'unknown')} "
+            f"({len(pdf_resp.content)} bytes)"
+        )
     return pdf_resp.content
 
 

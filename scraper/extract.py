@@ -4,6 +4,7 @@ import base64
 import json
 import os
 import re
+import time
 
 import requests
 
@@ -199,11 +200,22 @@ def _parse_menu_json(text: str) -> dict:
     return json.loads(text)
 
 
-def _call_grok(user_content, max_retries: int = 3) -> dict:
+RETRYABLE_STATUS = {408, 409, 425, 429, 500, 502, 503, 504, 520, 522, 524}
+GROK_TIMEOUT = (15, 180)  # (connect, read) seconds
+
+
+class _RetryableGrokError(RuntimeError):
+    """Transient failure (network, 5xx, truncated/garbled response)."""
+
+
+def _call_grok(user_content, max_retries: int = 4, backoff: float = 3.0) -> dict:
     """Call the xAI Grok chat completions API and return parsed menu JSON.
 
-    Retries up to *max_retries* times on parse failures (the most
-    common transient error) without re-fetching the page content.
+    Retries up to *max_retries* times with exponential backoff on transient
+    failures: request exceptions (timeouts, connection resets, truncated
+    streams), HTTP 408/429/5xx, non-JSON or incomplete responses
+    (e.g. finish_reason "length"), and unparseable menu JSON. Non-retryable
+    HTTP errors (401/403/400 …) fail immediately.
     """
     api_key = os.environ.get("XAI_API_KEY")
     if not api_key:
@@ -226,55 +238,77 @@ def _call_grok(user_content, max_retries: int = 3) -> dict:
         "temperature": 0,
     }
 
-    last_error = None
+    last_error: Exception | None = None
     for attempt in range(1, max_retries + 1):
         try:
-            resp = requests.post(
-                XAI_API_URL, headers=headers, json=payload, timeout=120
-            )
-        except requests.RequestException as exc:
-            last_error = RuntimeError(f"Grok API request failed: {exc}")
-            continue
+            return _grok_attempt(headers, payload)
+        except _RetryableGrokError as exc:
+            last_error = exc
+            if attempt < max_retries:
+                delay = backoff * (2 ** (attempt - 1))
+                print(
+                    f"  Grok attempt {attempt}/{max_retries} failed: "
+                    f"{str(exc)[:200]} — retrying in {delay:.0f}s"
+                )
+                time.sleep(delay)
 
-        if resp.status_code != 200:
-            last_error = RuntimeError(
-                f"Grok API failed (HTTP {resp.status_code}): {resp.text[:500]}"
-            )
-            continue
+    raise RuntimeError(
+        f"Grok extraction failed after {max_retries} attempts: {last_error}"
+    )
 
-        try:
-            data = resp.json()
-        except json.JSONDecodeError:
-            last_error = RuntimeError(
-                f"Grok API returned invalid JSON.\nbody: {resp.text[:500]}"
-            )
-            continue
 
-        try:
-            text = data["choices"][0]["message"]["content"]
-            if not isinstance(text, str):
-                # Some multimodal responses may return content parts
-                if isinstance(text, list):
-                    text = "".join(
-                        part.get("text", "") if isinstance(part, dict) else str(part)
-                        for part in text
-                    )
-                else:
-                    text = str(text)
-        except (KeyError, IndexError, TypeError) as exc:
-            last_error = RuntimeError(
-                f"Unexpected Grok API response shape: {exc}\n"
-                f"body: {json.dumps(data)[:500]}"
-            )
-            continue
+def _grok_attempt(headers: dict, payload: dict) -> dict:
+    """One API round-trip. Raises _RetryableGrokError on transient issues."""
+    try:
+        resp = requests.post(
+            XAI_API_URL, headers=headers, json=payload, timeout=GROK_TIMEOUT
+        )
+        body = resp.text  # force full read inside the try (truncated streams)
+    except requests.RequestException as exc:
+        raise _RetryableGrokError(f"Grok API request failed: {exc}") from exc
 
-        try:
-            return _parse_menu_json(text)
-        except json.JSONDecodeError:
-            last_error = RuntimeError(
-                f"Failed to parse menu JSON from Grok response "
-                f"(attempt {attempt}/{max_retries}).\n"
-                f"Raw content: {text[:500]}"
-            )
+    if resp.status_code != 200:
+        msg = f"Grok API failed (HTTP {resp.status_code}): {body[:500]}"
+        if resp.status_code in RETRYABLE_STATUS or resp.status_code >= 500:
+            raise _RetryableGrokError(msg)
+        raise RuntimeError(msg)
 
-    raise last_error
+    try:
+        data = json.loads(body)
+    except json.JSONDecodeError as exc:
+        raise _RetryableGrokError(
+            f"Grok API returned invalid/incomplete JSON: {body[:300]}"
+        ) from exc
+
+    try:
+        choice = data["choices"][0]
+        text = choice["message"]["content"]
+    except (KeyError, IndexError, TypeError) as exc:
+        raise _RetryableGrokError(
+            f"Unexpected Grok API response shape: {exc}; "
+            f"body: {json.dumps(data)[:300]}"
+        ) from exc
+
+    if isinstance(text, list):  # multimodal content parts
+        text = "".join(
+            part.get("text", "") if isinstance(part, dict) else str(part)
+            for part in text
+        )
+    elif not isinstance(text, str):
+        text = "" if text is None else str(text)
+
+    finish = choice.get("finish_reason")
+    if not text.strip():
+        raise _RetryableGrokError(f"Empty Grok response (finish_reason={finish})")
+    if finish == "length":
+        raise _RetryableGrokError("Grok response truncated (finish_reason=length)")
+
+    try:
+        parsed = _parse_menu_json(text)
+    except json.JSONDecodeError as exc:
+        raise _RetryableGrokError(
+            f"Failed to parse menu JSON from Grok response: {text[:300]}"
+        ) from exc
+    if not isinstance(parsed, dict):
+        raise _RetryableGrokError(f"Grok returned non-object JSON: {text[:200]}")
+    return parsed
