@@ -1,6 +1,6 @@
 {
   "week": "2026-W40",
-  "generated": "2026-09-28T11:13:47",
+  "generated": "2026-09-28T11:21:04",
   "restaurants": [
     {
       "name": "Björkmans Skafferi",
@@ -535,8 +535,73 @@
       "area": "Platinan",
       "region": "platinan",
       "url": "https://www.poppels.se/citybryggeriet/lunch/",
-      "days": [],
-      "error": "Could not load https://www.poppels.se/citybryggeriet/lunch/: Page.goto: net::ERR_CONNECTION_CLOSED at https://www.poppels.se/citybryggeriet/lunch/"
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Thailändska kycklingbollar. Fried rice, kokos & chilisås",
+              "price": "145 kr"
+            },
+            {
+              "name": "Thailändska bönbiffar. Fried rice, kokos & chilisås",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Kålpudding. Kokt potatis, gräddsås, lingon, saltgurka",
+              "price": "145 kr"
+            },
+            {
+              "name": "Vegetarisk kålpudding. Kokt potatis, gräddsås, lingon, saltgurka",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Havets wallenbergare. Pommes, remouladsås, kapris",
+              "price": "145 kr"
+            },
+            {
+              "name": "Rödbetsbiffar. Pommes, remouladsås, kapris",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Salcicciafärsbiffar. Rosmarinrostad potatis, rödvinssås, bakad fänkål",
+              "price": "145 kr"
+            },
+            {
+              "name": "Stekt svamp. Rosmarinrostad potatis, rödvinssås, bakad fänkål",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Pico de gallo fläsk. Bönsallad, tortillachips, majskräm",
+              "price": "145 kr"
+            },
+            {
+              "name": "Pico de gallo tzay. Bönsallad, tortillachips, majskräm",
+              "price": "145 kr"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "week": "2026-W40",
-  "generated": "2026-09-28T11:13:47",
+  "generated": "2026-09-28T11:21:04",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -906,8 +906,73 @@
       "area": "Amhult",
       "region": "torslanda",
       "url": "https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/",
-      "days": [],
-      "error": "HTTP 403 from https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/ (Access Denied)"
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "KÖTT: Pulled pork i brioche, syrad kål, chili cheese-sås, lökring, klyftpotatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "FISK: Gravad lax, pepparrotstuvad potatis, senapscreme, gruyere",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "KÖTT: Stekt rimmat fläsk med raggmunk, rårörda lingon, alt, löksås, kokt potatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "FISK: Smörstekt sej. fransk tartarsås, pommes frites, grillad citron",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "KÖTT: Masala gryta, kycklingklubbfilé, spenat, vispad ricotta, jasminris, cashewnötter",
+              "price": "139 kr"
+            },
+            {
+              "name": "FISK: Fiskpudding, kokt potatis, brynt smör, gröna ärter, färskriven pepparrot",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "KÖTT: Bryggans skomakarlåda, ryggbiff, potatispuré, rödvinsky, bacon, purjolök",
+              "price": "139 kr"
+            },
+            {
+              "name": "FISK: Vitvinspocherad kolja, potatispuré, anjovissmörsås, syrad fänkål",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "KÖTT: Entrecote(200g), jalapeno-/cheddarsmör, rostad potatis, balsamicosky, bakad tomat",
+              "price": "139 kr"
+            },
+            {
+              "name": "FISK: Miso-/honungs glaserad lax, jasminris, ingefärscreme, chiligurka",
+              "price": "139 kr"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
