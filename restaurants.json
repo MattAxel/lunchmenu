@@ -81,7 +81,9 @@
     "url": "https://www.poppels.se/citybryggeriet/lunch/",
     "type": "canva",
     "area": "Platinan",
-    "region": "platinan"
+    "region": "platinan",
+    "canva_url": "https://www.canva.com/design/DAFJA8wNZsw/view",
+    "week_check": true
   },
   {
     "name": "Monopolet",

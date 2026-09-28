@@ -21,6 +21,43 @@ def _slug(name: str) -> str:
     return name.lower().replace(" ", "-").replace("&", "").replace("--", "-")
 
 
+IMAGE_OVERRIDE_EXTS = (".png", ".jpg", ".jpeg", ".webp")
+OVERRIDE_EXTS = (".txt",) + IMAGE_OVERRIDE_EXTS
+
+
+def _find_override(name: str) -> Path | None:
+    """Return data/overrides/<slug>.{txt,png,jpg,jpeg,webp} if present."""
+    slug = _slug(name)
+    for ext in OVERRIDE_EXTS:
+        for candidate in (OVERRIDES_DIR / f"{slug}{ext}",
+                          OVERRIDES_DIR / f"{slug}{ext.upper()}"):
+            if candidate.exists():
+                return candidate
+    return None
+
+
+def _check_week(menu_data: dict, expected_week: str, require: bool) -> None:
+    """Reject menus whose printed week number isn't the current ISO week."""
+    expected_no = int(expected_week.split("-W")[1])
+    found = menu_data.get("week")
+    try:
+        found_no = int(found) if found is not None else None
+    except (TypeError, ValueError):
+        found_no = None
+    if found_no is None:
+        if require:
+            raise RuntimeError(
+                f"No week number found in source (expected week {expected_no})"
+            )
+        print(f"  WARNING: no week number in source; assuming week {expected_no}")
+        return
+    if found_no != expected_no:
+        raise RuntimeError(
+            f"Source menu is for week {found_no}, expected week {expected_no}"
+        )
+    print(f"  Week check OK (week {found_no}).")
+
+
 def current_week_label() -> str:
     """Return the current ISO week label, e.g. '2026-W13'."""
     now = datetime.now()
@@ -65,22 +102,43 @@ def run(restaurant_filter: str | None = None):
             print("  Already fetched this week, skipping.")
             continue
 
-        # Remove old entry if re-fetching
+        # Remove old entry if re-fetching (kept aside: if the re-fetch
+        # fails, a good entry from earlier this week is restored instead of
+        # being replaced by an error).
+        previous_ok = next(
+            (r for r in existing["restaurants"]
+             if r["name"] == restaurant["name"]
+             and "error" not in r and r.get("days")),
+            None,
+        )
         existing["restaurants"] = [
             r for r in existing["restaurants"]
             if r["name"] != restaurant["name"]
         ]
 
-        # Check for manual override file
-        override_file = OVERRIDES_DIR / f"{_slug(restaurant['name'])}.txt"
-        use_override = override_file.exists()
+        # Check for manual override file (.txt menu text or a menu image)
+        override_file = _find_override(restaurant["name"])
+        use_override = override_file is not None
         if use_override:
             print(f"  Using override file: {override_file.name}")
+        override_is_image = (
+            use_override and override_file.suffix.lower() in IMAGE_OVERRIDE_EXTS
+        )
+
+        # Week check: always for image overrides (a stale photo from last
+        # week must not be republished); opt-in per restaurant via
+        # "week_check": true in restaurants.json.
+        week_check = override_is_image or (
+            restaurant.get("week_check", False) and not use_override
+        )
+        expected_week = week_label if week_check else None
 
         max_retries = 2
         for attempt in range(1, max_retries + 1):
             try:
-                if use_override:
+                if override_is_image:
+                    content = override_file.read_bytes()
+                elif use_override:
                     content = override_file.read_text(encoding="utf-8")
                 else:
                     print(f"  Fetching from {restaurant['url']}...")
@@ -91,11 +149,25 @@ def run(restaurant_filter: str | None = None):
                 )
                 print(f"  Got {content_desc}. Extracting menu...")
 
-                if use_override:
+                if override_is_image:
+                    from scraper.extract import extract_menu_from_image
+                    menu_data = extract_menu_from_image(
+                        content, restaurant["name"], expected_week
+                    )
+                elif use_override:
                     from scraper.extract import extract_menu_from_text
                     menu_data = extract_menu_from_text(content, restaurant["name"])
                 else:
-                    menu_data = extract_menu(content, restaurant)
+                    menu_data = extract_menu(content, restaurant, expected_week)
+
+                if expected_week:
+                    _check_week(
+                        menu_data, expected_week,
+                        # Configured restaurants always print a week number;
+                        # a user-supplied photo might not, so only reject a
+                        # mismatch there.
+                        require=not override_is_image,
+                    )
 
                 days = menu_data.get("days", []) or []
                 if not days:
@@ -118,6 +190,10 @@ def run(restaurant_filter: str | None = None):
                     print(f"  Attempt {attempt} failed: {e}. Retrying...")
                     continue
                 print(f"  ERROR: {e}")
+                if previous_ok is not None:
+                    print("  Keeping this week's previously fetched menu.")
+                    existing["restaurants"].append(previous_ok)
+                    break
                 existing["restaurants"].append({
                     "name": restaurant["name"],
                     "area": restaurant["area"],

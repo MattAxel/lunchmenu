@@ -40,22 +40,50 @@ DEFAULT_MODEL = "grok-4.6"
 MIN_PDF_TEXT_CHARS = 50
 
 
-def extract_menu_from_text(text: str, restaurant_name: str) -> dict:
+def _week_instruction(expected_week: str | None) -> str:
+    """Extra prompt text asking Grok to pick and report the week.
+
+    *expected_week* is an ISO label like "2026-W40". The model must only
+    extract that week's menu (sources sometimes show next week too) and
+    report the week number printed in the source so run.py can reject stale
+    menus.
+    """
+    if not expected_week:
+        return ""
+    week_no = int(expected_week.split("-W")[1])
+    return (
+        f"\n\nThe current week is ISO week {week_no} ({expected_week}). "
+        f"Only extract the menu for week {week_no}; ignore other weeks "
+        f"(e.g. next week's menu on another page). Add a top-level key "
+        f'"week" with the week number printed in the source (integer), or '
+        f"null only if no week number is shown at all. If the source only "
+        f"has a menu for a different week, still report that printed week "
+        f'number in "week" and return "days": [].'
+    )
+
+
+def extract_menu_from_text(
+    text: str, restaurant_name: str, expected_week: str | None = None
+) -> dict:
     """Extract menu from text content using the xAI Grok API."""
     prompt = (
         f"Extract the lunch menu for '{restaurant_name}' from this text:\n\n"
         f"{text[:8000]}"
+        f"{_week_instruction(expected_week)}"
     )
     return _call_grok([{"type": "text", "text": prompt}])
 
 
-def extract_menu_from_image(image_bytes: bytes, restaurant_name: str) -> dict:
+def extract_menu_from_image(
+    image_bytes: bytes, restaurant_name: str, expected_week: str | None = None
+) -> dict:
     """Extract menu from an image using Grok vision (multimodal)."""
     mime = _detect_image_mime(image_bytes)
     b64 = base64.b64encode(image_bytes).decode("ascii")
     data_url = f"data:{mime};base64,{b64}"
     prompt = (
         f"Extract the lunch menu for '{restaurant_name}' from this image."
+        f"{_week_instruction(expected_week)}"
     )
     return _call_grok(
         [
@@ -148,12 +176,19 @@ def _render_pdf_pages(pdf_bytes: bytes, scale: float = 2.0) -> list[bytes]:
     return images
 
 
-def extract_menu(content: str | bytes, restaurant: dict) -> dict:
-    """Extract menu based on content type."""
+def extract_menu(
+    content: str | bytes, restaurant: dict, expected_week: str | None = None
+) -> dict:
+    """Extract menu based on content type.
+
+    *expected_week* (e.g. "2026-W40") is only passed for restaurants with
+    week checking enabled; it is added to the prompt and the result then
+    carries a "week" key.
+    """
     if restaurant["type"] in ("text", "text_days", "text_js", "canva"):
-        return extract_menu_from_text(content, restaurant["name"])
+        return extract_menu_from_text(content, restaurant["name"], expected_week)
     elif restaurant["type"] == "image":
-        return extract_menu_from_image(content, restaurant["name"])
+        return extract_menu_from_image(content, restaurant["name"], expected_week)
     elif restaurant["type"] == "pdf":
         return extract_menu_from_pdf(content, restaurant["name"])
     else:

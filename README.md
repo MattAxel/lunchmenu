@@ -25,7 +25,7 @@ Supports multiple regions — each region gets its own page and URL.
 |------|------|--------|
 | Björkmans Skafferi | Platinan | Text scraping (JS) |
 | Pagoden | Platinan | Text scraping |
-| Poppels Citybryggeriet | Platinan | Manual override |
+| Poppels Citybryggeriet | Platinan | Canva design (headed browser) → Grok, week-checked |
 
 ## Setup
 
@@ -97,7 +97,18 @@ Supported types:
 - `"image"` — uses Playwright to capture menu image, then Grok vision to read it
 - `"pdf"` — downloads a PDF, extracts text with pypdf, then Grok; scanned PDFs should use `"image"` instead
 
-For restaurants that can't be scraped automatically, place a text file in `data/overrides/{restaurant-slug}.txt` with the menu text. The scraper will use the override instead of fetching.
+- `"canva"` — finds the Canva embed on the restaurant page and reads the design's text in a plain visible Chromium window (Canva challenges headless browsers; needs a display, e.g. `xvfb-run` in CI). Optional `"canva_url"` is used when the page can't be loaded (e.g. Poppels blocks our network); if the page embeds a different design than `canva_url`, a NOTE is logged.
+
+Optional `"week_check": true` passes the current ISO week to the extraction prompt and rejects the result unless the source prints that week number (catches stale menus and "next week" pages).
+
+### Manual overrides
+
+For restaurants that can't be scraped automatically, put a file in `data/overrides/` named after the restaurant slug (lowercase, spaces → `-`, `&` removed, e.g. `bryggan`, `poppels-citybryggeriet`). The scraper uses it instead of fetching:
+
+- `{slug}.txt` — menu text, extracted like a text page.
+- `{slug}.png` / `.jpg` / `.jpeg` / `.webp` — a photo/screenshot of the menu, extracted with Grok vision. Image overrides are always week-checked: if the image shows a different week number (e.g. last week's photo left behind) the run fails for that restaurant instead of republishing a stale menu. Replace or delete the file each week.
+
+If a re-run fails for a restaurant that already has a good menu for the current week, the existing menu is kept.
 
 ## Adding a new region
 

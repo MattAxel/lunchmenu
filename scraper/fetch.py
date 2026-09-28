@@ -224,76 +224,115 @@ def fetch_text_playwright(url: str) -> str:
     return soup.get_text(separator="\n", strip=True)
 
 
-def fetch_canva(url: str) -> str:
-    """Fetch text from a page that embeds a Canva design.
+def _canva_design_id(canva_url: str | None) -> str | None:
+    import re as _re
+    m = _re.search(r"canva\.com/design/([A-Za-z0-9_-]+)", canva_url or "")
+    return m.group(1) if m else None
 
-    First loads the parent page to discover the Canva design URL,
-    then navigates directly to the Canva view URL in headed mode
-    (Canva blocks headless browsers) and extracts the text content.
-    """
-    from bs4 import BeautifulSoup as _BS
 
-    # Step 1: find the Canva embed URL from the parent page
+def _discover_canva_url(url: str) -> str:
+    """Load the restaurant page and return the embedded Canva view URL."""
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
-        ctx = browser.new_context()
-        ctx.add_cookies([{
-            "name": "CookieInformationConsent",
-            "value": '{"consents_approved":["cookie_cat_necessary","cookie_cat_functional","cookie_cat_statistic","cookie_cat_marketing"],"consents_denied":[]}',
-            "domain": f".{url.split('/')[2].replace('www.', '')}",
-            "path": "/",
-        }])
-        page = ctx.new_page()
-        nav_error = None
-        resp = None
         try:
-            resp = page.goto(url, wait_until="domcontentloaded", timeout=30000)
-        except Exception as exc:
-            nav_error = exc
-        page.wait_for_timeout(3000)
-        if nav_error is not None and resp is None:
-            browser.close()
-            raise RuntimeError(
-                f"Could not load {url}: {str(nav_error).splitlines()[0]}"
-            )
-        try:
+            ctx = browser.new_context()
+            ctx.add_cookies([{
+                "name": "CookieInformationConsent",
+                "value": '{"consents_approved":["cookie_cat_necessary","cookie_cat_functional","cookie_cat_statistic","cookie_cat_marketing"],"consents_denied":[]}',
+                "domain": f".{url.split('/')[2].replace('www.', '')}",
+                "path": "/",
+            }])
+            page = ctx.new_page()
+            nav_error = None
+            resp = None
+            try:
+                resp = page.goto(url, wait_until="domcontentloaded", timeout=30000)
+            except Exception as exc:
+                nav_error = exc
+            if nav_error is not None and resp is None:
+                raise RuntimeError(
+                    f"Could not load {url}: {str(nav_error).splitlines()[0]}"
+                )
+            page.wait_for_timeout(3000)
             _check_blocked(url, resp.status if resp else None, page.title())
-        except BlockedError:
-            browser.close()
-            raise
 
-        canva_url = page.evaluate("""
-        (() => {
-            const el = document.querySelector('iframe[data-src*="canva"]')
-                    || document.querySelector('iframe[src*="canva"]');
-            if (!el) return null;
-            const raw = el.getAttribute('data-src') || el.getAttribute('src');
-            return raw ? raw.replace('/view?embed', '/view') : null;
-        })()
-        """)
-        browser.close()
+            canva_url = page.evaluate("""
+            (() => {
+                const el = document.querySelector('iframe[data-src*="canva"]')
+                        || document.querySelector('iframe[src*="canva"]');
+                if (!el) return null;
+                const raw = el.getAttribute('data-src') || el.getAttribute('src');
+                return raw ? raw.replace('/view?embed', '/view') : null;
+            })()
+            """)
+        finally:
+            browser.close()
 
     if not canva_url:
         raise RuntimeError("No Canva embed found on the page")
+    return canva_url
 
-    # Step 2: open the Canva design directly in headed mode
+
+def fetch_canva(url: str, fallback_canva_url: str | None = None) -> str:
+    """Fetch text from a menu published as a Canva design.
+
+    1. Try to discover the Canva design URL from the restaurant page
+       (*url*). If that fails (site down / blocks our network) and
+       *fallback_canva_url* is configured (restaurants.json "canva_url"),
+       use that instead. If discovery finds a *different* design than the
+       configured one, log it so restaurants.json can be updated.
+    2. Open the design's public view URL in a plain, visible (headed)
+       Chromium window and read the rendered text in reading order. Canva
+       answers headless browsers with a Cloudflare challenge; no stealth
+       tweaks are used. Requires a display (DISPLAY, or xvfb-run in CI).
+    """
+    canva_url = None
+    try:
+        canva_url = _discover_canva_url(url)
+    except Exception as exc:
+        if not fallback_canva_url:
+            raise
+        print(
+            f"  Canva lookup on {url} failed ({str(exc)[:160]}); "
+            f"using configured canva_url {fallback_canva_url}"
+        )
+        canva_url = fallback_canva_url
+    else:
+        found_id = _canva_design_id(canva_url)
+        cfg_id = _canva_design_id(fallback_canva_url)
+        if cfg_id and found_id and found_id != cfg_id:
+            print(
+                f"  NOTE: page now embeds Canva design {found_id} "
+                f"(restaurants.json canva_url has {cfg_id}) - using the "
+                f"page's design; update restaurants.json."
+            )
+
+    import os
+    if not os.environ.get("DISPLAY"):
+        raise RuntimeError(
+            "fetch_canva needs a display for a headed browser "
+            "(set DISPLAY or run under xvfb-run)"
+        )
+
     with sync_playwright() as p:
-        browser = p.chromium.launch(
-            headless=False,
-            args=["--disable-blink-features=AutomationControlled"],
-        )
-        page = browser.new_page()
+        browser = p.chromium.launch(headless=False)
         try:
-            page.goto(canva_url, wait_until="domcontentloaded", timeout=30000)
-        except Exception:
-            pass
-        page.wait_for_timeout(10000)
+            page = browser.new_page()
+            resp = None
+            try:
+                resp = page.goto(canva_url, wait_until="domcontentloaded", timeout=30000)
+            except Exception as exc:
+                raise RuntimeError(
+                    f"Could not load {canva_url}: {str(exc).splitlines()[0]}"
+                ) from exc
+            page.wait_for_timeout(10000)
+            _check_blocked(canva_url, resp.status if resp else None, page.title())
+            text = page.evaluate("document.body ? document.body.innerText : ''")
+        finally:
+            browser.close()
 
-        text = page.evaluate(
-            "document.body ? document.body.innerText : ''"
-        )
-        browser.close()
-
+    if len(text.strip()) < 50:
+        raise RuntimeError(f"Canva design {canva_url} rendered no menu text")
     return text
 
 
@@ -383,7 +422,7 @@ def fetch_content(restaurant: dict) -> str | bytes:
     elif restaurant["type"] == "image":
         return fetch_image(restaurant["url"])
     elif restaurant["type"] == "canva":
-        return fetch_canva(restaurant["url"])
+        return fetch_canva(restaurant["url"], restaurant.get("canva_url"))
     elif restaurant["type"] == "pdf":
         return fetch_pdf(restaurant["url"], restaurant["area"])
     else:
