@@ -1,6 +1,6 @@
 {
   "week": "2026-W40",
-  "generated": "2026-09-28T12:04:26",
+  "generated": "2026-10-04T18:17:53",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -1570,6 +1570,139 @@
             {
               "name": "Pico de gallo tzay. Bönsallad, tortillachips, majskräm",
               "price": "145 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Carotte",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://carotte.se/restauranger/lappstiftet/dagens-lunch/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Kött: Köttbullar med potatispuré, gräddsås, rårörda lingon, picklad gurka och persilja",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fisk: Halstrad dagens fångst med tom kha-sås, kokos, jasminris, kimchibroccoli och koriander",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veg: Tom kha med rökt tofu, kokos, jasminris, kimchibroccoli och koriander",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans sallad: Quinoa, blandsallad, fetaost, tomater, picklad gurka, basilikakräm, friterad grönkål välj mellan rostbiff/kyckling/vegetariskt",
+              "price": "149 kr"
+            },
+            {
+              "name": "Dagens soppa: Grön ärtsoppa, serveras med kökets val av bröd",
+              "price": "115 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Kött: Nattbakad fläskkarré med råstekt potatis, krämig kantarellsås, Haricot verts, rucola, svartvinbärsgelé och persilja",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fisk: Pocherad dagens fångst med dillkokt potatis, vitvinssås med svamp och sidfläskragu, toppad med syrlig sallad",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veg: Långbakad spetskål med råstekt potatis, krämig kantarellsås, Haricot verts, rucola och persilja",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans sallad: Quinoa, blandsallad, fetaost, tomater, picklad gurka, basilikakräm, friterad grönkål välj mellan rostbiff/kyckling/vegetariskt",
+              "price": "149 kr"
+            },
+            {
+              "name": "Dagens soppa: Grön ärtsoppa, serveras med kökets val av bröd",
+              "price": "115 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Kött: Boeuf bourguignon på högrev med potatispuré, morot, svamp, sidfläsk och persilja",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fisk: Bakad dagens fångst med rostad kulpotatis, citronsås med spenat, rostad morot och ruccola",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veg: Tortellini med svamp och ricotta, citronsås med spenat, rostad morot och ruccola, toppad med Grana Padano",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans sallad: Quinoa, blandsallad, fetaost, tomater, picklad gurka, basilikakräm, friterad grönkål välj mellan rostbiff/kyckling/vegetariskt",
+              "price": "149 kr"
+            },
+            {
+              "name": "Dagens soppa: Grön ärtsoppa, serveras med kökets val av bröd",
+              "price": "115 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Kött: Gyros på fläskkarré med pommes frites, tzatzikisås, sallad, tomat, lök, fefferoni och hembakat pitabröd",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fisk: Bohusgryta med fisk, räkor och musslor, potatis, morot, saffransaioli, surdegskrutong, dill och citron",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veg: Friterad halloumi med pommes frites, tzatzikisås, sallad, tomat, lök, fefferoni och hembakat pitabröd",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans sallad: Quinoa, blandsallad, fetaost, tomater, picklad gurka, basilikakräm, friterad grönkål välj mellan rostbiff/kyckling/vegetariskt",
+              "price": "149 kr"
+            },
+            {
+              "name": "Dagens soppa: Grön ärtsoppa, serveras med kökets val av bröd",
+              "price": "115 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Kött: Krämig pasta carbonara med bacon, äggula, parmesan och persilja",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fisk: Dagens fångst à la Grenoble med dillslungad potatis, skirat smör, rödbeta, kapris, färsk pepparrot, rädisa och gräslök",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veg: Indisk korma med tofu, basmatiris, röda linser, friterad papadum och koriander",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans sallad: Quinoa, blandsallad, fetaost, tomater, picklad gurka, basilikakräm, friterad grönkål välj mellan rostbiff/kyckling/vegetariskt",
+              "price": "149 kr"
+            },
+            {
+              "name": "Dagens soppa: Grön ärtsoppa, serveras med kökets val av bröd",
+              "price": "115 kr"
             }
           ]
         }

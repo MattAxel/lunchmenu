@@ -26,6 +26,7 @@ Supports multiple regions — each region gets its own page and URL.
 | Björkmans Skafferi | Platinan | Text scraping (JS) |
 | Pagoden | Platinan | Text scraping |
 | Poppels Citybryggeriet | Platinan | Canva design (headed browser) → Grok, week-checked |
+| Carotte | Platinan (Läppstiftet) | Text scraping, week-checked |
 
 ## Setup
 

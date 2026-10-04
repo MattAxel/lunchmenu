@@ -99,5 +99,13 @@
     "type": "pdf",
     "area": "Platinan",
     "region": "platinan"
+  },
+  {
+    "name": "Carotte",
+    "url": "https://carotte.se/restauranger/lappstiftet/dagens-lunch/",
+    "type": "text",
+    "area": "Platinan",
+    "region": "platinan",
+    "week_check": true
   }
 ]
