@@ -4,6 +4,8 @@ name: Scrape Lunch Menus
 #   05:37 UTC = 07:37 Stockholm summer (CEST) / 06:37 winter (CET)
 #   08:07 UTC = 10:07 Stockholm summer (CEST) / 09:07 winter (CET)  (retry:
 #   restaurants already fetched this week are skipped, failed ones retried)
+# GitHub sometimes drops scheduled runs (none fired on 2026-10-05), so an
+# external Monday check starts this workflow via workflow_dispatch if needed.
 on:
   schedule:
     - cron: "37 5 * * 1"
@@ -25,7 +27,7 @@ concurrency:
 
 jobs:
   scrape:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 40
     env:
       TZ: Europe/Stockholm
