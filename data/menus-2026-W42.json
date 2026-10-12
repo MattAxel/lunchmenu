@@ -1,0 +1,1631 @@
+{
+  "week": "2026-W42",
+  "generated": "2026-10-12T08:39:38",
+  "restaurants": [
+    {
+      "name": "Golfkrogen",
+      "area": "Torslanda",
+      "region": "torslanda",
+      "url": "https://www.torslandagolfkrog.com/lunch-meny",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Dagens fisk är panerad och serveras med kallsås, potatis (tallriksservering på fiskrätten)",
+              "price": "159 kr"
+            },
+            {
+              "name": "Korvstroganoff serveras med jasminris (GF)",
+              "price": "145 kr"
+            },
+            {
+              "name": "Veckans vegetariska: Vego Lasagne",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Stekt fläsk med löksås eller bruna bönor potatis, lingon (GF)",
+              "price": "145 kr"
+            },
+            {
+              "name": "Stekt fläsk serveras med raggmunk, lingon",
+              "price": "145 kr"
+            },
+            {
+              "name": "Dagens fisk är pocherad och serveras med basilikasås, potatis (GF)",
+              "price": "145 kr"
+            },
+            {
+              "name": "Veckans vegetariska: Vego Lasagne",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Husets lasagne (N)",
+              "price": "145 kr"
+            },
+            {
+              "name": "Strömming serveras med skirat smör, potatismos, lingon",
+              "price": "145 kr"
+            },
+            {
+              "name": "Veckans vegetariska: Vego Lasagne",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Husets Gulaschsoppa serveras med vitlökskräm (GF)(N)",
+              "price": "145 kr"
+            },
+            {
+              "name": "Ärtsoppa med fläsk serveras med köttkorv (GF)",
+              "price": "145 kr"
+            },
+            {
+              "name": "Husets Fisksoppa serveras med vitlökskräm (GF)",
+              "price": "145 kr"
+            },
+            {
+              "name": "Hemmagjorda pannkakor serveras med sylt & grädde",
+              "price": "145 kr"
+            },
+            {
+              "name": "Veckans vegetariska: vego Ärtsoppa",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Fläskkött & kyckling serveras med primörer/potatis (GF)",
+              "price": "145 kr"
+            },
+            {
+              "name": "Husets Fisksoppa serveras med vitlökskräm (GF)",
+              "price": "145 kr"
+            },
+            {
+              "name": "Efterrätt",
+              "price": null
+            },
+            {
+              "name": "Veckans vegetariska: Vego Lasagne",
+              "price": "145 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bryggan",
+      "area": "Amhult",
+      "region": "torslanda",
+      "url": "https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Kött: Italiensk bistrokorv, potatis-/cheddarpuré, räkröra, syrad lök, friterad lök",
+              "price": "139 kr"
+            },
+            {
+              "name": "Fisk: HavetsWallenbergare, potatis-/cheddarpuré, räkor, brynt smör, gröna ärter",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Kött: Stekt rimmat fläsk med raggmunk, rårörda lingon, alt, löksås, kokt potatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "Fisk: Kallröktlax, pepparrotscreme, råstekt grönsparris, västerbottenpaj, fänkål",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Kött: Helstekt karré, potatisgratäng, kantarellsås, gröna ärter, gelé",
+              "price": "139 kr"
+            },
+            {
+              "name": "Fisk: Pocherad lax, hummersås, dillkoktpotatis, räkor, gröna ärter, pepparrot",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Kött: Yakiniku på entrecote, kokosris, morot-/sesamslaw, lime, koriander",
+              "price": "139 kr"
+            },
+            {
+              "name": "Fisk: Vitvinspocherad kolja, soltorkadtomatcreme, potatis-/emmentalerpuré, fänkålsallad",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Kött: Oxfile i ädelostsås, potatis-/dijonpure, friterad lök, persilja",
+              "price": "139 kr"
+            },
+            {
+              "name": "Fisk: Asiatisk poke bowl med ponzumarinerad färsk tonfisk, koriander,rödkål, sjögräsallad, syrad gurka, edamamebönor,ris, chimimayo",
+              "price": "139 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Masala Corner",
+      "area": "Amhult",
+      "region": "torslanda",
+      "url": "https://www.masalacorner.se/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Chicken korma: Kycklingfilé i mild gräddsås med hemmagjord ost, cashewnötter och russin.",
+              "price": "115 kr"
+            },
+            {
+              "name": "Achar gosht: Lamm i kryddig stärk sås och balandning av olika kryddor med kokos mjölk.",
+              "price": "115 kr"
+            },
+            {
+              "name": "Chicken tandoori: Yoghurtmarinerad, tandoorikryddad kyckling, grillad i lerugn.",
+              "price": "115 kr"
+            },
+            {
+              "name": "Vegetarisk thali: En välsmakande blandning av olika rätter med kikärtor/linser, grönsaksgryta, tillagad färskost, serveras med raita.",
+              "price": "115 kr"
+            },
+            {
+              "name": "Chicken tikka masala: Grillad kycklingfilé i kryddig mild sås med kokos.",
+              "price": "120 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Madrasi kycklinggryta: Kycklingfilé i Madrasi kryddsås och kokosmjölk.",
+              "price": "115 kr"
+            },
+            {
+              "name": "Shahi beef special: Nötkött med hemlagad ost i kryddstark gräddsås.",
+              "price": "115 kr"
+            },
+            {
+              "name": "Chicken tandoori: Yoghurtmarinerad, tandoorikryddad kyckling, grillad i lerugn.",
+              "price": "115 kr"
+            },
+            {
+              "name": "Vegetarisk thali: En välsmakande blandning av olika rätter med kikärtor/linser, grönsaksgryta, tillagad färskost, serveras med raita.",
+              "price": "115 kr"
+            },
+            {
+              "name": "Chicken tikka masala: Grillad kycklingfilé i kryddig sås med kokos.",
+              "price": "120 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Chapli kebab: Heta lammfärsrullar med tomat & ananaschutney, serveras med kryddig rödvinssås.",
+              "price": "115 kr"
+            },
+            {
+              "name": "Chicken karahi: Kycklingfilé med paprika,vitlök, grön chili & husets kryddblandning.",
+              "price": "115 kr"
+            },
+            {
+              "name": "Chicken tandoori: Yoghurtmarinerad, tandoorikryddad kyckling, grillad i lerugn.",
+              "price": "115 kr"
+            },
+            {
+              "name": "Vegetarisk thali: En välsmakande blandning av olika rätter med kikärtor/linser, grönsaksgryta, tillagad färskost, serveras med raita.",
+              "price": "115 kr"
+            },
+            {
+              "name": "Chicken tikka masala: Grillad kycklingfilé i kryddig sås med kokos.",
+              "price": "120 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Saag chicken: Kycklingfilé med spenat, ingefära, vitlök och garam masala.",
+              "price": "115 kr"
+            },
+            {
+              "name": "Beef kadahi: Nötkött med paprika, vitllök, grön cjili & husets kryddblandning.",
+              "price": "115 kr"
+            },
+            {
+              "name": "Chicken tandoori: Yoghurtmarinerad, tandoorikryddad kyckling, grillad i lerugn.",
+              "price": "115 kr"
+            },
+            {
+              "name": "Vegetarisk thali: En välsmakande blandning av olika rätter med kikärtor/linser, grönsaksgryta, tillagad färskost, serveras med raita.",
+              "price": "115 kr"
+            },
+            {
+              "name": "Chicken tikka masala: Grillad kycklingfilé i kryddig sås med kokos.",
+              "price": "120 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Butter chicken: Kycklingfilé i gräddsås av tomat & ost med chasewnötter.",
+              "price": "115 kr"
+            },
+            {
+              "name": "Beef vindaloo: Nötkött i kryddig stärk vindaloosås.",
+              "price": "115 kr"
+            },
+            {
+              "name": "Chicken tandoori: Yoghurtmarinerad, tandoorikryddad kyckling, grillad i lerugn.",
+              "price": "115 kr"
+            },
+            {
+              "name": "Vegetarisk thali: En välsmakande blandning av olika rätter med kikärtor/linser, grönsaksgryta, tillagad färskost, serveras med raita.",
+              "price": "115 kr"
+            },
+            {
+              "name": "Chicken tikka masala: Grillad kycklingfilé i kryddig sås med kokos.",
+              "price": "120 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tsuki Hana",
+      "area": "Amhult",
+      "region": "torslanda",
+      "url": "https://tsukihana.net/lunch#husmanskost",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Dagens kött: Tysk jägerschnitzel med en mustig champinjonsås, brynt potatis, ärtor, citron och hackad persilja",
+              "price": "120 kr"
+            },
+            {
+              "name": "Dagens asiatisk: Kinesisk \"Orange chicken\" med wokade grönsaker, ris, sesam och salladslök",
+              "price": "120 kr"
+            },
+            {
+              "name": "Dagens pasta: En het kycklingpasta med soltorkad tomat, svartpeppar, vitlök, grädde, färskriven parmesan och spenat",
+              "price": "120 kr"
+            },
+            {
+              "name": "Veckans vegetarisk: 10 krispiga vårrullar med grönsallad, sweet chilisås, sojadipp, ris och grönsallad",
+              "price": "120 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Dagens kött: Italienskt grillat kycklingbröst med en krämig svamprisotto, paprikacreme, örtolja och gröna blad",
+              "price": "120 kr"
+            },
+            {
+              "name": "Dagens fisk: Vänder dagens fångst i ströbröd och steks gyllene, med en kall tartarsås, dillkokt potatis, smörvända ärtor, citron och dill",
+              "price": "120 kr"
+            },
+            {
+              "name": "Dagens asiatisk: Kinesisk friterad kyckling med sötsur eller currysås(eller båda, säg till i kassan) picklad grönsak, ris och salladslök",
+              "price": "120 kr"
+            },
+            {
+              "name": "Veckans vegetarisk: 10 krispiga vårrullar med grönsallad, sweet chilisås, sojadipp, ris och grönsallad",
+              "price": "120 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Dagens kött: Lasagne al forno av nötfärs med en krämig ostsås, marinerade grönsaker och örtsallad",
+              "price": "120 kr"
+            },
+            {
+              "name": "Dagens fisk: Lyxig västkustgratäng med en fyllig räksås, tångcaviar, handskalade räkor, grönsaker, citron och dill",
+              "price": "120 kr"
+            },
+            {
+              "name": "Dagens asiatisk: Japansk \"Chicken katsu\"med Tonkatsusås, tunnskivad kålsallad, ris, salladslök och sesam",
+              "price": "120 kr"
+            },
+            {
+              "name": "Veckans vegetarisk: 10 krispiga vårrullar med grönsallad, sweet chilisås, sojadipp, ris och grönsallad",
+              "price": "120 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Dagens kött: Grekiskt kolgrillat souvlakigrillspett med en krämig tzatziki, chilimarinerade oliver, tomatsallad, grova pommes och gröna blad",
+              "price": "120 kr"
+            },
+            {
+              "name": "Dagens fisk: Husets goda fisk och skaldjurssoppa med aioli, blåmusslor, handskalade räkor, samt äpplepaj med vaniljvisp till kaffet",
+              "price": "120 kr"
+            },
+            {
+              "name": "Dagens asiatisk: Indonesisk kycklingwok med grönsaker, het jordnötssås, sesam och salladslök",
+              "price": "120 kr"
+            },
+            {
+              "name": "Veckans vegetarisk: 10 krispiga vårrullar med grönsallad, sweet chilisås, sojadipp, ris och grönsallad",
+              "price": "120 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Dagens kött: Grillmix med ryggbiff, kryddig lammkorv, kyckling, rödvinsreduktion, cowboy butter, kryddiga klyftpotatis, tomat -löksallad, chimichurri och en örtsallad",
+              "price": "120 kr"
+            },
+            {
+              "name": "Dagens fisk: Smörsteker dagens fångst, med en god citron -dragonsås, kokt potatis, fänkålssallad smaksatt med chili, spenat, citron och krasse",
+              "price": "120 kr"
+            },
+            {
+              "name": "Dagens asiatisk: Koreansk \"Chicken over rice\" med snabbsyrad kimchi, picklade grönsaker, ingefärsdipp, het koreansk bbq-sås, hackade nötter och lök",
+              "price": "120 kr"
+            },
+            {
+              "name": "Veckans vegetarisk: 10 krispiga vårrullar med grönsallad, sweet chilisås, sojadipp, ris och grönsallad",
+              "price": "120 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tilda & Josper",
+      "area": "Amhult",
+      "region": "torslanda",
+      "url": "https://tildajosper.se/lunch",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Nötfärsbiff med rosépepparsås, lingonsylt, potattismos",
+              "price": "135 kr"
+            },
+            {
+              "name": "Honungsgriljerad fläskkarré med rödvinsås, äpplemos, kokt potatis",
+              "price": "135 kr"
+            },
+            {
+              "name": "Veckans pasta: Pasta Carbonara med riven ost",
+              "price": "135 kr"
+            },
+            {
+              "name": "Veckans sallad: Asiatisk nudelsallad med biff (sallad, risnudlar, morötter, gurka, böngroddar, koriander, jordnötter)",
+              "price": "135 kr"
+            },
+            {
+              "name": "Veckans fisk: Havets wallenbergare med hummersås, räkor, kokt potatis",
+              "price": "135 kr"
+            },
+            {
+              "name": "Veckans kött: Ryggbiff med bearnaisesås, pommes frites",
+              "price": "160 kr"
+            },
+            {
+              "name": "Veggie: Halloumiburgare med chilimajo, sallad, tomat, picklad lök, aioli, pommes frites",
+              "price": "140 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Krispig anka med stekta äggnudlar, mongolisk bbq-sås, ris",
+              "price": "135 kr"
+            },
+            {
+              "name": "Stekt fläsk med: A. Löksås och kokt potatis B. Husets raggmunkar och lingonsylt C. Bruna bönor och kokt potatis",
+              "price": "135 kr"
+            },
+            {
+              "name": "Veckans pasta: Pasta Carbonara med riven ost",
+              "price": "135 kr"
+            },
+            {
+              "name": "Veckans sallad: Asiatisk nudelsallad med biff (sallad, risnudlar, morötter, gurka, böngroddar, koriander, jordnötter)",
+              "price": "135 kr"
+            },
+            {
+              "name": "Veckans fisk: Havets wallenbergare med hummersås, räkor, kokt potatis",
+              "price": "135 kr"
+            },
+            {
+              "name": "Veckans kött: Ryggbiff med bearnaisesås, pommes frites",
+              "price": "160 kr"
+            },
+            {
+              "name": "Veggie: Halloumiburgare med chilimajo, sallad, tomat, picklad lök, aioli, pommes frites",
+              "price": "140 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Schnitzel med stekt potatis, persiljesmör",
+              "price": "135 kr"
+            },
+            {
+              "name": "Kalops med kokt potatis, rödbetor",
+              "price": "135 kr"
+            },
+            {
+              "name": "Veckans pasta: Pasta Carbonara med riven ost",
+              "price": "135 kr"
+            },
+            {
+              "name": "Veckans sallad: Asiatisk nudelsallad med biff (sallad, risnudlar, morötter, gurka, böngroddar, koriander, jordnötter)",
+              "price": "135 kr"
+            },
+            {
+              "name": "Veckans fisk: Havets wallenbergare med hummersås, räkor, kokt potatis",
+              "price": "135 kr"
+            },
+            {
+              "name": "Veckans kött: Ryggbiff med bearnaisesås, pommes frites",
+              "price": "160 kr"
+            },
+            {
+              "name": "Veggie: Halloumiburgare med chilimajo, sallad, tomat, picklad lök, aioli, pommes frites",
+              "price": "140 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Jägarebiff med gräddsås, lingonsylt, potatismos",
+              "price": "135 kr"
+            },
+            {
+              "name": "Korvstroganoff med ris",
+              "price": "135 kr"
+            },
+            {
+              "name": "Veckans pasta: Pasta Carbonara med riven ost",
+              "price": "135 kr"
+            },
+            {
+              "name": "Veckans sallad: Asiatisk nudelsallad med biff (sallad, risnudlar, morötter, gurka, böngroddar, koriander, jordnötter)",
+              "price": "135 kr"
+            },
+            {
+              "name": "Veckans fisk: Havets wallenbergare med hummersås, räkor, kokt potatis",
+              "price": "135 kr"
+            },
+            {
+              "name": "Veckans kött: Ryggbiff med bearnaisesås, pommes frites",
+              "price": "160 kr"
+            },
+            {
+              "name": "Veggie: Halloumiburgare med chilimajo, sallad, tomat, picklad lök, aioli, pommes frites",
+              "price": "140 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Black and White (ryggbiff, fläskfilé) med bearnaisesås, rödvinsås, potatisgratäng",
+              "price": "135 kr"
+            },
+            {
+              "name": "Stekt kyckling i bitar med stekta grönsaker, sambalchilisås, ris",
+              "price": "135 kr"
+            },
+            {
+              "name": "Veckans pasta: Pasta Carbonara med riven ost",
+              "price": "135 kr"
+            },
+            {
+              "name": "Veckans sallad: Asiatisk nudelsallad med biff (sallad, risnudlar, morötter, gurka, böngroddar, koriander, jordnötter)",
+              "price": "135 kr"
+            },
+            {
+              "name": "Veckans fisk: Havets wallenbergare med hummersås, räkor, kokt potatis",
+              "price": "135 kr"
+            },
+            {
+              "name": "Veckans kött: Ryggbiff med bearnaisesås, pommes frites",
+              "price": "160 kr"
+            },
+            {
+              "name": "Veggie: Halloumiburgare med chilimajo, sallad, tomat, picklad lök, aioli, pommes frites",
+              "price": "140 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Restaurang Hörnet",
+      "area": "Torslanda",
+      "region": "torslanda",
+      "url": "https://www.restaurang-hornet.se/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Kycklinggryta med curry och grönsaker serveras med ris",
+              "price": "135 kr"
+            },
+            {
+              "name": "Hörnets fisk och skaldjurspudding serveras med kokt potatis och örtsmör",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Stekt fläsk med löksås, bruna bönor, raggmunk samt kokt potatis och lingonsylt",
+              "price": "135 kr"
+            },
+            {
+              "name": "Ångad fiskfile serveras med ägg och persiljesås samt kokt potatis",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Biff Lindström serveras med brunsås samt kokt potatis",
+              "price": "135 kr"
+            },
+            {
+              "name": "Stekt strömming serveras med skirat smör, lingonsylt samt potatismos",
+              "price": "135 kr"
+            },
+            {
+              "name": "Paj med vaniljvisp",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Rimmad oxbringa serveras med rotmos samt pepparrotssås",
+              "price": "135 kr"
+            },
+            {
+              "name": "Ärtsoppa med korv och fläsk samt pannkaka med sylt och grädde",
+              "price": "135 kr"
+            },
+            {
+              "name": "Gulaschsoppa med gräddfil",
+              "price": "135 kr"
+            },
+            {
+              "name": "Friterad fiskfile serveras med remouladsås samt kokt potatis",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Helstekt fläskfile serveras med rödvinssås, choronsås samt örtstekt potatis",
+              "price": "135 kr"
+            },
+            {
+              "name": "Laxfärserad rödtunga serveras med hummersås samt potatismos",
+              "price": "135 kr"
+            },
+            {
+              "name": "Äpplepaj med vaniljvisp",
+              "price": "135 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Masala Zone",
+      "area": "Torslanda",
+      "region": "torslanda",
+      "url": "https://www.masalazone.se/masala-zone-torslanda/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Tandoori chicken. Grillad kycklingklubbs med ben marinrad i yoghurt. Tandoori masala, ingefära,vitlölk, gräddsås.",
+              "price": "98 kr"
+            },
+            {
+              "name": "Murgh methi malai. Kycklingffile,ingefära,vitlök, grädde.",
+              "price": "98 kr"
+            },
+            {
+              "name": "Malwani gosht. Lammbitar,rostad cocos,tomat,grön chili.",
+              "price": "98 kr"
+            },
+            {
+              "name": "Mix tallrik. Två små vegetariska rätter",
+              "price": "98 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Tandoori chicken. Grillad kycklingklubbs med ben marinrad i yoghurt. Tandoori masala, ingefära,vitlölk, gräddsås.",
+              "price": "98 kr"
+            },
+            {
+              "name": "Tikka masala. Kycldingfile med tornat, lök, i en smakfull gräddig kryddsås",
+              "price": "98 kr"
+            },
+            {
+              "name": "Beef kadahi. Oxkött med vitlök, ingefära, grön chili, tomat, paprika i kryddig currysås",
+              "price": "98 kr"
+            },
+            {
+              "name": "Mix tallrik. Två små vegetariska rätter",
+              "price": "98 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Tandoori chicken. Grillad kycklingklubbs med ben marinrad i yoghurt. Tandoori masala, ingefära,vitlölk, gräddsås.",
+              "price": "98 kr"
+            },
+            {
+              "name": "Murgh madras. Kycklingfile med lök, kokosmjölk, ingefära, i smakfull currysås",
+              "price": "98 kr"
+            },
+            {
+              "name": "Curry gosht. Lammbitar med lök, tomat, chili i en smakfull curry sås",
+              "price": "98 kr"
+            },
+            {
+              "name": "Mix tallrik. Två små vegetariska rätter",
+              "price": "98 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Tandoori chicken. Grillad kycklingklubbs med ben marinrad i yoghurt. Tandoori masala, ingefära,vitlölk, gräddsås.",
+              "price": "98 kr"
+            },
+            {
+              "name": "Butter chicken. Kycklingfils i krämig sås. Tomat, grädde.",
+              "price": "98 kr"
+            },
+            {
+              "name": "Beef balti. Oxkött med ingefära, champinjoner paprika, i kryddstark sås.",
+              "price": "98 kr"
+            },
+            {
+              "name": "Mix tallrik. Två små vegetariska rätter",
+              "price": "98 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Tandoori chicken. Grillad kycklingklubbs med ben marinrad i yoghurt. Tandoori masala, ingefära,vitlölk, gräddsås.",
+              "price": "98 kr"
+            },
+            {
+              "name": "Butter chicken. Kycklingfils i krämig sås. Tomat, grädde.",
+              "price": "98 kr"
+            },
+            {
+              "name": "Beef balti. Oxkött med ingefära, champinjoner paprika, i kryddstark sås.",
+              "price": "98 kr"
+            },
+            {
+              "name": "Mix tallrik. Två små vegetariska rätter",
+              "price": "98 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kalimera",
+      "area": "Amhult",
+      "region": "torslanda",
+      "url": "https://kalimeramezetapas.se/veckans-lunch/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Yoghurtlu kebab, turkiska nötfärsbiffar på bädd av vitlöksyoghurt, serveras med tomatsås & pilavris.",
+              "price": "139 kr"
+            },
+            {
+              "name": "Boeuf Bourguignon på högrev, sidfläsk & potatispuré.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta med oxfilé, lök, champinjoner & gorgonzolasås",
+              "price": "149 kr"
+            },
+            {
+              "name": "Vin kokt Torskfilé, serveras med brynt smör, rödbetor, riven pepparrot, handskalade räkor & kokt potatis",
+              "price": "159 kr"
+            },
+            {
+              "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Ceasarsallad med kycklingfilé, bacon, krutonger & parmesan.",
+              "price": "139 kr"
+            },
+            {
+              "name": "Moussaka, serveras med tzatziki.",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Yoghurtlu kebab, turkiska nötfärsbiffar på bädd av vitlöksyoghurt, serveras med tomatsås & pilavris.",
+              "price": "139 kr"
+            },
+            {
+              "name": "Boeuf Bourguignon på högrev, sidfläsk & potatispuré.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta med oxfilé, lök, champinjoner & gorgonzolasås",
+              "price": "149 kr"
+            },
+            {
+              "name": "Vin kokt Torskfilé, serveras med brynt smör, rödbetor, riven pepparrot, handskalade räkor & kokt potatis",
+              "price": "159 kr"
+            },
+            {
+              "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Ceasarsallad med kycklingfilé, bacon, krutonger & parmesan.",
+              "price": "139 kr"
+            },
+            {
+              "name": "Moussaka, serveras med tzatziki.",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Yoghurtlu kebab, turkiska nötfärsbiffar på bädd av vitlöksyoghurt, serveras med tomatsås & pilavris.",
+              "price": "139 kr"
+            },
+            {
+              "name": "Boeuf Bourguignon på högrev, sidfläsk & potatispuré.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta med oxfilé, lök, champinjoner & gorgonzolasås",
+              "price": "149 kr"
+            },
+            {
+              "name": "Vin kokt Torskfilé, serveras med brynt smör, rödbetor, riven pepparrot, handskalade räkor & kokt potatis",
+              "price": "159 kr"
+            },
+            {
+              "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Ceasarsallad med kycklingfilé, bacon, krutonger & parmesan.",
+              "price": "139 kr"
+            },
+            {
+              "name": "Moussaka, serveras med tzatziki.",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Yoghurtlu kebab, turkiska nötfärsbiffar på bädd av vitlöksyoghurt, serveras med tomatsås & pilavris.",
+              "price": "139 kr"
+            },
+            {
+              "name": "Boeuf Bourguignon på högrev, sidfläsk & potatispuré.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta med oxfilé, lök, champinjoner & gorgonzolasås",
+              "price": "149 kr"
+            },
+            {
+              "name": "Vin kokt Torskfilé, serveras med brynt smör, rödbetor, riven pepparrot, handskalade räkor & kokt potatis",
+              "price": "159 kr"
+            },
+            {
+              "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Ceasarsallad med kycklingfilé, bacon, krutonger & parmesan.",
+              "price": "139 kr"
+            },
+            {
+              "name": "Moussaka, serveras med tzatziki.",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Yoghurtlu kebab, turkiska nötfärsbiffar på bädd av vitlöksyoghurt, serveras med tomatsås & pilavris.",
+              "price": "139 kr"
+            },
+            {
+              "name": "Boeuf Bourguignon på högrev, sidfläsk & potatispuré.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta med oxfilé, lök, champinjoner & gorgonzolasås",
+              "price": "149 kr"
+            },
+            {
+              "name": "Vin kokt Torskfilé, serveras med brynt smör, rödbetor, riven pepparrot, handskalade räkor & kokt potatis",
+              "price": "159 kr"
+            },
+            {
+              "name": "200Gr Högrevsburgare med cheddar, tryffelmajo, picklad rödlök, pommes frites, lökringar & cheddardipp.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Ceasarsallad med kycklingfilé, bacon, krutonger & parmesan.",
+              "price": "139 kr"
+            },
+            {
+              "name": "Moussaka, serveras med tzatziki.",
+              "price": "139 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Björkmans Skafferi",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.bjorkmansskafferi.se/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Grönt: Fried \"jerk\" cheese, friterad ost kryddad med jamaikansk kryddmix, rostad potatis & sötpotatis samt sallad på koriander & chilirostad kokos",
+              "price": "135 kr"
+            },
+            {
+              "name": "Fågel: Ginger & spring onion chicken, grillad kyckling med ingefära & salladslökssås, jasminris samt kinesisk gurksallad",
+              "price": "135 kr"
+            },
+            {
+              "name": "Fisk: Sesambakad lax, med misosmörsås, rostad potatis & blomkål med spetskålssallad & torkad gräslök",
+              "price": "135 kr"
+            },
+            {
+              "name": "Kött: Köttbullar i gräddsås, med potatismos, pressgurka & rårörda lingon",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Grönt: Roasted carrot hummus, kikärtshummus smaksatt med rostade morötter, bakade rödbetor & smulad vitost, babyspenat & salt frögranola",
+              "price": "135 kr"
+            },
+            {
+              "name": "Fågel: Chicken panang, kyckling i panangcurry med kokosmjölk, kaffirlimeblad & jordnötter, jasminris, toppad med salladslök, chili & koriander",
+              "price": "135 kr"
+            },
+            {
+              "name": "Fisk: Skafferiets fiskgratäng, kolja & räkor bakade med kräftsmörsås, duchesstoppar & sallad på sockerärtor, dill & schalottenlök",
+              "price": "135 kr"
+            },
+            {
+              "name": "Kött: Kokt rimmad oxbringa, med persiljebakad potatis & rotfrukter, pepparotssås, toppad med råmarinerade rödbetor",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Grönt: Crispy veggie dumplings, friterade dumplings fyllda med grönsaker, jasminris, sojamajo, picklade grönsaker samt rostad schalottenlök",
+              "price": "135 kr"
+            },
+            {
+              "name": "Fågel: Chicken vindaloo, kyckling i het & syrlig curry med basmatiris, mangoraita, vitlöksnaan & koriander",
+              "price": "135 kr"
+            },
+            {
+              "name": "Fisk: Friterad spätta, med tatarsås, dillkokt potatis & sallad på dill & rädisor",
+              "price": "135 kr"
+            },
+            {
+              "name": "Kött: Grillad secreto ibericó, med bearnaise smaksatt med basilika & soltorkad tomat, rostad potatis samt smulad pecorino",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Grönt: Veggie grill, grillad paprika, svamp & zucchini med labneh, kikärtor i paprikakräm samt sumak & frödukkah",
+              "price": "135 kr"
+            },
+            {
+              "name": "Fågel: Fried Vietnamese chicken, friterad kyckling med jasminris, sallad på morot, vitkål & mynta samt nouc cham dressing & rostade jordnötter",
+              "price": "135 kr"
+            },
+            {
+              "name": "Fisk: Spansk fisksoppa, med färsk tonfisk, potatis & paprika i mussel & saffransbuljong, rökt paprika-aioli samt persiljesallad",
+              "price": "135 kr"
+            },
+            {
+              "name": "Kött: Klassisk Wallenbergare, med potatispure, ärter & schalottenlök i brynt smör samt rårörda lingon",
+              "price": "135 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Grönt: Veggie enchiladas, tortilla fylld med bönor i chipotlesås & gratinerad med ost, toppat med vit sås, smulad ost, rostad majs, chili, & koriander",
+              "price": "135 kr"
+            },
+            {
+              "name": "Fågel: Pulled chicken burger, riven bbqkryddad kyckling i brichebröd med coleslaw, rödlök & jalapeno samt rostad potatis & ranchdipp",
+              "price": "135 kr"
+            },
+            {
+              "name": "Fisk: Teri yaki lax, stekt lax med japansk soyasås, ris samt sallad på gurka, inlagd ingefära & salladslök",
+              "price": "135 kr"
+            },
+            {
+              "name": "Kött: Schnitzel \"Saltimbocca\", fylld med lufttorkad skinka & salvia med friterad potatis smaksatt med gremoulata & riven parmesan",
+              "price": "135 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pagoden",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://pagoden.se/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Around the world: Pancopanerad Kycklingschnitzel, serveras med tomatsås, råstekt potatis samt citron aioli toppas med örter",
+              "price": null
+            },
+            {
+              "name": "Green Kitchen: Vietnamesisk Bowl – Chilimarinerad kyckling serveras med ingefärsmarinerad rödkål, sesamsmaksatt quinoa, picklad morot, srirachadressing samt sojabönor toppas med koriander & sesamfrön",
+              "price": null
+            },
+            {
+              "name": "Green Kitchen: Veg Vietnamesisk Bowl – Chilimarinerad halloumi serveras med ingefärsmarinerad rödkål, sesamsmaksatt quinoa, picklad morot, srirachadressing samt sojabönor toppas med koriander & sesamfrön",
+              "price": null
+            },
+            {
+              "name": "Green Kitchen: Cesarsallad – Kyckling, bacon, sallad, gurka, tomat, lök, brödkrutonger samt cesardressing",
+              "price": null
+            },
+            {
+              "name": "Fish Market: Bohusländsk Fisksoppa, krämig fisksoppa med juliennegrönsaker serveras med aioli samt vitlöksbröd",
+              "price": null
+            },
+            {
+              "name": "Butcher´s: ”Jägar Wallenbergare”, Klassisk Wallenbergare med krämigsvampsås smaksatt med whiskey serveras med potatispuré & rårörda lingon toppas med persilja",
+              "price": null
+            },
+            {
+              "name": "East Asia: Chilikryddad & kolgrillad gårdsgris, serveras med kimchisallad, tonkatsusås samt jasminris toppas med koreansk chili crème, vårlök & koriander",
+              "price": null
+            },
+            {
+              "name": "East Asia: Asiatiska bönbollar, serveras med kimchisallad, tonkatsusås samt jasminris toppas med koreansk chili crème, vårlök & koriander",
+              "price": null
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Around the world: Pagodens Philly Cheese Sandwich – surdegsbröd toppas med gårdsgris, stekt paprika & lök serveras med varmostsås med jalapeño samt frasiga pommes",
+              "price": null
+            },
+            {
+              "name": "Green Kitchen: Vietnamesisk Bowl – Chilimarinerad kyckling serveras med ingefärsmarinerad rödkål, sesamsmaksatt quinoa, picklad morot, srirachadressing samt sojabönor toppas med koriander & sesamfrön",
+              "price": null
+            },
+            {
+              "name": "Green Kitchen: Veg Vietnamesisk Bowl – Chilimarinerad halloumi serveras med ingefärsmarinerad rödkål, sesamsmaksatt quinoa, picklad morot, srirachadressing samt sojabönor toppas med koriander & sesamfrön",
+              "price": null
+            },
+            {
+              "name": "Green Kitchen: Cesarsallad – Kyckling, bacon, sallad, gurka, tomat, lök, brödkrutonger samt cesardressing",
+              "price": null
+            },
+            {
+              "name": "Fish Market: Örtstekt fiskfilé, serveras gräslökscrème samt färskost stompad potatis toppas med vårsallad & citron",
+              "price": null
+            },
+            {
+              "name": "Butcher´s: Kolgrillad fläskytterfilé, serveras med rödvinssky samt klyftpotatis toppas med körvelbearnaisesås & örter",
+              "price": null
+            },
+            {
+              "name": "East Asia: Massamancurry kyckling – Med kokosmjölk, jordnötter samt wokade grönsaker serveras med jasminris",
+              "price": null
+            },
+            {
+              "name": "East Asia: Massamancurry biff – Med kokosmjölk, jordnötter samt wokade grönsaker serveras med jasminris",
+              "price": null
+            },
+            {
+              "name": "East Asia: Massamancurry vegetarisk – Med kokosmjölk, jordnötter samt wokade grönsaker serveras med jasminris",
+              "price": null
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Around the world: Kolgrillad kycklingfilé, serveras med rödvinssky, krossad potatis smaksatt med örter samt parmesanost toppas med tzatziki samt tomat & löksallad",
+              "price": null
+            },
+            {
+              "name": "Green Kitchen: Vietnamesisk Bowl – Chilimarinerad kyckling serveras med ingefärsmarinerad rödkål, sesamsmaksatt quinoa, picklad morot, srirachadressing samt sojabönor toppas med koriander & sesamfrön",
+              "price": null
+            },
+            {
+              "name": "Green Kitchen: Veg Vietnamesisk Bowl – Chilimarinerad halloumi serveras med ingefärsmarinerad rödkål, sesamsmaksatt quinoa, picklad morot, srirachadressing samt sojabönor toppas med koriander & sesamfrön",
+              "price": null
+            },
+            {
+              "name": "Green Kitchen: Cesarsallad – Kyckling, bacon, sallad, gurka, tomat, lök, brödkrutonger samt cesardressing",
+              "price": null
+            },
+            {
+              "name": "Fish Market: Havets wallenbergare, serveras med skagencrème samt potatispuré och citron toppas med dillpicklad gurka",
+              "price": null
+            },
+            {
+              "name": "Butcher´s: Cafe de Paris Schnitzel, Pancopanerad schnitzel serveras med rödvinssky, cafe de parissmör samt rostad potatis och citron, smörslungade ärtor",
+              "price": null
+            },
+            {
+              "name": "East Asia: ”Mango Chicken Baltik” – Indisk kycklinggryta med grädde, chili, koriander, citron och mango serveras med kardemmuma kryddat basmatiris toppas med pfeffacrème. Serveras idag med nybakt naanbröd penslat med smör, chili och vitlök",
+              "price": null
+            },
+            {
+              "name": "East Asia: ”Mango Vegetarian Baltik” – Indisk grönsaksgryta med grädde, chili, koriander, citron och mango serveras med kardemmuma kryddat basmatiris toppas med pfeffacrème. Serveras idag med nybakt naanbröd penslat med smör, chili och vitlök",
+              "price": null
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Around the world: Köttbulle Torsdag, Vilt Köttbullar serveras med kantarellsås smaksatt med whiskey samt potatispuré & rårörda lingon toppas med persilja",
+              "price": null
+            },
+            {
+              "name": "Green Kitchen: Vietnamesisk Bowl – Chilimarinerad kyckling serveras med ingefärsmarinerad rödkål, sesamsmaksatt quinoa, picklad morot, srirachadressing samt sojabönor toppas med koriander & sesamfrön",
+              "price": null
+            },
+            {
+              "name": "Green Kitchen: Veg Vietnamesisk Bowl – Chilimarinerad halloumi serveras med ingefärsmarinerad rödkål, sesamsmaksatt quinoa, picklad morot, srirachadressing samt sojabönor toppas med koriander & sesamfrön",
+              "price": null
+            },
+            {
+              "name": "Green Kitchen: Cesarsallad – Kyckling, bacon, sallad, gurka, tomat, lök, brödkrutonger samt cesardressing",
+              "price": null
+            },
+            {
+              "name": "Fish Market: Fisk burgare – Pancopanerad & friterad fisk serveras med potatobun, krispsallad, chili & limedressing samt pommes & rostad vitlöksaioli",
+              "price": null
+            },
+            {
+              "name": "Butcher´s: Kolgrillad högrevsbiff, serveras med rostad potatis samt balsamicosky toppas med västerbottenostcrème & örtsallad",
+              "price": null
+            },
+            {
+              "name": "East Asia: Chili & citrongräsrostad kyckling, serveras med rökig chilicrème samt sallad på böngroddar, granatäpplen och morot, jasminris toppas med soyasås, koriander",
+              "price": null
+            },
+            {
+              "name": "East Asia: Friterade vårrullar, serveras med rökig chilicrème samt sallad på böngroddar, granatäpplen och morot, jasmineris toppas med soyasås, koriander",
+              "price": null
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Around the world: Kentucky Fried Chicken – Krispig kycklinginnerfilé glaserad med chipotle & honung serveras med coleslaw smaksatt med jalapeno samt klyftpotatis",
+              "price": null
+            },
+            {
+              "name": "Green Kitchen: Vietnamesisk Bowl – Chilimarinerad kyckling serveras med ingefärsmarinerad rödkål, sesamsmaksatt quinoa, picklad morot, srirachadressing samt sojabönor toppas med koriander & sesamfrön",
+              "price": null
+            },
+            {
+              "name": "Green Kitchen: Veg Vietnamesisk Bowl – Chilimarinerad halloumi serveras med ingefärsmarinerad rödkål, sesamsmaksatt quinoa, picklad morot, srirachadressing samt sojabönor toppas med koriander & sesamfrön",
+              "price": null
+            },
+            {
+              "name": "Green Kitchen: Cesarsallad – Kyckling, bacon, sallad, gurka, tomat, lök, brödkrutonger samt cesardressing",
+              "price": null
+            },
+            {
+              "name": "Fish Market: Grana padano & örtbakad fiskfilé, serveras med smörad skaldjursrisotto samt grana padano toppas med bondbönor & örtsallad",
+              "price": null
+            },
+            {
+              "name": "Butcher´s: October Burger – Högrevsburgare med pepper jackost, krispsallad, tomat, picklad rödlök, pfeffacrème, pommes frites samt tryffelcrème",
+              "price": null
+            },
+            {
+              "name": "Butcher´s: October Halloumiburger – Krispig halloumi serveras med Briochebröd, krispsallad, tomat, picklad rödlök, pfeffacrème, pommes frites samt tryffelcrème",
+              "price": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Poppels Citybryggeriet",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.poppels.se/citybryggeriet/lunch/",
+      "days": [],
+      "error": "Source menu is for week 41, expected week 42"
+    },
+    {
+      "name": "Monopolet",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://monopolet.nu/#lunch",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Dagens kött: Klassiska Köttbullar / Potatispuré / Gräddsås / Rårördalingon / Pressgurka",
+              "price": "139 kr"
+            },
+            {
+              "name": "Dagens fisk: Bakad Havskatt / Citronsmörsås med Gräslök / Potatis- & Jordärtskockspuré / Friterade Rotfruktschips / Citron",
+              "price": "139 kr"
+            },
+            {
+              "name": "Dagens veg: Vegetarisks köttbullar / Potatispuré / Gräddsås / Rårördalingon / Pressgurka",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Dagens kött: Korean Fried Chicken Burger – Sesam Coleslaw / Picklad Silverlök / Korean BBQ-Glaze / Sweet Potato Fries / Rostad Chilikräm / Salladslök / Koriander",
+              "price": "139 kr"
+            },
+            {
+              "name": "Dagens fisk: Stekt Fångst / Potatispuré / Rostad Palsternacka & Morot / Örtagårdssås",
+              "price": "139 kr"
+            },
+            {
+              "name": "Dagens veg: Korean Fried Tofu Burger -Sesam Coleslaw / Picklad Silverlök / Korean BBQ-Glaze / Sweet Potato Fries / Rostad Chilikräm / Salladslök / Koriander",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Dagens kött: Nduja Högrevsburgare / Egen Bakat Hamburgerbröd / Cheddar / Picklad Lök / Krispsallad / Tomat / Dirty Fries",
+              "price": "139 kr"
+            },
+            {
+              "name": "Dagens fisk: Monopolets Fisk & Skaldjurssoppa / Aioli / Handskalade Räkor / Krutonger / Färska Örter",
+              "price": "139 kr"
+            },
+            {
+              "name": "Dagens veg: Halloumiburgare / Egen Bakat Hamburgerbröd / Picklad Lök / Krispsallad / Tomat / Dirty Fries",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Kött bricka: Grillad Kyckling / Pulled Sesam Pork / Grillad Korv of The Day / Picklad Rödlök / Honungsrostad Majskolv / Chipotlemayo / Pommes Frites",
+              "price": "139 kr"
+            },
+            {
+              "name": "Fisk bricka: Skaldjursgratinerad Fångst / Pommes Duchesse / Citronkräm / Broccoli / Blomkål",
+              "price": "139 kr"
+            },
+            {
+              "name": "Veg bricka: Sojafärsbiff Smaksatt med Ajvar & Fetaost / Picklad Rödlök / Honungsrostad Majskolv / Chipotlemayo / Pommes Frites",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Vår härliga Pizza & Taco Buffé",
+              "price": "139 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Delissimo",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.delissimo.se",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Helstekt ryggbiff med grönpepparsås & klyftpotatis.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta carbonara: Stekt bacon i parmesansås med svartpeppar. Serveras med spaghetti.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans pizza - Gorgonzola: Frasig surdegspizza med örtig tomatsås, mozzarella fior di latte, gorgonzola & skogschampinjoner. Toppas med oregano, ruccola & balsamico.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans caesarsallad: Grillad kycklingfilé, hickoryrökt bacon, ugnsbakade krutonger & romansallad. Toppas med ruccola & parmesan samt serveras med caesarsås vid sidan.",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Kött: Fårostfyllda färsbiffar med rödvinssås & ugnsbakad färsk potatis.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fågel: Stuvade kycklingfilé med gräddig Dijonsås & råstekt potatis.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fisk: Vitvins pocherad kummelfilé med räksås & kokt potatis.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta nonna: Italienska kalvköttbullar i örtig tomatsås. Serveras med färsk tagliatelle.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans pizza - Gorgonzola: Frasig surdegspizza med örtig tomatsås, mozzarella fior di latte, gorgonzola & skogschampinjoner. Toppas med oregano, ruccola & balsamico.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans caesarsallad: Grillad kycklingfilé, hickoryrökt bacon, ugnsbakade krutonger & romansallad. Toppas med ruccola & parmesan samt serveras med caesarsås vid sidan.",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Kött: Italiensk kalvhögrevsgryta med svamp, schalottenlök & soltorkad tomatsås & basmatiris.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fågel: Grillad kycklingfilé med gorgonzolasås & rostad potatis.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fisk: Halstrad laxfjärill med citrussås & potatispuré.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta tortelini: Färska pastaknutar fyllda med ricotta & spenat. Serveras i en gräddig svampsås med parmesan.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans pizza - Gorgonzola: Frasig surdegspizza med örtig tomatsås, mozzarella fior di latte, gorgonzola & skogschampinjoner. Toppas med oregano, ruccola & balsamico.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans caesarsallad: Grillad kycklingfilé, hickoryrökt bacon, ugnsbakade krutonger & romansallad. Toppas med ruccola & parmesan samt serveras med caesarsås vid sidan.",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Kött: Fläskschnitzel med skirat smör, kapris, citron & stekt potatis.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fågel: Mascarpone samt spenatrullade kycklinglårfile med dragonsås & bakad färsk potatis.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fisk: Friterad flundrafilé med skagenröra & kokt potatis.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta sole: Stekta grillade italienska grönsaker i örtig tomatsås & parmesan.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans pizza - Gorgonzola: Frasig surdegspizza med örtig tomatsås, mozzarella fior di latte, gorgonzola & skogschampinjoner. Toppas med oregano, ruccola & balsamico.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans caesarsallad: Grillad kycklingfilé, hickoryrökt bacon, ugnsbakade krutonger & romansallad. Toppas med ruccola & parmesan samt serveras med caesarsås vid sidan.",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Grillmix med Entrecote, Lammchorizo & kalvfärsbiff. Serveras med fries, BBQ-sås & chilibearnaise.",
+              "price": "159 kr"
+            },
+            {
+              "name": "Lasagne al forno: Husets lasagne av nöt med bechamelsås, örtig tomatsås & parmesan.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans pizza - Gorgonzola: Frasig surdegspizza med örtig tomatsås, mozzarella fior di latte, gorgonzola & skogschampinjoner. Toppas med oregano, ruccola & balsamico.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans caesarsallad: Grillad kycklingfilé, hickoryrökt bacon, ugnsbakade krutonger & romansallad. Toppas med ruccola & parmesan samt serveras med caesarsås vid sidan.",
+              "price": "149 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Carotte",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://carotte.se/restauranger/lappstiftet/dagens-lunch/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Kött: Köttbullar med potatispuré, gräddsås, rårörda lingon, picklad gurka och persilja",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fisk: Pocherad dagens fångst med dillkokt potatis, kallrökt laxröra, rostad broccoli, dill och citron",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veg: Friterad falafel med potatispuré, chilimajonnäs, rostad broccoli och persilja",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans sallad: Ceasarsallad med ceasardressad romansallad, bacon, parmesan, krutonger. Välj mellan kyckling eller vegetariskt",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Kött: Nattbakad fläsksida med jasminris, wokade grönsaker, hoisinsås smaksatt med apelsin, sesam och koriander",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fisk: Bakad dagens fångst med färskost, rostad kulpotatis, tomatsås med basilika, grillade grönsaker och ruccola",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veg: Stekt halloumi med rostad kulpotatis, tomatsås med basilika, grillade grönsaker och ruccola",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans sallad: Ceasarsallad med ceasardressad romansallad, bacon, parmesan, krutonger. Välj mellan kyckling eller vegetariskt",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Kött: Marinerad kycklingfilé med potatispuré smaksatt med Västerbottensost, kantarellsås, grönkål och svartvinbärsgelé",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fisk: Pocherad dagens fångst med dillkokt potatis, äggsås med pepparrot, dill och citron",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veg: Gnocchi med svamp och spenat, kantarellsås, grönkål och parmesan",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans sallad: Ceasarsallad med ceasardressad romansallad, bacon, parmesan, krutonger. Välj mellan kyckling eller vegetariskt",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Kött: Grekisk stifado med rostad klyftpotatis, myntayoghurt, Kalamataoliver, soltorkade tomater och ruccola",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fisk: Halstrad dagens fångst med spenatstomp, citronsås, syrlig sallad och dill",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veg: Tofu med rostad klyftpotatis, myntayoghurt, Kalamataoliver, soltorkade tomater och ruccola",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans sallad: Ceasarsallad med ceasardressad romansallad, bacon, parmesan, krutonger. Välj mellan kyckling eller vegetariskt",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Kött: Högrevsburgare med pommes frites, briochebröd, krispsallad, ost, karamelliserad lök och tryffelmajonnäs",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fisk: Vitvinspocherad dagens fångst med gräslöksslungad potatis, vitvinssås, rädisa, spenat och dill",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veg: Halloumiburgare med pommes frites, briochebröd, krispsallad, ost, karamelliserad lök och tryffelmajonnäs",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans sallad: Ceasarsallad med ceasardressad romansallad, bacon, parmesan, krutonger. Välj mellan kyckling eller vegetariskt",
+              "price": "149 kr"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
