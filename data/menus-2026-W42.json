@@ -1,6 +1,6 @@
 {
   "week": "2026-W42",
-  "generated": "2026-10-12T08:39:38",
+  "generated": "2026-10-12T09:56:27",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -1285,14 +1285,6 @@
       ]
     },
     {
-      "name": "Poppels Citybryggeriet",
-      "area": "Platinan",
-      "region": "platinan",
-      "url": "https://www.poppels.se/citybryggeriet/lunch/",
-      "days": [],
-      "error": "Source menu is for week 41, expected week 42"
-    },
-    {
       "name": "Monopolet",
       "area": "Platinan",
       "region": "platinan",
@@ -1622,6 +1614,79 @@
             {
               "name": "Veckans sallad: Ceasarsallad med ceasardressad romansallad, bacon, parmesan, krutonger. Välj mellan kyckling eller vegetariskt",
               "price": "149 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Poppels Citybryggeriet",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.poppels.se/citybryggeriet/lunch/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Kyckling tikka masala, Ris,raita, spenatsallad",
+              "price": "145 kr"
+            },
+            {
+              "name": "Indisk linsgryta, Ris, raita, spenatsallad",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Plommonspäckad fläskkarré, Stekt potatis, gräddsås, pressgurka, äppelmos",
+              "price": "145 kr"
+            },
+            {
+              "name": "Saltbakade betor, Stekt potatis, gräddsås, pressgurka, äppelmos",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Kyckling milanese, Gnocchi, tomatsås, basilikamarinerade tomater",
+              "price": "145 kr"
+            },
+            {
+              "name": "Halloumi milanese, Gnocchi, tomatsås, basilikamarinerade tomater",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Nattbakad högrev, Potatispuré, rödvinssås, löksallad",
+              "price": "145 kr"
+            },
+            {
+              "name": "Rökt morot, Potatispuré, rödvinssås, löksallad",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Risotto med salsiccia, Svamp, pesto, parmesan",
+              "price": "145 kr"
+            },
+            {
+              "name": "Risotto med rostad palsternacka, Svamp, pesto, parmesan",
+              "price": "145 kr"
             }
           ]
         }
