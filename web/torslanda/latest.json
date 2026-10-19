@@ -1,6 +1,6 @@
 {
   "week": "2026-W43",
-  "generated": "2026-10-19T09:33:53",
+  "generated": "2026-10-19T12:40:13",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -893,8 +893,73 @@
       "area": "Amhult",
       "region": "torslanda",
       "url": "https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/",
-      "days": [],
-      "error": "Menu image is for week 42 (alt='meny v.42-26', file='A4 - meny v.42.jpg'), expected week 43"
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Kött: Pytt i panna, stekt ägg, syrad polkabeta, senapscreme, persilja",
+              "price": "139 kr"
+            },
+            {
+              "name": "Fisk: Rågmjölsstekt sej, potatispure, citronsås, ägg-/pepparrotsrulle, dillolja",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Kött: Stekt rimmat fläsk med raggmunk, rårörda lingon, alt, löksås, koktpotatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "Fisk: Laxfärserad rödtunga, potatis-/emmentalerpure, hummersås, råstekta primörer",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Kött: Citron-/vitlöks rostad kycklingklubbfilé, potatis-/palsternackspuré, cidergräddsky, syrad gurka",
+              "price": "139 kr"
+            },
+            {
+              "name": "Fisk: Soltomatsbakad lax, potatis-/palsternackspure, citron-/dragonsås, syrad gurka",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Kött: Hjortfärsbiff, råstektpotatis alt. potatisgratäng, grönpepparsås, rårörda lingon, brysselkål",
+              "price": "139 kr"
+            },
+            {
+              "name": "Fisk: Vitvinspocherad kolja, dillkokt potatis, gubbröra, fänkålspicklade betor, rostad kavring",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Kött: Entrecote(200g) örtrostad amandine potatis, rödvinsky, rosépeppersmör",
+              "price": "139 kr"
+            },
+            {
+              "name": "Fisk: Varmrökt lax, örtrostad amandine potatis, gräslökshollandaise, smörad morot med röktpaprika",
+              "price": "139 kr"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
