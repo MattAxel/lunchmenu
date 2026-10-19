@@ -1,6 +1,6 @@
 {
   "week": "2026-W43",
-  "generated": "2026-10-19T08:29:14",
+  "generated": "2026-10-19T09:33:53",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -93,14 +93,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "Bryggan",
-      "area": "Amhult",
-      "region": "torslanda",
-      "url": "https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/",
-      "days": [],
-      "error": "Menu image is for week 42 (alt='meny v.42-26', file='A4 - meny v.42.jpg'), expected week 43"
     },
     {
       "name": "Masala Corner",
@@ -1609,6 +1601,14 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Bryggan",
+      "area": "Amhult",
+      "region": "torslanda",
+      "url": "https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/",
+      "days": [],
+      "error": "Menu image is for week 42 (alt='meny v.42-26', file='A4 - meny v.42.jpg'), expected week 43"
     }
   ]
 }
