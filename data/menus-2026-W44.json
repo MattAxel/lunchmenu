@@ -1,6 +1,6 @@
 {
   "week": "2026-W44",
-  "generated": "2026-10-26T08:29:16",
+  "generated": "2026-10-26T09:43:01",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -1285,14 +1285,6 @@
       ]
     },
     {
-      "name": "Poppels Citybryggeriet",
-      "area": "Platinan",
-      "region": "platinan",
-      "url": "https://www.poppels.se/citybryggeriet/lunch/",
-      "days": [],
-      "error": "Source menu is for week 43, expected week 44"
-    },
-    {
       "name": "Monopolet",
       "area": "Platinan",
       "region": "platinan",
@@ -1638,6 +1630,119 @@
             {
               "name": "Veckans sallad: Ceasarsallad med ceasardressad romansallad, bacon, parmesan, krutonger. Välj mellan kyckling eller vegetariskt",
               "price": "149 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Poppels Citybryggeriet",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.poppels.se/citybryggeriet/lunch/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Rosmarinkyckling, Pasta rigatoni, svampsås, parmesan",
+              "price": "145 kr"
+            },
+            {
+              "name": "Rosmarinportabello, Pasta rigatoni, svampsås, parmesan",
+              "price": "145 kr"
+            },
+            {
+              "name": "Veckans husman: Wallenbergare på kalv, Potatismos, brynt smör, ärtor, lingon",
+              "price": "145 kr"
+            },
+            {
+              "name": "Veckans sallad: Sesamglaserad kyckling, Limemarinerat svartris, syrad lök, sallad, sojabönor, gochujangdressing",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Fish‘n chips, Pommes, tartarsås, ärtor, citron",
+              "price": "145 kr"
+            },
+            {
+              "name": "Halloumi’n chips, Pommes, tartarsås, ärtor, citron",
+              "price": "145 kr"
+            },
+            {
+              "name": "Veckans husman: Wallenbergare på kalv, Potatismos, brynt smör, ärtor, lingon",
+              "price": "145 kr"
+            },
+            {
+              "name": "Veckans sallad: Sesamglaserad kyckling, Limemarinerat svartris, syrad lök, sallad, sojabönor, gochujangdressing",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Hoisinbakad fläskkarré, Ris, kålsallad med chili, sojamajo",
+              "price": "145 kr"
+            },
+            {
+              "name": "Hoisinbakad vitkål, Ris, sallad på vita bönor och chili, sojamajo",
+              "price": "145 kr"
+            },
+            {
+              "name": "Veckans husman: Wallenbergare på kalv, Potatismos, brynt smör, ärtor, lingon",
+              "price": "145 kr"
+            },
+            {
+              "name": "Veckans sallad: Sesamglaserad kyckling, Limemarinerat svartris, syrad lök, sallad, sojabönor, gochujangdressing",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Boeuf bourguignon på högrev, Potatismos, svamp, lök, sidfläsk",
+              "price": "145 kr"
+            },
+            {
+              "name": "Bouef bourguignon på kålrot, Potatismos, svamp, lök",
+              "price": "145 kr"
+            },
+            {
+              "name": "Veckans husman: Wallenbergare på kalv, Potatismos, brynt smör, ärtor, lingon",
+              "price": "145 kr"
+            },
+            {
+              "name": "Veckans sallad: Sesamglaserad kyckling, Limemarinerat svartris, syrad lök, sallad, sojabönor, gochujangdressing",
+              "price": "145 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Kycklingfajitas, Chiliris, avokadokräm, rostad tomat- och paprikasallad, tortillabröd",
+              "price": "145 kr"
+            },
+            {
+              "name": "Halloumifajitas, Chiliris, avokadokräm, rostad tomat- och paprikasallad, tortillabröd",
+              "price": "145 kr"
+            },
+            {
+              "name": "Veckans husman: Wallenbergare på kalv, Potatismos, brynt smör, ärtor, lingon",
+              "price": "145 kr"
+            },
+            {
+              "name": "Veckans sallad: Sesamglaserad kyckling, Limemarinerat svartris, syrad lök, sallad, sojabönor, gochujangdressing",
+              "price": "145 kr"
             }
           ]
         }
