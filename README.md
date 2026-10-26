@@ -17,6 +17,7 @@ Supports multiple regions — each region gets its own page and URL.
 | Masala Corner | Amhult | Text scraping |
 | Tsuki Hana | Amhult | Text scraping |
 | Tilda & Josper | Amhult | Text scraping |
+| Sockermajas | Amhult | Public Facebook page: newest image post headed `LUNCHMENY V.<week>` → Grok Vision, current week only (posted ~15:00 Mondays, not every week) |
 | Kalimera | Amhult | Text scraping |
 
 ### Platinan

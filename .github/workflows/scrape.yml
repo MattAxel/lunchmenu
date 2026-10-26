@@ -4,16 +4,21 @@ name: Scrape Lunch Menus
 #   05:37 UTC = 07:37 Stockholm summer (CEST) / 06:37 winter (CET)
 #   08:07 UTC = 10:07 Stockholm summer (CEST) / 09:07 winter (CET)  (retry:
 #   restaurants already fetched this week are skipped, failed ones retried)
+#   14:37 UTC Mon = 15:37 CET / 16:37 CEST and 06:07 UTC Tue: late pass for
+#   Sockermajas, which posts "LUNCHMENY V.<week>" on Facebook ~15:00 Mondays
+#   (only failed/missing restaurants are re-fetched; no stale weeks accepted)
 # GitHub sometimes drops scheduled runs (none fired on 2026-10-05), so an
 # external Monday check starts this workflow via workflow_dispatch if needed.
 on:
   schedule:
     - cron: "37 5 * * 1"
     - cron: "7 8 * * 1"
+    - cron: "37 14 * * 1"
+    - cron: "7 6 * * 2"
   workflow_dispatch:
     inputs:
       force:
-        description: 'Re-fetch even if already fetched this week: "all" or comma list of names, e.g. "Bryggan,Poppels"'
+        description: 'Re-fetch even if already fetched this week: "all" or comma list of names, e.g. "Bryggan,Poppels" or "Sockermajas"'
         required: false
         default: ""
         type: string

@@ -57,6 +57,14 @@
     "region": "torslanda"
   },
   {
+    "name": "Sockermajas",
+    "url": "https://www.facebook.com/sockermajas/",
+    "type": "facebook",
+    "area": "Amhult",
+    "region": "torslanda",
+    "week_check": true
+  },
+  {
     "name": "Kalimera",
     "url": "https://kalimeramezetapas.se/veckans-lunch/",
     "type": "text",

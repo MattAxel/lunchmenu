@@ -496,6 +496,132 @@ def fetch_text_days(base_url: str, day_paths: list[str]) -> str:
 
 
 
+class MenuNotPublishedError(RuntimeError):
+    """The source has no menu for the current week yet (not a scrape failure)."""
+
+
+FB_POST_IMAGE_JS = """
+() => [...document.querySelectorAll('img')]
+  .map(i => ({src: i.currentSrc || i.src || '', alt: i.getAttribute('alt') || '',
+              w: i.getBoundingClientRect().width, h: i.getBoundingClientRect().height,
+              top: i.getBoundingClientRect().top + window.scrollY,
+              loaded: i.complete && i.naturalWidth > 0}))
+  .filter(x => x.src.includes('fbcdn.net') && !x.src.includes('rsrc.php')
+               && x.w >= 250 && x.h >= 150)
+"""
+
+
+def _fb_dismiss(page) -> None:
+    """Close the cookie dialog and the login popup (no login is attempted)."""
+    for name in ("Tillåt alla cookies", "Allow all cookies",
+                 "Avvisa valfria cookies", "Decline optional cookies"):
+        try:
+            btn = page.get_by_role("button", name=name).first
+            if btn.count():
+                btn.click(timeout=3000)
+                page.wait_for_timeout(1000)
+                break
+        except Exception:
+            pass
+    for sel in ('[aria-label="Stäng"]', '[aria-label="Close"]'):
+        try:
+            page.locator(sel).first.click(timeout=2000)
+            break
+        except Exception:
+            pass
+
+
+def fetch_facebook(url: str, expected_week: str, max_candidates: int = 4) -> bytes:
+    """Return the image of the newest public FB post titled "LUNCHMENY V.<week>".
+
+    Plain public page load (no login, no bot-protection evasion). Post images
+    are checked newest first: by alt text when FB's alt carries the text, else
+    by a short Grok vision call that reads the heading. Only the current ISO
+    week is accepted; when no such post exists yet MenuNotPublishedError is
+    raised so the app shows "not published" instead of last week's menu.
+    """
+    from scraper.extract import read_menu_heading_week
+
+    expected_no = int(expected_week.split("-W")[1])
+    slug = urlparse(url).path.strip("/").split("/")[0] or "facebook"
+    urls = [url]
+    if "://www.facebook.com" in url:
+        # m.facebook.com sometimes renders posts when www shows "not available"
+        urls.append(url.replace("://www.facebook.com", "://m.facebook.com"))
+
+    seen: set[str] = set()
+    checked = 0
+    last_err = None
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        try:
+            for page_url in urls:
+                context = browser.new_context(
+                    viewport={"width": 1366, "height": 900}, locale="sv-SE",
+                    user_agent=DEFAULT_HEADERS["User-Agent"],
+                )
+                page = context.new_page()
+                try:
+                    resp = _goto_loaded(page, page_url)
+                    page.wait_for_timeout(4000)
+                    _check_blocked(page_url, resp.status if resp else None, page.title())
+                    _fb_dismiss(page)
+                    for _ in range(3):
+                        page.mouse.wheel(0, 900)
+                        page.wait_for_timeout(2000)
+                    _debug_screenshot(page, f"facebook-{slug}")
+                    images = sorted(page.evaluate(FB_POST_IMAGE_JS), key=lambda x: x["top"])
+                except Exception as exc:
+                    last_err = f"{page_url}: {str(exc).splitlines()[0]}"
+                    print(f"  {last_err}")
+                    context.close()
+                    continue
+                print(f"  {page_url}: {len(images)} post image(s)")
+                for info in images:
+                    key = info["src"].split("?")[0].rsplit("/", 1)[-1]
+                    if key in seen or checked >= max_candidates:
+                        continue
+                    seen.add(key)
+                    alt = info["alt"]
+                    alt_week = _week_from_label(alt) if "meny" in alt.lower() else None
+                    if alt_week is not None and alt_week != expected_no:
+                        print(f"  Skipping image (alt says week {alt_week}): {alt[:80]!r}")
+                        continue
+                    try:
+                        data = _download_image(info["src"], page_url, context)
+                    except Exception as exc:
+                        print(f"  Download failed ({str(exc)[:120]}); using element screenshot")
+                        try:
+                            loc = page.locator(f'img[src="{info["src"]}"]').first
+                            loc.scroll_into_view_if_needed(timeout=5000)
+                            page.wait_for_timeout(1500)
+                            data = loc.screenshot(type="png")
+                        except Exception as exc2:
+                            print(f"  Screenshot failed: {str(exc2).splitlines()[0]}")
+                            continue
+                    checked += 1
+                    week = alt_week if alt_week is not None else read_menu_heading_week(data)
+                    print(f"  Candidate {checked}: alt={alt[:60]!r} lunch-menu week={week}")
+                    if week == expected_no:
+                        content = ImageContent(data)
+                        content.source_url, content.alt, content.printed_week = (
+                            info["src"], alt, week)
+                        return content
+                context.close()
+                if checked:
+                    break  # posts were readable; no need for the mobile page
+        finally:
+            browser.close()
+    if not checked:
+        raise RuntimeError(
+            f"Could not read any post images from {url}"
+            + (f" ({last_err})" if last_err else "")
+        )
+    raise MenuNotPublishedError(
+        f"Ingen LUNCHMENY V.{expected_no} publicerad än ({checked} senaste bildinlägg kontrollerade)"
+    )
+
+
 def fetch_content(restaurant: dict, expected_week: str | None = None) -> str | bytes:
     """Fetch content based on restaurant type.
 
@@ -510,6 +636,8 @@ def fetch_content(restaurant: dict, expected_week: str | None = None) -> str | b
         return fetch_text_playwright(restaurant["url"])
     elif restaurant["type"] == "image":
         return fetch_image(restaurant["url"], expected_week)
+    elif restaurant["type"] == "facebook":
+        return fetch_facebook(restaurant["url"], expected_week)
     elif restaurant["type"] == "canva":
         return fetch_canva(restaurant["url"], restaurant.get("canva_url"))
     elif restaurant["type"] == "pdf":

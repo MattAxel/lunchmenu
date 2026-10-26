@@ -394,7 +394,9 @@
         html += `<span class="area-badge">${esc(r.area)}</span>`;
         html += `</div>`;
 
-        if (r.error) {
+        if (r.not_published) {
+          html += `<div class="error-msg">Veckans meny är inte publicerad än</div>`;
+        } else if (r.error) {
           html += `<div class="error-msg">Kunde inte hämta menyn</div>`;
         } else if (days.length === 0 && activeDay !== null) {
           html += `<div class="day"><div class="day-name">${esc(activeDay)}</div><div class="dish"><span class="dish-name" style="color:var(--muted);font-style:italic">Ingen lunch denna dag</span></div></div>`;

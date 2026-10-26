@@ -96,6 +96,35 @@ def extract_menu_from_image(
     )
 
 
+def read_menu_heading_week(image_bytes: bytes) -> int | None:
+    """Return N if the image is a lunch menu headed "LUNCHMENY V.N", else None.
+
+    Cheap pre-check for social-media posts (most posts are not menus).
+    """
+    mime = _detect_image_mime(image_bytes)
+    b64 = base64.b64encode(image_bytes).decode("ascii")
+    prompt = (
+        "Is this image a weekly lunch menu with a heading like 'LUNCHMENY V.44' "
+        "(or 'Lunchmeny vecka 44')? Return ONLY JSON: "
+        '{"is_lunch_menu": true/false, "week": <integer week number printed in '
+        "the heading, or null>, \"days\": []}"
+    )
+    try:
+        result = _call_grok([
+            {"type": "text", "text": prompt},
+            {"type": "image_url", "image_url": {"url": f"data:{mime};base64,{b64}"}},
+        ])
+    except Exception as exc:
+        print(f"  Heading check failed: {exc}")
+        return None
+    if not result.get("is_lunch_menu"):
+        return None
+    try:
+        return int(result.get("week"))
+    except (TypeError, ValueError):
+        return None
+
+
 def extract_menu_from_pdf(pdf_bytes: bytes, restaurant_name: str) -> dict:
     """Extract menu from a PDF via text when clean, else Grok vision on pages.
 
@@ -190,7 +219,7 @@ def extract_menu(
     """
     if restaurant["type"] in ("text", "text_days", "text_js", "canva"):
         return extract_menu_from_text(content, restaurant["name"], expected_week)
-    elif restaurant["type"] == "image":
+    elif restaurant["type"] in ("image", "facebook"):
         return extract_menu_from_image(content, restaurant["name"], expected_week)
     elif restaurant["type"] == "pdf":
         return extract_menu_from_pdf(content, restaurant["name"])

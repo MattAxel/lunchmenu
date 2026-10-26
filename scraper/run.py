@@ -8,7 +8,7 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-from scraper.fetch import fetch_content
+from scraper.fetch import MenuNotPublishedError, fetch_content
 from scraper.extract import extract_menu
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -245,7 +245,8 @@ def run(restaurant_filter: str | None = None, force: str | None = None):
                 break
 
             except Exception as e:
-                if attempt < max_retries:
+                not_published = isinstance(e, MenuNotPublishedError)
+                if attempt < max_retries and not not_published:
                     print(f"  Attempt {attempt} failed: {e}. Retrying...")
                     continue
                 print(f"  ERROR: {e}")
@@ -260,6 +261,7 @@ def run(restaurant_filter: str | None = None, force: str | None = None):
                     "url": restaurant["url"],
                     "days": [],
                     "error": str(e),
+                    **({"not_published": True} if not_published else {}),
                 })
 
     existing["generated"] = datetime.now().isoformat(timespec="seconds")

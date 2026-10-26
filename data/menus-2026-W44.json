@@ -1,6 +1,6 @@
 {
   "week": "2026-W44",
-  "generated": "2026-10-26T09:43:01",
+  "generated": "2026-10-26T15:30:02",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -1743,6 +1743,79 @@
             {
               "name": "Veckans sallad: Sesamglaserad kyckling, Limemarinerat svartris, syrad lök, sallad, sojabönor, gochujangdressing",
               "price": "145 kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sockermajas",
+      "area": "Amhult",
+      "region": "torslanda",
+      "url": "https://www.facebook.com/sockermajas/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Sallader: Svartris, rödkål, rostad potatis, granatäpple salladsost serveras med basilika och citronsås Varmrökt lax eller Kyckling",
+              "price": "135 kr"
+            },
+            {
+              "name": "Varm mat på buffé: Svampsoppa med kantarellfond och vittvin på buffé",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Sallader: Svartris, rödkål, rostad potatis, granatäpple salladsost serveras med basilika och citronsås",
+              "price": "135 kr"
+            },
+            {
+              "name": "Varm mat på buffé: Svampsoppa med kantarell fond och vittvin på buffé",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Sallader: Asiatisk sallad med risnudlar, mango sojabönor Sesam, koriander Kyckling/räkor",
+              "price": "135 kr"
+            },
+            {
+              "name": "Varm mat på buffé: Köttbullar med gräddsås, potatismos rårörda lingon",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Sallader: Pasta pesto med soltorkade tomater oliver, majs, rödlök. Kyckling eller Räkor",
+              "price": "135 kr"
+            },
+            {
+              "name": "Varm mat på buffé: Köttbullar med gräddsås, potatismos rårörda lingon",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Sallader: Honungsrostade rödbetor, solrosfrön, ost svartris kyckling eller räkor",
+              "price": "135 kr"
+            },
+            {
+              "name": "Varm mat på buffé: Fisk och skaldjursoppa med lax, torsk och Räkor",
+              "price": "149 kr"
             }
           ]
         }
