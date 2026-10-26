@@ -1758,12 +1758,12 @@
           "day": "Måndag",
           "dishes": [
             {
-              "name": "Sallader: Svartris, rödkål, rostad potatis, granatäpple salladsost serveras med basilika och citronsås Varmrökt lax eller Kyckling",
-              "price": "135 kr"
+              "name": "Sallad: Svartris, rödkål, rostad potatis, granatäpple, salladsost serveras med basilika och citronsås. Varmrökt lax eller kyckling",
+              "price": "135 kr take away / 149 kr äta här inkl. kaffe och kaka"
             },
             {
-              "name": "Varm mat på buffé: Svampsoppa med kantarellfond och vittvin på buffé",
-              "price": "149 kr"
+              "name": "Varm mat på buffé: Svampsoppa med kantarellfond och vitt vin",
+              "price": "149 kr take away"
             }
           ]
         },
@@ -1771,12 +1771,12 @@
           "day": "Tisdag",
           "dishes": [
             {
-              "name": "Sallader: Svartris, rödkål, rostad potatis, granatäpple salladsost serveras med basilika och citronsås",
-              "price": "135 kr"
+              "name": "Sallad: Svartris, rödkål, rostad potatis, granatäpple, salladsost serveras med basilika och citronsås. Varmrökt lax eller kyckling",
+              "price": "135 kr take away / 149 kr äta här inkl. kaffe och kaka"
             },
             {
-              "name": "Varm mat på buffé: Svampsoppa med kantarell fond och vittvin på buffé",
-              "price": "149 kr"
+              "name": "Varm mat på buffé: Svampsoppa med kantarellfond och vitt vin",
+              "price": "149 kr take away"
             }
           ]
         },
@@ -1784,12 +1784,12 @@
           "day": "Onsdag",
           "dishes": [
             {
-              "name": "Sallader: Asiatisk sallad med risnudlar, mango sojabönor Sesam, koriander Kyckling/räkor",
-              "price": "135 kr"
+              "name": "Sallad: Asiatisk sallad med risnudlar, mango, sojabönor, sesam, koriander. Kyckling/räkor",
+              "price": "135 kr take away / 149 kr äta här inkl. kaffe och kaka"
             },
             {
-              "name": "Varm mat på buffé: Köttbullar med gräddsås, potatismos rårörda lingon",
-              "price": "149 kr"
+              "name": "Varm mat på buffé: Köttbullar med gräddsås, potatismos, rårörda lingon",
+              "price": "149 kr take away"
             }
           ]
         },
@@ -1797,12 +1797,12 @@
           "day": "Torsdag",
           "dishes": [
             {
-              "name": "Sallader: Pasta pesto med soltorkade tomater oliver, majs, rödlök. Kyckling eller Räkor",
-              "price": "135 kr"
+              "name": "Sallad: Pasta pesto med soltorkade tomater, oliver, majs, rödlök. Kyckling eller räkor",
+              "price": "135 kr take away / 149 kr äta här inkl. kaffe och kaka"
             },
             {
-              "name": "Varm mat på buffé: Köttbullar med gräddsås, potatismos rårörda lingon",
-              "price": "149 kr"
+              "name": "Varm mat på buffé: Köttbullar med gräddsås, potatismos, rårörda lingon",
+              "price": "149 kr take away"
             }
           ]
         },
@@ -1810,12 +1810,12 @@
           "day": "Fredag",
           "dishes": [
             {
-              "name": "Sallader: Honungsrostade rödbetor, solrosfrön, ost svartris kyckling eller räkor",
-              "price": "135 kr"
+              "name": "Sallad: Honungsrostade rödbetor, solrosfrön, ost, svartris, kyckling eller räkor",
+              "price": "135 kr take away / 149 kr äta här inkl. kaffe och kaka"
             },
             {
-              "name": "Varm mat på buffé: Fisk och skaldjursoppa med lax, torsk och Räkor",
-              "price": "149 kr"
+              "name": "Varm mat på buffé: Fisk- och skaldjurssoppa med lax, torsk och räkor",
+              "price": "149 kr take away"
             }
           ]
         }
