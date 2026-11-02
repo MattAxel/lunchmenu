@@ -115,5 +115,13 @@
     "area": "Platinan",
     "region": "platinan",
     "week_check": true
+  },
+  {
+    "name": "K17 Kitchen",
+    "url": "https://www.k17kitchen.se/lunch/",
+    "type": "text",
+    "area": "Platinan",
+    "region": "platinan",
+    "week_check": true
   }
 ]
