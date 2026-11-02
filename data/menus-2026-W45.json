@@ -1,6 +1,6 @@
 {
   "week": "2026-W45",
-  "generated": "2026-11-02T19:13:49",
+  "generated": "2026-11-02T19:44:26",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -1740,6 +1740,99 @@
       "days": [],
       "error": "Ingen LUNCHMENY V.45 publicerad än (1 senaste bildinlägg kontrollerade)",
       "not_published": true
+    },
+    {
+      "name": "K17 Kitchen",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.k17kitchen.se/lunch/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Pasta rigatoni serveras med ragù på högrev, tomat och vin samt Grana Padano och rucola",
+              "price": "144 kr"
+            },
+            {
+              "name": "Pocherad fisk serveras med pumpapuré, rostade hasselnötter, skirat smör och örter",
+              "price": "144 kr"
+            },
+            {
+              "name": "Bakade betor, pumpapuré, rostade hasselnötter, skirat smör och örter",
+              "price": "144 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Stekt fläsk med löksås, kokt potatis och persilja",
+              "price": "144 kr"
+            },
+            {
+              "name": "Pocherad kolja, potatispuré, skirat smör, grönkål och picklad polkabeta",
+              "price": "144 kr"
+            },
+            {
+              "name": "Risotto med rostad pumpa och grönkål serveras med Grana Padano och rostade fröer",
+              "price": "144 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Köttbullar, nyslungat potatismos, rårörda lingon och pressad gurka",
+              "price": "144 kr"
+            },
+            {
+              "name": "Stekt röding med stekt kål, potatispuré och örtaioli, toppas med örter",
+              "price": "144 kr"
+            },
+            {
+              "name": "Helbakad morot serveras med stekt kål, potatispuré, örtaioli, rostade kikärtor och örter",
+              "price": "144 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Ärtsoppa med eller utan fläskkorv serveras med pannkakor, sylt och grädde",
+              "price": "144 kr"
+            },
+            {
+              "name": "Gulaschgryta serveras med långkornigt ris, smetana och syltad lök",
+              "price": "144 kr"
+            },
+            {
+              "name": "Panerad fisk serveras med örtslungad potatis, gräslöksaioli, citron och räkor",
+              "price": "144 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Pulled pork serveras med friterad potatis, majskolv och jalapeñosmajonnäs och toppas med salladslök och koriander",
+              "price": "144 kr"
+            },
+            {
+              "name": "Fisk- och skaldjursgryta serveras med räkor, potatis och saffransaioli",
+              "price": "144 kr"
+            },
+            {
+              "name": "BBQ Oumph serveras med friterad potatis, majskolv och jalapeñosmajonnäs och toppas med salladslök och koriander",
+              "price": "144 kr"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
