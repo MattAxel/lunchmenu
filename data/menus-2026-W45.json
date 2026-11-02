@@ -1,6 +1,6 @@
 {
   "week": "2026-W45",
-  "generated": "2026-11-02T08:36:16",
+  "generated": "2026-11-02T14:48:56",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -804,15 +804,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "Sockermajas",
-      "area": "Amhult",
-      "region": "torslanda",
-      "url": "https://www.facebook.com/sockermajas/",
-      "days": [],
-      "error": "Ingen LUNCHMENY V.45 publicerad än (2 senaste bildinlägg kontrollerade)",
-      "not_published": true
     },
     {
       "name": "Kalimera",
@@ -1740,6 +1731,15 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Sockermajas",
+      "area": "Amhult",
+      "region": "torslanda",
+      "url": "https://www.facebook.com/sockermajas/",
+      "days": [],
+      "error": "Ingen LUNCHMENY V.45 publicerad än (1 senaste bildinlägg kontrollerade)",
+      "not_published": true
     }
   ]
 }
