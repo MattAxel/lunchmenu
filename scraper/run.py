@@ -263,6 +263,14 @@ def run(restaurant_filter: str | None = None, force: str | None = None):
                     "error": str(e),
                     **({"not_published": True} if not_published else {}),
                 })
+                break
+
+    # Safety net: exactly one entry per restaurant name (last one wins).
+    by_name = {}
+    for r in existing["restaurants"]:
+        by_name.pop(r["name"], None)
+        by_name[r["name"]] = r
+    existing["restaurants"] = list(by_name.values())
 
     existing["generated"] = datetime.now().isoformat(timespec="seconds")
     existing["week"] = week_label
