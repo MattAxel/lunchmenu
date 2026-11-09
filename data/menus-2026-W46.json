@@ -806,9 +806,73 @@
       "area": "Amhult",
       "region": "torslanda",
       "url": "https://www.facebook.com/sockermajas/",
-      "days": [],
-      "error": "Ingen LUNCHMENY V.46 publicerad än (2 senaste bildinlägg kontrollerade)",
-      "not_published": true
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Sallad: Svartris, granatäpple, honungsrostade rödbetor, chèvre, serveras med basilika och citronsås. Räkor eller kyckling",
+              "price": "135 kr take away / 149 kr äta här inkl. kaffe och kaka"
+            },
+            {
+              "name": "Varm mat på buffé: Krämig svampsoppa på kantarellfond, stekta champinjoner och sherry, serveras med vitlöksbröd",
+              "price": "149 kr take away"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Sallad: Skagen med varmrökt lax, kokt ägg, kokt potatis, majs och picklad rödlök",
+              "price": "135 kr take away / 149 kr äta här inkl. kaffe och kaka"
+            },
+            {
+              "name": "Varm mat på buffé: Krämig svampsoppa på kantarellfond, stekta champinjoner och sherry, serveras med vitlöksbröd",
+              "price": "149 kr take away"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Sallad: Asiatisk sallad med risnudlar, mango, cashewnötter, koriander, chili och kyckling/räkor",
+              "price": "135 kr take away / 149 kr äta här inkl. kaffe och kaka"
+            },
+            {
+              "name": "Varm mat på buffé: Köttbullar med gräddsås, potatismos och rårörda lingon",
+              "price": "149 kr take away"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Sallad: Quinoa med strimlad rödkål, avocado, sesamfrön, rivna morötter samt kryddrostade kikärtor. Lax eller kyckling",
+              "price": "135 kr take away / 149 kr äta här inkl. kaffe och kaka"
+            },
+            {
+              "name": "Varm mat på buffé: Köttbullar med gräddsås, potatismos och rårörda lingon",
+              "price": "149 kr take away"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Sallad: Pasta eller svartris, kyckling eller räkor, soltorkad tomat, oliver, salladsost och curry-mangoraja",
+              "price": "135 kr take away / 149 kr äta här inkl. kaffe och kaka"
+            },
+            {
+              "name": "Varm mat på buffé: Fisk- och skaldjurssoppa med lax, torsk och räkor",
+              "price": "149 kr take away"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Kalimera",
