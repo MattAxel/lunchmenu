@@ -70,6 +70,10 @@ jobs:
           errors = []
           for region in ("platinan", "torslanda"):
               for r in json.load(open(f"web/{region}/latest.json"))["restaurants"]:
+                  # "type": "manual" (e.g. Ahlströms, from email) waiting
+                  # for this week's menu is expected, not an error
+                  if r.get("manual") and not r.get("error"):
+                      continue
                   if "error" in r or not r.get("days"):
                       errors.append(r["name"])
           print("Restaurants with errors:", ", ".join(errors) or "none")

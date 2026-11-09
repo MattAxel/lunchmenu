@@ -28,6 +28,8 @@ Supports multiple regions — each region gets its own page and URL.
 | Pagoden | Platinan | Text scraping |
 | Poppels Citybryggeriet | Platinan | Canva design (headed browser) → Grok, week-checked |
 | Carotte | Platinan (Läppstiftet) | Text scraping, week-checked |
+| K17 Kitchen | Platinan | Text scraping, week-checked |
+| Ahlströms Konditori | Platinan | `"type": "manual"` — weekly email (Mondays ~09:00) → published with `scraper/manual_entry.py` |
 
 ## Setup
 
@@ -104,6 +106,7 @@ Supported types:
 - `"text_js"` — uses Playwright for JS-rendered pages, then extracts text
 - `"image"` — loads the page with Playwright, downloads the menu `<img>` (first `img[alt^="meny v." i]`, then generic menu selectors, then a screenshot as a last resort), then Grok vision reads it. With `"week_check": true`, a week number in the alt text or file name (e.g. `meny v.40`) must match the current week.
 - `"pdf"` — downloads a PDF, extracts text with pypdf, then Grok; scanned PDFs should use `"image"` instead
+- `"manual"` — never fetched by the scraper (not even with `--force all`). Publish each week's menu with `scraper/manual_entry.py` (see below). Scraper runs keep a published entry for the current week untouched; until one exists the restaurant is shown as "Veckans meny är inte publicerad än" (`"not_published": true`, not counted as an error).
 
 - `"canva"` — finds the Canva embed on the restaurant page and reads the design's text in a plain visible Chromium window (Canva challenges headless browsers; needs a display, e.g. `xvfb-run` in CI). Optional `"canva_url"` is used when the page can't be loaded (e.g. Poppels blocks our network); if the page embeds a different design than `canva_url`, a NOTE is logged.
 
@@ -115,6 +118,22 @@ For restaurants that can't be scraped automatically, put a file in `data/overrid
 
 - `{slug}.txt` — menu text, extracted like a text page.
 - `{slug}.png` / `.jpg` / `.jpeg` / `.webp` — a photo/screenshot of the menu, extracted with Grok vision. Image overrides are always week-checked: if the image shows a different week number (e.g. last week's photo left behind) the run fails for that restaurant instead of republishing a stale menu. Replace or delete the file each week.
+
+### Manual weekly menus (`"type": "manual"`)
+
+For restaurants whose menu arrives by email or similar (e.g. Ahlströms Konditori, Platinan), publish the week in one command:
+
+```bash
+python3 -m scraper.manual_entry "Ahlströms Konditori" --week 2026-W46 \
+  --item "Veckans soppa: Tomatsoppa men härliga tillbehör" \
+  --item "Veckans varma: Tuna melt , serveras med sidosallad" \
+  --item "Veckans krans: Smörkola krans"
+```
+
+- Each `--item` is `"Dish text"` or `"Dish text | price"` (e.g. `"Veckans varma: Tuna melt | 125 kr"`). Alternatively `--items-file items.txt` (one item per line, `-` = stdin) or `--items-json '[{"name": "...", "price": "..."}]'` (inline or a file path).
+- Weekly items are listed on every weekday Måndag–Fredag (`--days Måndag,Tisdag` to limit). `--week` defaults to the current ISO week.
+- The entry (marked `"manual": true`) is merged into `data/menus-<week>.json`, replacing any earlier entry or placeholder for that restaurant, and `web/<region>/latest.json` files are regenerated if that week is the one shown (or newer). Then commit `data/ web/*/latest.json` and push; the Deploy workflow publishes it.
+- No extra dependencies (standard library only), so it runs without the scraper's virtualenv.
 
 If a re-run fails for a restaurant that already has a good menu for the current week, the existing menu is kept.
 

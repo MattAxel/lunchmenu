@@ -1,6 +1,6 @@
 {
   "week": "2026-W46",
-  "generated": "2026-11-09T08:24:23",
+  "generated": "2026-11-09T09:21:26",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -1849,6 +1849,85 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Ahlströms Konditori",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://ahlstromskonditori.se/",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Veckans soppa: Tomatsoppa men härliga tillbehör"
+            },
+            {
+              "name": "Veckans varma: Tuna melt , serveras med sidosallad"
+            },
+            {
+              "name": "Veckans krans: Smörkola krans"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Veckans soppa: Tomatsoppa men härliga tillbehör"
+            },
+            {
+              "name": "Veckans varma: Tuna melt , serveras med sidosallad"
+            },
+            {
+              "name": "Veckans krans: Smörkola krans"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Veckans soppa: Tomatsoppa men härliga tillbehör"
+            },
+            {
+              "name": "Veckans varma: Tuna melt , serveras med sidosallad"
+            },
+            {
+              "name": "Veckans krans: Smörkola krans"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Veckans soppa: Tomatsoppa men härliga tillbehör"
+            },
+            {
+              "name": "Veckans varma: Tuna melt , serveras med sidosallad"
+            },
+            {
+              "name": "Veckans krans: Smörkola krans"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Veckans soppa: Tomatsoppa men härliga tillbehör"
+            },
+            {
+              "name": "Veckans varma: Tuna melt , serveras med sidosallad"
+            },
+            {
+              "name": "Veckans krans: Smörkola krans"
+            }
+          ]
+        }
+      ],
+      "manual": true
     }
   ]
 }

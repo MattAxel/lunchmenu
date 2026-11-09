@@ -17,6 +17,23 @@ OVERRIDES_DIR = DATA_DIR / "overrides"
 WEB_DIR = ROOT / "web"
 RESTAURANTS_FILE = ROOT / "restaurants.json"
 
+# Restaurants with "type": "manual" in restaurants.json are published by hand
+# (python -m scraper.manual_entry) and never fetched by the scraper.
+MANUAL_TYPE = "manual"
+
+
+def manual_placeholder(restaurant: dict) -> dict:
+    """Entry shown as "Veckans meny är inte publicerad än" (not an error)."""
+    return {
+        "name": restaurant["name"],
+        "area": restaurant["area"],
+        "region": restaurant.get("region", "torslanda"),
+        "url": restaurant["url"],
+        "days": [],
+        "manual": True,
+        "not_published": True,
+    }
+
 
 def _slug(name: str) -> str:
     """Convert restaurant name to a filename slug."""
@@ -90,6 +107,8 @@ def _write_summary(existing: dict, attempted: set[str]) -> None:
     print("\nSummary:")
     for r in existing["restaurants"]:
         status = ("ERROR: " + r["error"][:150]) if "error" in r else "ok"
+        if r.get("manual") and not r.get("days"):
+            status = "manual: not published yet"
         if r["name"] in attempted and "error" not in r:
             status += " (fetched this run)"
         print(f"  {r['name']}: {len(r.get('days') or [])} days, {status}")
@@ -144,6 +163,25 @@ def run(restaurant_filter: str | None = None, force: str | None = None):
 
     for restaurant in restaurants:
         print(f"--- {restaurant['name']} ({restaurant['area']}) ---")
+
+        # "type": "manual" restaurants (e.g. Ahlströms Konditori, whose menu
+        # arrives by email; published with scraper/manual_entry.py) are never
+        # fetched, not even when forced or filtered. A published entry for
+        # this week is kept untouched; without one a friendly "not published
+        # yet" placeholder is written (not an error).
+        if restaurant.get("type") == MANUAL_TYPE:
+            current = [r for r in existing["restaurants"]
+                       if r["name"] == restaurant["name"]]
+            if any(r.get("days") and "error" not in r for r in current):
+                print("  Manual source: keeping this week's published entry.")
+            else:
+                print("  Manual source: not published yet this week.")
+                existing["restaurants"] = [
+                    r for r in existing["restaurants"]
+                    if r["name"] != restaurant["name"]
+                ]
+                existing["restaurants"].append(manual_placeholder(restaurant))
+            continue
 
         # Skip if already fetched successfully this week (unless filtering)
         if (restaurant["name"] in existing_ok and not restaurant_filter

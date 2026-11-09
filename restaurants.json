@@ -123,5 +123,13 @@
     "area": "Platinan",
     "region": "platinan",
     "week_check": true
+  },
+  {
+    "name": "Ahlströms Konditori",
+    "url": "https://ahlstromskonditori.se/",
+    "type": "manual",
+    "source": "email",
+    "area": "Platinan",
+    "region": "platinan"
   }
 ]
