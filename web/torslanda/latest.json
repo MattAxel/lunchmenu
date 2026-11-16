@@ -1,6 +1,6 @@
 {
   "week": "2026-W47",
-  "generated": "2026-11-16T08:54:26",
+  "generated": "2026-11-16T09:21:05",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -110,14 +110,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "Bryggan",
-      "area": "Amhult",
-      "region": "torslanda",
-      "url": "https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/",
-      "days": [],
-      "error": "Menu image is for week 46 (alt='meny v.46', file='A4 -meny v.46-26.jpg'), expected week 47"
     },
     {
       "name": "Masala Corner",
@@ -741,14 +733,6 @@
       ]
     },
     {
-      "name": "Sockermajas",
-      "area": "Amhult",
-      "region": "torslanda",
-      "url": "https://www.facebook.com/sockermajas/",
-      "days": [],
-      "error": "Could not read any post images from https://www.facebook.com/sockermajas/"
-    },
-    {
       "name": "Kalimera",
       "area": "Amhult",
       "region": "torslanda",
@@ -920,6 +904,23 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Bryggan",
+      "area": "Amhult",
+      "region": "torslanda",
+      "url": "https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/",
+      "days": [],
+      "error": "Menu image is for week 46 (alt='meny v.46', file='A4 -meny v.46-26.jpg'), expected week 47"
+    },
+    {
+      "name": "Sockermajas",
+      "area": "Amhult",
+      "region": "torslanda",
+      "url": "https://www.facebook.com/sockermajas/",
+      "days": [],
+      "error": "Ingen LUNCHMENY V.47 publicerad än (2 senaste bildinlägg kontrollerade)",
+      "not_published": true
     }
   ]
 }

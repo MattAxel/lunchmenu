@@ -1,6 +1,6 @@
 {
   "week": "2026-W47",
-  "generated": "2026-11-16T08:54:26",
+  "generated": "2026-11-16T09:21:05",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -110,14 +110,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "Bryggan",
-      "area": "Amhult",
-      "region": "torslanda",
-      "url": "https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/",
-      "days": [],
-      "error": "Menu image is for week 46 (alt='meny v.46', file='A4 -meny v.46-26.jpg'), expected week 47"
     },
     {
       "name": "Masala Corner",
@@ -739,14 +731,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "Sockermajas",
-      "area": "Amhult",
-      "region": "torslanda",
-      "url": "https://www.facebook.com/sockermajas/",
-      "days": [],
-      "error": "Could not read any post images from https://www.facebook.com/sockermajas/"
     },
     {
       "name": "Kalimera",
@@ -1426,14 +1410,6 @@
       ]
     },
     {
-      "name": "Delissimo",
-      "area": "Platinan",
-      "region": "platinan",
-      "url": "https://www.delissimo.se",
-      "days": [],
-      "error": "No PDF link found matching area 'Platinan' on https://www.delissimo.se"
-    },
-    {
       "name": "Carotte",
       "area": "Platinan",
       "region": "platinan",
@@ -1717,6 +1693,168 @@
         }
       ],
       "manual": true
+    },
+    {
+      "name": "Bryggan",
+      "area": "Amhult",
+      "region": "torslanda",
+      "url": "https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/",
+      "days": [],
+      "error": "Menu image is for week 46 (alt='meny v.46', file='A4 -meny v.46-26.jpg'), expected week 47"
+    },
+    {
+      "name": "Sockermajas",
+      "area": "Amhult",
+      "region": "torslanda",
+      "url": "https://www.facebook.com/sockermajas/",
+      "days": [],
+      "error": "Ingen LUNCHMENY V.47 publicerad än (2 senaste bildinlägg kontrollerade)",
+      "not_published": true
+    },
+    {
+      "name": "Delissimo",
+      "area": "Platinan",
+      "region": "platinan",
+      "url": "https://www.delissimo.se",
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Kött: Grillad ryggbiff med stekt potatis, haricot verts & rödvinssås",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fågel: Kycklinggryta med tomatsås, grönsaker, basmatiris & vitlöksyoghurt.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta milano: Stekt salami i örtig tomatsås med skvätt grädde, rödlök, chili & persilja. Toppas med ruccola & parmesan.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans pizza - vegetale: Frasig surdegspizza med örtig tomatsås, mozzarella fior di latte & grillade italienska grönsaker (zucchini, paprika & aubergine) med basilikapesto.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans caesarsallad: Grillad kycklingfilé, hickoryrökt bacon, ugnsbakade krutonger & romansallad. Toppas med ruccola & parmesan samt serveras med caesarsås.",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Kött: Köttfärslimpa med potatismos gräddsås, ärtor, press gurka & rårörda lingon.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fågel: Kycklingspett med klyftpotatis, haricot verts, BBQ-sås & aioli.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fisk: Panerad flundrafilé med kokt potatis, ärtor & kall dillsås med kapris.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta verde: Vitlöksstekt kyckling & cocktailtomater i basilikasås med parmesan.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans pizza - vegetale: Frasig surdegspizza med örtig tomatsås, mozzarella fior di latte & grillade italienska grönsaker (zucchini, paprika & aubergine) med basilikapesto.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans caesarsallad: Grillad kycklingfilé, hickoryrökt bacon, ugnsbakade krutonger & romansallad. Toppas med ruccola & parmesan samt serveras med caesarsås.",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Kött: Grillmix med fläskspett, entrecote, biffar, färsk potatis & choronsås.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fågel: Kycklingcurry gryta med jordnötter, banan, paprika & basmatiris.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fisk: Hummerdoftande fisksoppa med laxfilé, flundrafilé, räkor, aioli & citron.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta alfredo: Stekt kyckling i parmesansås med persilja & vitlök.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans pizza - vegetale: Frasig surdegspizza med örtig tomatsås, mozzarella fior di latte & grillade italienska grönsaker (zucchini, paprika & aubergine) med basilikapesto.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans caesarsallad: Grillad kycklingfilé, hickoryrökt bacon, ugnsbakade krutonger & romansallad. Toppas med ruccola & parmesan samt serveras med caesarsås.",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Kött: Krämig lövbiffsgryta med svamp, lök, creme fraiche & stekt potatis.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fågel: Stekt kycklingfilé med rostad potatis, haricot verts & krämig tomatsås.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Fisk: Halstrad laxfjäril med kokt potatis, saffranssås & ärtor.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta spinachi: Färska pastaknutar fyllda med spenat & ricotta. Serveras i svampsås med parmesan.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans pizza - vegetale: Frasig surdegspizza med örtig tomatsås, mozzarella fior di latte & grillade italienska grönsaker (zucchini, paprika & aubergine) med basilikapesto.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans caesarsallad: Grillad kycklingfilé, hickoryrökt bacon, ugnsbakade krutonger & romansallad. Toppas med ruccola & parmesan samt serveras med caesarsås.",
+              "price": "149 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Kött: Grillad Entrecote med klyftpotatis, svampsås & röd pestosås.",
+              "price": "159 kr"
+            },
+            {
+              "name": "Fågel: Kycklingschnitzel med pommes söt chilisås, ärtor & bearnaisesås.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Pasta foresta: Vitlöksstekt ostronskivling & champinjoner i gräddig vitvinssås med parmesan & persilja.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans pizza - vegetale: Frasig surdegspizza med örtig tomatsås, mozzarella fior di latte & grillade italienska grönsaker (zucchini, paprika & aubergine) med basilikapesto.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans caesarsallad: Grillad kycklingfilé, hickoryrökt bacon, ugnsbakade krutonger & romansallad. Toppas med ruccola & parmesan samt serveras med caesarsås.",
+              "price": "149 kr"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
