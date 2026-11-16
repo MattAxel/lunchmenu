@@ -1,6 +1,6 @@
 {
   "week": "2026-W47",
-  "generated": "2026-11-16T08:34:03",
+  "generated": "2026-11-16T08:54:26",
   "restaurants": [
     {
       "name": "Björkmans Skafferi",
@@ -725,9 +725,79 @@
       "area": "Platinan",
       "region": "platinan",
       "url": "https://ahlstromskonditori.se/",
-      "days": [],
-      "manual": true,
-      "not_published": true
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Veckans soppa: Härlig svampsoppa toppad med solrosfrön"
+            },
+            {
+              "name": "Veckans varma: Fetaost och spenatpaj serveras med sidosallad"
+            },
+            {
+              "name": "månadens krans: Smörkolakrans med dulce de leche"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Veckans soppa: Härlig svampsoppa toppad med solrosfrön"
+            },
+            {
+              "name": "Veckans varma: Fetaost och spenatpaj serveras med sidosallad"
+            },
+            {
+              "name": "månadens krans: Smörkolakrans med dulce de leche"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Veckans soppa: Härlig svampsoppa toppad med solrosfrön"
+            },
+            {
+              "name": "Veckans varma: Fetaost och spenatpaj serveras med sidosallad"
+            },
+            {
+              "name": "månadens krans: Smörkolakrans med dulce de leche"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Veckans soppa: Härlig svampsoppa toppad med solrosfrön"
+            },
+            {
+              "name": "Veckans varma: Fetaost och spenatpaj serveras med sidosallad"
+            },
+            {
+              "name": "månadens krans: Smörkolakrans med dulce de leche"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Veckans soppa: Härlig svampsoppa toppad med solrosfrön"
+            },
+            {
+              "name": "Veckans varma: Fetaost och spenatpaj serveras med sidosallad"
+            },
+            {
+              "name": "månadens krans: Smörkolakrans med dulce de leche"
+            }
+          ]
+        }
+      ],
+      "manual": true
     }
   ]
 }
