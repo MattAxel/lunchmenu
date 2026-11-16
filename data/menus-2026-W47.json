@@ -1,6 +1,6 @@
 {
   "week": "2026-W47",
-  "generated": "2026-11-16T09:21:05",
+  "generated": "2026-11-16T09:29:30",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -1708,7 +1708,7 @@
       "region": "torslanda",
       "url": "https://www.facebook.com/sockermajas/",
       "days": [],
-      "error": "Ingen LUNCHMENY V.47 publicerad än (2 senaste bildinlägg kontrollerade)",
+      "error": "Ingen LUNCHMENY V.47 publicerad än (1 senaste bildinlägg kontrollerade)",
       "not_published": true
     },
     {
@@ -1721,23 +1721,27 @@
           "day": "Måndag",
           "dishes": [
             {
-              "name": "Kött: Grillad ryggbiff med stekt potatis, haricot verts & rödvinssås",
+              "name": "Kött: Black and White - Grillad ryggbiff samt kycklingbröst som serveras med ugnsrostad färsk potatis. Serveras med bearnaise & rödvinssås.",
               "price": "149 kr"
             },
             {
-              "name": "Fågel: Kycklinggryta med tomatsås, grönsaker, basmatiris & vitlöksyoghurt.",
+              "name": "Fågel: Helstekt ankbröstfilé med potatismos & skysås. Toppas med stekt bacon.",
               "price": "149 kr"
             },
             {
-              "name": "Pasta milano: Stekt salami i örtig tomatsås med skvätt grädde, rödlök, chili & persilja. Toppas med ruccola & parmesan.",
+              "name": "Pasta alfredo: Smörstekt kycklingfilé i parmesansås med vitlök & persilja.",
               "price": "149 kr"
             },
             {
-              "name": "Veckans pizza - vegetale: Frasig surdegspizza med örtig tomatsås, mozzarella fior di latte & grillade italienska grönsaker (zucchini, paprika & aubergine) med basilikapesto.",
+              "name": "Veckans pizza - Simone: Frasig surdegspizza med örtig tomatsås, mozzarella fior di latte & hickory rökt bacon & färsk vitlök. Toppas med parmesan & färsk ruccola.",
               "price": "149 kr"
             },
             {
-              "name": "Veckans caesarsallad: Grillad kycklingfilé, hickoryrökt bacon, ugnsbakade krutonger & romansallad. Toppas med ruccola & parmesan samt serveras med caesarsås.",
+              "name": "Veckans tonosallad: Salladsmix med rödlök, trädgårdstomater, tärnad mango, ruccola & tärnad rå tonfisk. Toppas med unagisås & sesamfrö.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans caesarsallad: ugnsbakad kycklingfilé, hickoryrökt bacon, örtiga krutonger & romansallad. Toppas med ruccola & parmesan. Serveras med caesarsås vid sidan.",
               "price": "149 kr"
             }
           ]
@@ -1746,27 +1750,31 @@
           "day": "Tisdag",
           "dishes": [
             {
-              "name": "Kött: Köttfärslimpa med potatismos gräddsås, ärtor, press gurka & rårörda lingon.",
+              "name": "Kött: Boeuf Bourguignon med kokt potatis & färsk oregano.",
               "price": "149 kr"
             },
             {
-              "name": "Fågel: Kycklingspett med klyftpotatis, haricot verts, BBQ-sås & aioli.",
+              "name": "Fågel: Asiatisk chicken Bau Buns med picklad gurka, chilimajo & sötpommes.",
               "price": "149 kr"
             },
             {
-              "name": "Fisk: Panerad flundrafilé med kokt potatis, ärtor & kall dillsås med kapris.",
+              "name": "Fisk: Pocherad kummelfilé med hummersås. Toppas med tigerräkor.",
               "price": "149 kr"
             },
             {
-              "name": "Pasta verde: Vitlöksstekt kyckling & cocktailtomater i basilikasås med parmesan.",
+              "name": "Pasta vegetale: Stekta grillade grönsaker (Zucchini, Paprika & Auberginer) i långkokt örtig tomatsås & parmesan.",
               "price": "149 kr"
             },
             {
-              "name": "Veckans pizza - vegetale: Frasig surdegspizza med örtig tomatsås, mozzarella fior di latte & grillade italienska grönsaker (zucchini, paprika & aubergine) med basilikapesto.",
+              "name": "Veckans pizza - Simone: Frasig surdegspizza med örtig tomatsås, mozzarella fior di latte & hickory rökt bacon & färsk vitlök. Toppas med parmesan & färsk ruccola.",
               "price": "149 kr"
             },
             {
-              "name": "Veckans caesarsallad: Grillad kycklingfilé, hickoryrökt bacon, ugnsbakade krutonger & romansallad. Toppas med ruccola & parmesan samt serveras med caesarsås.",
+              "name": "Veckans tonosallad: Salladsmix med rödlök, trädgårdstomater, tärnad mango, ruccola & tärnad rå tonfisk. Toppas med unagisås & sesamfrö.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans caesarsallad: ugnsbakad kycklingfilé, hickoryrökt bacon, örtiga krutonger & romansallad. Toppas med ruccola & parmesan. Serveras med caesarsås vid sidan.",
               "price": "149 kr"
             }
           ]
@@ -1775,27 +1783,31 @@
           "day": "Onsdag",
           "dishes": [
             {
-              "name": "Kött: Grillmix med fläskspett, entrecote, biffar, färsk potatis & choronsås.",
+              "name": "Kött: Handrullade högrevsköttbullar med potatismos, gräddsås, pressad gurka & rårörda lingon.",
               "price": "149 kr"
             },
             {
-              "name": "Fågel: Kycklingcurry gryta med jordnötter, banan, paprika & basmatiris.",
+              "name": "Fågel: Kycklingfärsrullar fyllda med ärtor & majs. Serveras med sweet chili-sås, ingefära & klyftpotatis.",
               "price": "149 kr"
             },
             {
-              "name": "Fisk: Hummerdoftande fisksoppa med laxfilé, flundrafilé, räkor, aioli & citron.",
+              "name": "Fisk: Friterad koljafilé med kall kapris- och dillsås. Serveras med kokt färsk potatis.",
               "price": "149 kr"
             },
             {
-              "name": "Pasta alfredo: Stekt kyckling i parmesansås med persilja & vitlök.",
+              "name": "Pasta tortellini: Färska pastaknutar fyllda med spenat & ricotta. Serveras i örtig långkok tomatsås samt toppas med buffelmozzarella.",
               "price": "149 kr"
             },
             {
-              "name": "Veckans pizza - vegetale: Frasig surdegspizza med örtig tomatsås, mozzarella fior di latte & grillade italienska grönsaker (zucchini, paprika & aubergine) med basilikapesto.",
+              "name": "Veckans pizza - Simone: Frasig surdegspizza med örtig tomatsås, mozzarella fior di latte & hickory rökt bacon & färsk vitlök. Toppas med parmesan & färsk ruccola.",
               "price": "149 kr"
             },
             {
-              "name": "Veckans caesarsallad: Grillad kycklingfilé, hickoryrökt bacon, ugnsbakade krutonger & romansallad. Toppas med ruccola & parmesan samt serveras med caesarsås.",
+              "name": "Veckans tonosallad: Salladsmix med rödlök, trädgårdstomater, tärnad mango, ruccola & tärnad rå tonfisk. Toppas med unagisås & sesamfrö.",
+              "price": "149 kr"
+            },
+            {
+              "name": "Veckans caesarsallad: ugnsbakad kycklingfilé, hickoryrökt bacon, örtiga krutonger & romansallad. Toppas med ruccola & parmesan. Serveras med caesarsås vid sidan.",
               "price": "149 kr"
             }
           ]
@@ -1804,27 +1816,27 @@
           "day": "Torsdag",
           "dishes": [
             {
-              "name": "Kött: Krämig lövbiffsgryta med svamp, lök, creme fraiche & stekt potatis.",
+              "name": "Kött: Nattbakad hel fläskkarré med kimchi, kulpotatis & ingefäramajo.",
               "price": "149 kr"
             },
             {
-              "name": "Fågel: Stekt kycklingfilé med rostad potatis, haricot verts & krämig tomatsås.",
+              "name": "Fågel: Chicken Bombay med kokosgrädde & basmatiris.",
               "price": "149 kr"
             },
             {
-              "name": "Fisk: Halstrad laxfjäril med kokt potatis, saffranssås & ärtor.",
+              "name": "Pasta guanciale: Vitlöksstekt gunaciale i parmesansås med äggula & svartpeppar.",
               "price": "149 kr"
             },
             {
-              "name": "Pasta spinachi: Färska pastaknutar fyllda med spenat & ricotta. Serveras i svampsås med parmesan.",
+              "name": "Veckans pizza - Simone: Frasig surdegspizza med örtig tomatsås, mozzarella fior di latte & hickory rökt bacon & färsk vitlök. Toppas med parmesan & färsk ruccola.",
               "price": "149 kr"
             },
             {
-              "name": "Veckans pizza - vegetale: Frasig surdegspizza med örtig tomatsås, mozzarella fior di latte & grillade italienska grönsaker (zucchini, paprika & aubergine) med basilikapesto.",
+              "name": "Veckans tonosallad: Salladsmix med rödlök, trädgårdstomater, tärnad mango, ruccola & tärnad rå tonfisk. Toppas med unagisås & sesamfrö.",
               "price": "149 kr"
             },
             {
-              "name": "Veckans caesarsallad: Grillad kycklingfilé, hickoryrökt bacon, ugnsbakade krutonger & romansallad. Toppas med ruccola & parmesan samt serveras med caesarsås.",
+              "name": "Veckans caesarsallad: ugnsbakad kycklingfilé, hickoryrökt bacon, örtiga krutonger & romansallad. Toppas med ruccola & parmesan. Serveras med caesarsås vid sidan.",
               "price": "149 kr"
             }
           ]
@@ -1833,23 +1845,23 @@
           "day": "Fredag",
           "dishes": [
             {
-              "name": "Kött: Grillad Entrecote med klyftpotatis, svampsås & röd pestosås.",
+              "name": "Grillmix med lammspett, lammfärsspett & kycklingspett. Serveras med fris, bearnaise & BBQ-sås.",
               "price": "159 kr"
             },
             {
-              "name": "Fågel: Kycklingschnitzel med pommes söt chilisås, ärtor & bearnaisesås.",
+              "name": "Lasagne salmone: Husets laxlasagne med bechamelsås, parmesan & spenat.",
               "price": "149 kr"
             },
             {
-              "name": "Pasta foresta: Vitlöksstekt ostronskivling & champinjoner i gräddig vitvinssås med parmesan & persilja.",
+              "name": "Veckans pizza - Simone: Frasig surdegspizza med örtig tomatsås, mozzarella fior di latte & hickory rökt bacon & färsk vitlök. Toppas med parmesan & färsk ruccola.",
               "price": "149 kr"
             },
             {
-              "name": "Veckans pizza - vegetale: Frasig surdegspizza med örtig tomatsås, mozzarella fior di latte & grillade italienska grönsaker (zucchini, paprika & aubergine) med basilikapesto.",
+              "name": "Veckans tonosallad: Salladsmix med rödlök, trädgårdstomater, tärnad mango, ruccola & tärnad rå tonfisk. Toppas med unagisås & sesamfrö.",
               "price": "149 kr"
             },
             {
-              "name": "Veckans caesarsallad: Grillad kycklingfilé, hickoryrökt bacon, ugnsbakade krutonger & romansallad. Toppas med ruccola & parmesan samt serveras med caesarsås.",
+              "name": "Veckans caesarsallad: ugnsbakad kycklingfilé, hickoryrökt bacon, örtiga krutonger & romansallad. Toppas med ruccola & parmesan. Serveras med caesarsås vid sidan.",
               "price": "149 kr"
             }
           ]
