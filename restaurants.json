@@ -106,7 +106,11 @@
     "url": "https://www.delissimo.se",
     "type": "pdf",
     "area": "Platinan",
-    "region": "platinan"
+    "region": "platinan",
+    "pdf_match": [
+      "centralen",
+      "platinan"
+    ]
   },
   {
     "name": "Carotte",

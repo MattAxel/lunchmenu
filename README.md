@@ -105,7 +105,7 @@ Supported types:
 - `"text_days"` — fetches separate weekday pages under one site (e.g. Masala Corner) and extracts the full week
 - `"text_js"` — uses Playwright for JS-rendered pages, then extracts text
 - `"image"` — loads the page with Playwright, downloads the menu `<img>` (first `img[alt^="meny v." i]`, then generic menu selectors, then a screenshot as a last resort), then Grok vision reads it. With `"week_check": true`, a week number in the alt text or file name (e.g. `meny v.40`) must match the current week.
-- `"pdf"` — downloads a PDF, extracts text with pypdf, then Grok; scanned PDFs should use `"image"` instead
+- `"pdf"` — downloads a PDF, extracts text with pypdf, then Grok; scanned PDFs should use `"image"` instead. Matches `area` in the link label or filename. Optional `"pdf_match": ["centralen", "platinan"]` sets extra/override keywords. Filenames containing `gamle` / `gamlestan` / `gamlestaden` are never picked (Delissimo has labelled those PDFs incorrectly).
 - `"manual"` — never fetched by the scraper (not even with `--force all`). Publish each week's menu with `scraper/manual_entry.py` (see below). Scraper runs keep a published entry for the current week untouched; until one exists the restaurant is shown as "Veckans meny är inte publicerad än" (`"not_published": true`, not counted as an error).
 
 - `"canva"` — finds the Canva embed on the restaurant page and reads the design's text in a plain visible Chromium window (Canva challenges headless browsers; needs a display, e.g. `xvfb-run` in CI). Optional `"canva_url"` is used when the page can't be loaded (e.g. Poppels blocks our network); if the page embeds a different design than `canva_url`, a NOTE is logged.

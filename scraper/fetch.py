@@ -421,45 +421,77 @@ def fetch_canva(url: str, fallback_canva_url: str | None = None) -> str:
     return text
 
 
-def fetch_pdf(url: str, area: str) -> bytes:
-    """Fetch a PDF menu linked from a page, matched by area name.
+# Filenames for Delissimo's Gamlestan menu (and similar). Exclusion is
+# filename/URL only: the site has labelled Centralen.pdf "GAMLESTADEN" and
+# Gamle.pdf "PLATINAN", so link text alone is not trustworthy.
+_PDF_FILENAME_EXCLUDE = ("gamle", "gamlestan", "gamlestaden")
 
-    Prefer the link's own label and filename. Parent/nav text often lists
-    every location (e.g. "ÖJERSJÖ | PARTILLE | … | PLATINAN"), so matching
-    on parent alone picks the wrong PDF.
+
+def _pdf_match_keywords(area: str, pdf_match: list[str] | None) -> list[str]:
+    if pdf_match:
+        keywords = [str(k).strip().lower() for k in pdf_match if str(k).strip()]
+        if keywords:
+            return keywords
+    return [area.lower()]
+
+
+def select_pdf_url(
+    html: str,
+    page_url: str,
+    area: str,
+    pdf_match: list[str] | None = None,
+) -> str:
+    """Pick the best PDF href from a menu page.
+
+    Matches *pdf_match* keywords (falling back to *area*) against the link's
+    own label and filename, never parent/nav text. Filenames containing
+    gamle/gamlestan/gamlestaden are skipped so a mislabelled Gamlestan PDF
+    cannot win.
     """
-    from urllib.parse import urljoin, urlparse
-
-    resp = requests.get(url, headers=DEFAULT_HEADERS, timeout=30)
-    _check_blocked(url, resp.status_code, body=resp.text)
-    resp.raise_for_status()
-    soup = BeautifulSoup(resp.text, "html.parser")
-
-    area_l = area.lower()
+    keywords = _pdf_match_keywords(area, pdf_match)
+    soup = BeautifulSoup(html, "html.parser")
     candidates: list[tuple[int, str, str]] = []
 
     for link in soup.find_all("a", href=True):
         href = link["href"]
         if not href.lower().endswith(".pdf"):
             continue
-        pdf_url = urljoin(url, href)
+        pdf_url = urljoin(page_url, href)
         link_text = link.get_text(" ", strip=True)
-        filename = urlparse(pdf_url).path.rsplit("/", 1)[-1].lower()
+        filename = unquote(urlparse(pdf_url).path.rsplit("/", 1)[-1]).lower()
+        if any(ex in filename for ex in _PDF_FILENAME_EXCLUDE):
+            continue
         score = 0
-        if area_l in link_text.lower():
-            score += 100
-        if area_l in filename:
-            score += 50
+        for keyword in keywords:
+            if keyword in link_text.lower():
+                score += 100
+            if keyword in filename:
+                score += 50
         if score:
             candidates.append((score, pdf_url, link_text))
 
     if not candidates:
-        raise RuntimeError(f"No PDF link found matching area '{area}' on {url}")
+        raise RuntimeError(f"No PDF link found matching {keywords} on {page_url}")
 
     candidates.sort(key=lambda item: (-item[0], item[1]))
     # Delissimo links PDFs as http://; its host answers plain http with a JS
     # bot-challenge HTML page, while https serves the real file.
-    pdf_url = _https(candidates[0][1])
+    return _https(candidates[0][1])
+
+
+def fetch_pdf(url: str, area: str, pdf_match: list[str] | None = None) -> bytes:
+    """Fetch a PDF menu linked from a page, matched by keywords or area name.
+
+    Prefer the link's own label and filename. Parent/nav text often lists
+    every location (e.g. "ÖJERSJÖ | PARTILLE | … | PLATINAN"), so matching
+    on parent alone picks the wrong PDF. Optional *pdf_match* (from
+    restaurants.json) is a list of filename/label keywords such as
+    ["centralen", "platinan"].
+    """
+    resp = requests.get(url, headers=DEFAULT_HEADERS, timeout=30)
+    _check_blocked(url, resp.status_code, body=resp.text)
+    resp.raise_for_status()
+    pdf_url = select_pdf_url(resp.text, url, area, pdf_match)
     pdf_resp = requests.get(pdf_url, headers=DEFAULT_HEADERS, timeout=30)
     pdf_resp.raise_for_status()
     if not pdf_resp.content.lstrip()[:5] == b"%PDF-":
@@ -641,6 +673,10 @@ def fetch_content(restaurant: dict, expected_week: str | None = None) -> str | b
     elif restaurant["type"] == "canva":
         return fetch_canva(restaurant["url"], restaurant.get("canva_url"))
     elif restaurant["type"] == "pdf":
-        return fetch_pdf(restaurant["url"], restaurant["area"])
+        return fetch_pdf(
+            restaurant["url"],
+            restaurant["area"],
+            restaurant.get("pdf_match"),
+        )
     else:
         raise ValueError(f"Unknown restaurant type: {restaurant['type']}")
