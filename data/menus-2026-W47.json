@@ -1,6 +1,6 @@
 {
   "week": "2026-W47",
-  "generated": "2026-11-16T19:23:17",
+  "generated": "2026-11-17T12:08:48",
   "restaurants": [
     {
       "name": "Golfkrogen",
@@ -1865,8 +1865,7 @@
       "region": "torslanda",
       "url": "https://www.facebook.com/sockermajas/",
       "days": [],
-      "error": "Ingen LUNCHMENY V.47 publicerad än (2 senaste bildinlägg kontrollerade)",
-      "not_published": true
+      "error": "Could not read any post images from https://www.facebook.com/sockermajas/"
     }
   ]
 }
