@@ -919,7 +919,8 @@
       "region": "torslanda",
       "url": "https://www.facebook.com/sockermajas/",
       "days": [],
-      "error": "Could not read any post images from https://www.facebook.com/sockermajas/"
+      "error": "Ingen LUNCHMENY V.47 publicerad än (2 senaste bildinlägg kontrollerade)",
+      "not_published": true
     }
   ]
 }
