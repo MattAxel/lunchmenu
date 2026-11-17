@@ -910,8 +910,93 @@
       "area": "Amhult",
       "region": "torslanda",
       "url": "https://www.ica.se/butiker/maxi/goteborg/maxi-ica-stormarknad-torslanda-1003825/tjanster/cafe/",
-      "days": [],
-      "error": "Menu image is for week 46 (alt='meny v.46', file='A4 -meny v.46-26.jpg'), expected week 47"
+      "days": [
+        {
+          "day": "Måndag",
+          "dishes": [
+            {
+              "name": "Kött: Fläsklägg, rotmos, senapssås, färskriven pepparrot, krispiglök",
+              "price": "139 kr"
+            },
+            {
+              "name": "Fisk: Friterad spätta, rotmos, salviasky, curry-/fänkål, dill",
+              "price": "139 kr"
+            },
+            {
+              "name": "Bryggans Caesarsallad - Romansallad, bacon, parmesan, caesardressing, tomat, syrad lök, krispig panko. Välj: Kyckling, räkor eller halloumi (endast caesar 110:-)",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "dishes": [
+            {
+              "name": "Kött: Stekt rimmat fläsk med raggmunk, rårörda lingon, alt, löksås, kokt potatis",
+              "price": "139 kr"
+            },
+            {
+              "name": "Fisk: Fisk-/skaldjurslasagne, vitvinsås, parmesan, dillolja",
+              "price": "139 kr"
+            },
+            {
+              "name": "Bryggans Caesarsallad - Romansallad, bacon, parmesan, caesardressing, tomat, syrad lök, krispig panko. Välj: Kyckling, räkor eller halloumi (endast caesar 110:-)",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "dishes": [
+            {
+              "name": "Kött: Helstekt fläskkarre, potatisgratäng, kantarellsås, äpplemos, bönor",
+              "price": "139 kr"
+            },
+            {
+              "name": "Fisk: Stekt lax, dillkokt potatis, citronsås, räkor, gröna ärter",
+              "price": "139 kr"
+            },
+            {
+              "name": "Bryggans Caesarsallad - Romansallad, bacon, parmesan, caesardressing, tomat, syrad lök, krispig panko. Välj: Kyckling, räkor eller halloumi (endast caesar 110:-)",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "dishes": [
+            {
+              "name": "Kött: Kycklingschnitzel fylld med taleggio och rökt skinka, potatispuré, pepparsås, persilja",
+              "price": "139 kr"
+            },
+            {
+              "name": "Fisk: Stekt strömming, potatispuré, brynt smör, rårörda lingon",
+              "price": "139 kr"
+            },
+            {
+              "name": "Bryggans Caesarsallad - Romansallad, bacon, parmesan, caesardressing, tomat, syrad lök, krispig panko. Välj: Kyckling, räkor eller halloumi (endast caesar 110:-)",
+              "price": "139 kr"
+            }
+          ]
+        },
+        {
+          "day": "Fredag",
+          "dishes": [
+            {
+              "name": "Kött: Confiterat anklår, hasselbackspotatis, apelsinsky, baconlindade haricots verts",
+              "price": "139 kr"
+            },
+            {
+              "name": "Fisk: Varmrökt lax, hummerhollandaise, kokt potatis, gräslök, fänkål",
+              "price": "139 kr"
+            },
+            {
+              "name": "Bryggans Caesarsallad - Romansallad, bacon, parmesan, caesardressing, tomat, syrad lök, krispig panko. Välj: Kyckling, räkor eller halloumi (endast caesar 110:-)",
+              "price": "139 kr"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Sockermajas",
